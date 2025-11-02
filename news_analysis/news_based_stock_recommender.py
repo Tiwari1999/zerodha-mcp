@@ -96,8 +96,6 @@ class NewsBasedStockRecommender:
     
     def analyze_stock_from_news(self, ticker, news_count, news_articles):
         """Analyze a stock mentioned in news using pattern analysis."""
-        print(f"\n📊 Analyzing {ticker}...")
-        print(f"   📰 Mentioned in {news_count} articles")
         
         try:
             # Download stock data
@@ -105,14 +103,11 @@ class NewsBasedStockRecommender:
             stock_data = self.analyzer.download_enhanced_stock_data(ticker, period="1y", exchange="NSE")
             
             if not stock_data or "daily" not in stock_data or stock_data["daily"].empty:
-                print(f"   ⚠️ No data available for {ticker}")
                 return None
             
-            # Calculate indicators
             daily_data = self.analyzer.calculate_advanced_indicators(stock_data["daily"])
             
             if daily_data is None or daily_data.empty:
-                print(f"   ⚠️ Error calculating indicators for {ticker}")
                 return None
             
             # Get current price
@@ -126,15 +121,24 @@ class NewsBasedStockRecommender:
                     pattern_analysis = self.analyzer.pattern_analyzer.analyze_patterns(
                         daily_data, ticker
                     )
-                except Exception as e:
-                    print(f"   ⚠️ Pattern analysis error: {e}")
+                except Exception:
                     pattern_analysis = None
             
-            # Generate trading signals
+            # Fundamental screening
+            info = stock_data.get("info", {})
+            market_cap = info.get("marketCap", 0)
+            avg_volume = daily_data["Volume"].mean() if not daily_data.empty else 0
+            
+            if market_cap > 0 and market_cap < 5e9:
+                return None
+            
+            if avg_volume < 100000:
+                return None
+            
             signals = self.analyzer.generate_enhanced_signals(stock_data, None)
             
-            # Calculate recommendation score
-            score = 0
+            if signals.get("signal") == "HOLD" and signals.get("confidence") == 0:
+                return None
             
             # News factor (0-30 points)
             if news_count >= 10:
@@ -176,11 +180,48 @@ class NewsBasedStockRecommender:
             rsi = latest.get("RSI", None) if "RSI" in daily_data.columns else None
             macd = latest.get("MACD", None) if "MACD" in daily_data.columns else None
             
+            # Calculate stop loss (7% below entry or below pattern support)
+            atr = latest.get("ATR", None) if "ATR" in daily_data.columns else None
+            stop_loss = round(current_price * 0.93, 2)  # Default 7% stop
+            
+            if pattern_analysis and pattern_analysis.get("top_3_patterns"):
+                # Use pattern support if available
+                for pattern in pattern_analysis["top_3_patterns"]:
+                    if pattern.get("signal") == "BUY" and pattern.get("support_level"):
+                        pattern_stop = pattern.get("support_level", stop_loss)
+                        stop_loss = min(stop_loss, round(pattern_stop * 0.98, 2))
+            
+            # Simple news sentiment (keyword-based)
+            # Note: For ML models later, use article.get("content") instead of just title
+            positive_keywords = ["rise", "gain", "up", "bullish", "strong", "beat", "growth", "profit", "win", "positive"]
+            negative_keywords = ["fall", "drop", "down", "bearish", "weak", "miss", "loss", "decline", "warn", "negative"]
+            
+            sentiment_score = 0
+            for article in news_articles[:5]:  # Check top 5 articles
+                title = article.get("title", "").upper()
+                # TODO: When ML model added, analyze article.get("content") for deeper sentiment
+                pos_count = sum(1 for kw in positive_keywords if kw.upper() in title)
+                neg_count = sum(1 for kw in negative_keywords if kw.upper() in title)
+                sentiment_score += (pos_count - neg_count)
+            
+            news_sentiment = "POSITIVE" if sentiment_score > 0 else "NEGATIVE" if sentiment_score < 0 else "NEUTRAL"
+            
+            # Adjust news score based on sentiment
+            if news_sentiment == "NEGATIVE":
+                news_score = max(0, news_score - 10)
+            elif news_sentiment == "POSITIVE":
+                news_score = min(30, news_score + 5)
+            
+            total_score = news_score + signal_score + pattern_score
+            
             recommendation = {
                 "ticker": ticker,
                 "yahoo_symbol": yahoo_symbol,
                 "current_price": round(current_price, 2),
+                "stop_loss": stop_loss,
+                "risk_reward": round((current_price - stop_loss) / stop_loss, 2) if stop_loss > 0 else None,
                 "news_count": news_count,
+                "news_sentiment": news_sentiment,
                 "news_articles": news_articles,
                 "signal": signal,
                 "signal_confidence": round(confidence, 1),
@@ -197,41 +238,54 @@ class NewsBasedStockRecommender:
                 "reasons": signals.get("reasons", [])
             }
             
-            print(f"   ✅ Analysis complete | Score: {total_score:.1f} | Signal: {signal} ({confidence:.1f}%)")
-            
             return recommendation
             
         except Exception as e:
-            print(f"   ❌ Error analyzing {ticker}: {e}")
             return None
     
-    def recommend_stocks(self, max_stocks=20, top_recommendations=3):
-        """Main function: Scrape news, analyze stocks, recommend top buys."""
-        print("🚀 NEWS-BASED STOCK RECOMMENDATION SYSTEM")
-        print("=" * 80)
+    def load_json_data(self, json_file):
+        """Load news data from existing JSON file."""
+        import json
+        with open(json_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
         
-        # Step 1: Scrape Moneycontrol news
-        print("\n📰 Step 1: Scraping Moneycontrol Markets News...")
-        print("-" * 80)
+        # Convert JSON structure to format expected by recommend_stocks
+        articles = data.get("articles", [])
+        ticker_summary = data.get("ticker_summary", {})
+        ticker_articles = data.get("ticker_articles", {})
         
-        news_data = scrape_markets_news()
+        # Sort tickers by count
+        sorted_tickers = sorted(ticker_summary.items(), key=lambda x: x[1], reverse=True)
+        
+        return {
+            "articles": articles,
+            "tickers": [t[0] for t in sorted_tickers],
+            "ticker_counts": dict(sorted_tickers),
+            "ticker_articles": ticker_articles,
+            "files": {"json": json_file}
+        }
+    
+    def recommend_stocks(self, max_stocks=20, top_recommendations=3, json_file=None):
+        """Main function: Scrape news, analyze stocks, recommend top buys.
+        
+        Args:
+            max_stocks: Maximum number of stocks to analyze
+            top_recommendations: Number of top recommendations to return
+            json_file: Optional path to existing JSON file (skips scraping if provided)
+        """
+        if json_file:
+            print(f"📂 Loading news data from {json_file}...")
+            news_data = self.load_json_data(json_file)
+        else:
+            print("🔍 Scraping news and analyzing stocks...")
+            news_data = scrape_markets_news()
         
         if not news_data or not news_data.get("tickers"):
-            print("\n❌ Failed to scrape news or no stocks found in articles.")
-            print("   Cannot provide recommendations without real data.")
             return None
-        
-        # Step 2: Get top mentioned stocks
-        print(f"\n📊 Step 2: Found {len(news_data['tickers'])} unique stocks mentioned in news")
-        print(f"   Analyzing top {max_stocks} most mentioned stocks...")
         
         top_tickers = news_data["tickers"][:max_stocks]
         ticker_counts = news_data["ticker_counts"]
         ticker_articles = news_data["ticker_articles"]
-        
-        # Step 3: Analyze each stock
-        print(f"\n🔍 Step 3: Running Technical Analysis & Pattern Detection...")
-        print("-" * 80)
         
         recommendations = []
         for ticker in top_tickers:
@@ -243,80 +297,32 @@ class NewsBasedStockRecommender:
                 recommendations.append(rec)
         
         if not recommendations:
-            print("\n❌ No valid stock analysis completed. Cannot provide recommendations.")
             return None
         
-        # Step 4: Rank and recommend
-        print(f"\n🎯 Step 4: Ranking Stocks & Generating Recommendations...")
-        print("-" * 80)
-        
-        # Sort by total score (highest first)
         recommendations.sort(key=lambda x: x["total_score"], reverse=True)
         
-        # Filter to BUY recommendations only
-        buy_recommendations = [r for r in recommendations if r["recommendation"] == "BUY"]
+        # Filter: Only BUY recommendations with positive sentiment
+        buy_recommendations = [
+            r for r in recommendations 
+            if r["recommendation"] == "BUY" and r.get("news_sentiment") != "NEGATIVE"
+        ]
         
         if not buy_recommendations:
-            buy_recommendations = [r for r in recommendations[:top_recommendations]]
-        
-        # Step 5: Generate report
-        print("\n" + "=" * 80)
-        print("📈 TOP STOCK RECOMMENDATIONS FROM NEWS ANALYSIS")
-        print("=" * 80)
+            buy_recommendations = [r for r in recommendations if r.get("news_sentiment") != "NEGATIVE"][:top_recommendations]
         
         print(f"\n🎯 TOP {top_recommendations} BUY RECOMMENDATIONS:")
-        print("-" * 80)
+        print("=" * 80)
         
         for i, rec in enumerate(buy_recommendations[:top_recommendations], 1):
-            print(f"\n🏆 #{i}: {rec['ticker']}")
-            print(f"   💰 Current Price: ₹{rec['current_price']:,.2f}")
-            print(f"   📊 Total Score: {rec['total_score']:.1f}/100")
-            print(f"      📰 News Score: {rec['news_score']:.1f}/30 (Mentioned in {rec['news_count']} articles)")
-            print(f"      📈 Signal Score: {rec['signal_score']:.1f}/40 (Signal: {rec['signal']} @ {rec['signal_confidence']}%)")
-            print(f"      🎨 Pattern Score: {rec['pattern_score']:.1f}/30 (Pattern: {rec['pattern_signal']} @ {rec['pattern_confidence']}%)")
-            
+            print(f"\n#{i} {rec['ticker']} | ₹{rec['current_price']:,.2f} | Stop: ₹{rec.get('stop_loss', 0):,.0f}")
+            print(f"   Score: {rec['total_score']:.1f}/100 | News: {rec['news_count']} ({rec.get('news_sentiment', 'N/A')}) | Signal: {rec['signal']} ({rec['signal_confidence']:.0f}%)")
             if rec.get('rsi'):
-                print(f"   📊 RSI: {rec['rsi']:.2f}")
-            if rec.get('macd'):
-                print(f"   📊 MACD: {rec['macd']:.4f}")
-            
-            if rec['top_patterns']:
-                print(f"   🎨 Top Patterns Detected:")
-                for pattern in rec['top_patterns'][:2]:
-                    pattern_name = pattern.get('pattern', 'Unknown')
-                    confidence = pattern.get('confidence', 0)
-                    signal = pattern.get('signal', 'HOLD')
-                    emoji = "📈" if signal == "BUY" else "📉" if signal == "SELL" else "⚖️"
-                    print(f"      {emoji} {pattern_name}: {confidence}% confidence ({signal})")
-            
-            if rec['reasons']:
-                print(f"   📝 Key Reasons:")
-                for reason in rec['reasons'][:3]:
-                    print(f"      • {reason}")
-            
-            print(f"   📰 Latest News Articles:")
-            for article in rec['news_articles'][:3]:
-                title = article.get('title', 'No title')
-                if len(title) > 70:
-                    title = title[:70] + "..."
-                print(f"      • {title}")
+                print(f"   RSI: {rec['rsi']:.1f}")
         
-        print(f"\n📋 ALL ANALYZED STOCKS:")
-        print("-" * 80)
-        
-        df = pd.DataFrame(recommendations)
-        print(df[['ticker', 'current_price', 'news_count', 'signal', 'signal_confidence', 
-                  'pattern_signal', 'pattern_confidence', 'total_score', 'recommendation']].to_string(index=False))
-        
-        # Save recommendations
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         csv_file = f"stock_recommendations_{timestamp}.csv"
+        df = pd.DataFrame(recommendations)
         df.to_csv(csv_file, index=False)
-        
-        print(f"\n💾 Recommendations saved to: {csv_file}")
-        print("\n" + "=" * 80)
-        print("✅ Analysis Complete!")
-        print("=" * 80)
         
         return {
             "top_recommendations": buy_recommendations[:top_recommendations],

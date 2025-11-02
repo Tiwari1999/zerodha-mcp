@@ -17,18 +17,29 @@ from news_analysis.news_based_stock_recommender import NewsBasedStockRecommender
 
 def main():
     """Main entry point for news-based stock recommender."""
-    print("🚀 Starting News-Based Stock Recommendation System")
-    print("=" * 80)
+    import sys
+    import glob
+    import os
     
     recommender = NewsBasedStockRecommender()
-    result = recommender.recommend_stocks(max_stocks=20, top_recommendations=3)
     
-    if result:
-        print("\n✅ Analysis complete!")
-        return result
+    # Check if JSON file provided as argument or find latest
+    json_file = None
+    if len(sys.argv) > 1:
+        json_file = sys.argv[1]
     else:
-        print("\n❌ Analysis failed or no stocks found.")
-        return None
+        # Find latest moneycontrol JSON file
+        json_files = glob.glob("news_analysis/moneycontrol_markets_*.json")
+        if json_files:
+            json_file = max(json_files, key=lambda x: os.path.getmtime(x))
+            print(f"📂 Using existing JSON file: {json_file}")
+    
+    result = recommender.recommend_stocks(
+        max_stocks=20, 
+        top_recommendations=3,
+        json_file=json_file
+    )
+    return result
 
 if __name__ == "__main__":
     main()

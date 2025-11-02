@@ -300,27 +300,17 @@ def scrape_markets_news():
     cutoff = now_utc() - timedelta(hours=HOURS_BACK)
     total_articles_scraped = 0
 
-    print("🔍 Scraping Moneycontrol Markets News...")
-    print("=" * 80)
-
     for section in SECTIONS:
-        print(f"\n[SECTION] {section}")
         section_articles = 0
         
         for p in range(1, MAX_PAGES_PER_SECTION + 1):
             url = page_url(section, p)
-            print(f"  [LIST] Page {p}")
-
             soup = get_soup(session, url)
             if not soup:
                 break
 
             links = parse_listing_links(soup)
-            
-            if links:
-                print(f"    Found {len(links)} article links")
-            else:
-                print("    No article links found; stopping section")
+            if not links:
                 break
 
             stop_due_to_time = False
@@ -352,19 +342,13 @@ def scrape_markets_news():
                         except Exception:
                             pass
 
-                    if art.get("tickers"):
-                        print(f"    ✅ {art.get('title', 'No title')[:60]}... | Tickers: {art['tickers']}")
-                    
                     all_items.append(art)
                     section_articles += 1
                     total_articles_scraped += 1
 
-            print(f"    Collected {section_articles} articles from page {p}")
             time.sleep(SLEEP_LISTING_SEC)
 
             if stop_due_to_time or section_articles >= MAX_ARTICLES_PER_SECTION:
-                if stop_due_to_time:
-                    print("    Hit items older than 24h; stopping pagination")
                 break
 
     # Aggregate tickers
@@ -382,15 +366,7 @@ def scrape_markets_news():
                 "published_at": item.get("published_at")
             })
 
-    # Save results
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    
-    print(f"\n📊 Scraping Complete!")
-    print(f"   Total articles: {len(all_items)}")
-    print(f"   Articles with tickers: {sum(1 for item in all_items if item.get('tickers'))}")
-    print(f"   Unique stocks mentioned: {len(ticker_count)}")
-    
-    # Save JSON
     json_file = f"moneycontrol_markets_{timestamp}.json"
     json_data = {
         "scrape_date": datetime.now().isoformat(),
@@ -406,16 +382,11 @@ def scrape_markets_news():
     with open(json_file, "w", encoding="utf-8") as f:
         json.dump(json_data, f, ensure_ascii=False, indent=2)
     
-    # Save CSV
     csv_file = None
     if all_items:
         df = pd.DataFrame(all_items)
         csv_file = f"moneycontrol_markets_{timestamp}.csv"
         df.to_csv(csv_file, index=False)
-        print(f"   ✅ Saved: {json_file}")
-        print(f"   ✅ Saved: {csv_file}")
-    else:
-        print(f"   ⚠️  No articles found - saved empty JSON: {json_file}")
     
     # Return tickers sorted by mention count
     sorted_tickers = sorted(ticker_count.items(), key=lambda x: x[1], reverse=True)
@@ -429,7 +400,4 @@ def scrape_markets_news():
     }
 
 if __name__ == "__main__":
-    result = scrape_markets_news()
-    print("\n📈 Top 10 Most Mentioned Stocks:")
-    for ticker, count in list(result["ticker_counts"].items())[:10]:
-        print(f"   {ticker}: {count} mentions")
+    scrape_markets_news()

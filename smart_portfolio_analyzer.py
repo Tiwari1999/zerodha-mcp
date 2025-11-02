@@ -179,6 +179,9 @@ class SmartPortfolioAnalyzer:
             # Get stock info
             try:
                 info = stock.info
+                # Get average volume for liquidity check
+                avg_volume = data["daily"]["Volume"].mean() if not data["daily"].empty else 0
+                
                 data["info"] = {
                     "sector": info.get("sector", "Unknown"),
                     "industry": info.get("industry", "Unknown"),
@@ -187,6 +190,7 @@ class SmartPortfolioAnalyzer:
                     "pe_ratio": info.get("trailingPE", 0),
                     "pb_ratio": info.get("priceToBook", 0),
                     "div_yield": info.get("dividendYield", 0),
+                    "avg_volume": avg_volume,
                 }
             except:
                 data["info"] = {}
@@ -289,6 +293,12 @@ class SmartPortfolioAnalyzer:
             elif latest["RSI"] < 40:
                 bearish_signals += 1
 
+            # 200 DMA check (key trend filter)
+            nifty_above_200dma = latest["Close"] > latest.get("SMA_200", latest["Close"])
+            if not nifty_above_200dma:
+                self.market_condition = "BEARISH"
+                return "BEARISH"
+            
             # Moving average trend
             if latest["Close"] > latest["SMA_20"] > latest["SMA_50"]:
                 bullish_signals += 2
@@ -309,7 +319,6 @@ class SmartPortfolioAnalyzer:
             else:
                 self.market_condition = "NEUTRAL"
 
-            print(f"📊 Market Condition: {self.market_condition}")
             return self.market_condition
 
         except Exception as e:
@@ -333,6 +342,28 @@ class SmartPortfolioAnalyzer:
         buy_score = 0
         sell_score = 0
 
+        # Fundamental screening filter
+        info = stock_data.get("info", {})
+        market_cap = info.get("marketCap", 0)
+        avg_volume = info.get("avg_volume", 0) or daily_data["Volume"].mean()
+        
+        # Reject if market cap < 500 crore or avg volume < 100k
+        if market_cap > 0 and market_cap < 5e9:  # 500 crore = 5 billion
+            return {
+                "signal": "HOLD",
+                "confidence": 0,
+                "reasons": ["Market cap too low (< ₹500 crore)"],
+                "patterns": [],
+            }
+        
+        if avg_volume < 100000:
+            return {
+                "signal": "HOLD",
+                "confidence": 0,
+                "reasons": ["Low liquidity (< 100k avg volume)"],
+                "patterns": [],
+            }
+
         # Pattern Analysis (NEW)
         pattern_analysis = None
         if self.pattern_analysis_enabled and self.pattern_analyzer:
@@ -346,19 +377,23 @@ class SmartPortfolioAnalyzer:
                     daily_data, symbol
                 )
 
-                # Integrate pattern signals
+                # Volume confirmation for patterns
+                volume_confirmed = False
+                if "Volume_SMA" in daily_data.columns and not pd.isna(latest["Volume_SMA"]):
+                    volume_ratio = latest["Volume"] / latest["Volume_SMA"] if latest["Volume_SMA"] > 0 else 1
+                    volume_confirmed = volume_ratio >= 1.5
+                
+                # Integrate pattern signals with volume confirmation
                 if pattern_analysis["overall_signal"] == "BUY":
-                    buy_score += (
-                            pattern_analysis["overall_confidence"] / 20
-                    )  # Scale to 0-5
-                    signals.append(
-                        f"Pattern Analysis: {pattern_analysis['pattern_summary']}"
-                    )
+                    if volume_confirmed:
+                        buy_score += pattern_analysis["overall_confidence"] / 20
+                        signals.append(f"Pattern Analysis: {pattern_analysis['pattern_summary']} (Volume confirmed)")
+                    else:
+                        buy_score += (pattern_analysis["overall_confidence"] / 20) * 0.5
+                        signals.append(f"Pattern Analysis: {pattern_analysis['pattern_summary']} (Low volume)")
                 elif pattern_analysis["overall_signal"] == "SELL":
                     sell_score += pattern_analysis["overall_confidence"] / 20
-                    signals.append(
-                        f"Pattern Analysis: {pattern_analysis['pattern_summary']}"
-                    )
+                    signals.append(f"Pattern Analysis: {pattern_analysis['pattern_summary']}")
 
                 # Add top pattern if significant
                 if pattern_analysis["top_3_patterns"]:
@@ -507,13 +542,16 @@ class SmartPortfolioAnalyzer:
                 signals.append(f"Exceptional profit {pnl_percent:.1f}% - Book profits")
                 sell_score += 2
 
-        # 8. Market condition influence
+        # 8. Market condition influence (strict filter)
         if self.market_condition == "BEARISH":
+            # Reject all BUY signals in bear market unless extremely strong
+            if buy_score > 0:
+                buy_score = max(0, buy_score - 3)
             sell_score += 1
-            signals.append("Overall market bearish - Caution advised")
+            signals.append("Market below 200 DMA - Bear market detected")
         elif self.market_condition == "BULLISH":
             buy_score += 1
-            signals.append("Overall market bullish - Favorable conditions")
+            signals.append("Market above 200 DMA - Bullish conditions")
 
         # 9. Add multitimeframe confirmation
         if timeframe_scores["buy"] > timeframe_scores["sell"]:
@@ -636,30 +674,19 @@ class SmartPortfolioAnalyzer:
 
     def run_complete_analysis(self):
         """Run complete portfolio analysis with all features."""
-        print("🚀 Starting Smart Portfolio Analysis...")
-        print("=" * 60)
-
-        # Step 1: Fetch real portfolio data
         portfolio_data = self.fetch_real_portfolio_data()
         if not portfolio_data:
-            print("❌ Failed to fetch portfolio data.")
             return None
 
-        # Step 2: Assess market condition
         self.assess_market_condition()
-
-        # Step 3: Analyze portfolio composition
         composition_analysis = self.analyze_portfolio_composition()
-
-        # Step 4: Analyze each holding
         analysis_results = []
 
-        print(f"\n🔍 Analyzing {len(portfolio_data['holdings'])} holdings...")
+        print(f"\n📊 Analyzing {len(portfolio_data['holdings'])} holdings...")
 
         for holding in portfolio_data["holdings"]:
             symbol = holding["tradingsymbol"]
             exchange = holding.get("exchange", "NSE")
-            print(f"\n📊 Analyzing {symbol}...")
 
             # Download enhanced data
             stock_data = self.download_enhanced_stock_data(symbol, period="1y", exchange=exchange)
@@ -673,6 +700,18 @@ class SmartPortfolioAnalyzer:
                 # Generate enhanced signals
                 signals = self.generate_enhanced_signals(stock_data, holding)
 
+                # Calculate stop loss
+                current_price = holding["last_price"]
+                latest = stock_data["daily"].iloc[-1]
+                stop_loss = round(current_price * 0.93, 2)  # Default 7% stop
+                
+                patterns = signals.get("patterns", {})
+                if patterns and patterns.get("top_3_patterns"):
+                    for pattern in patterns["top_3_patterns"]:
+                        if pattern.get("signal") == "BUY" and pattern.get("support_level"):
+                            pattern_stop = pattern.get("support_level", stop_loss)
+                            stop_loss = min(stop_loss, round(pattern_stop * 0.98, 2))
+
                 # Prepare comprehensive result
                 result = {
                     "symbol": symbol,
@@ -680,6 +719,7 @@ class SmartPortfolioAnalyzer:
                     "quantity": holding["quantity"],
                     "avg_price": holding["average_price"],
                     "current_price": holding["last_price"],
+                    "stop_loss": stop_loss,
                     "investment": holding["quantity"] * holding["average_price"],
                     "current_value": holding["quantity"] * holding["last_price"],
                     "pnl": holding["pnl"],
@@ -734,216 +774,76 @@ class SmartPortfolioAnalyzer:
 
     def generate_comprehensive_report(self, analysis_results, composition_analysis):
         """Generate a comprehensive analysis report with actionable insights."""
-        print("\n" + "=" * 80)
-        print("📈 SMART PORTFOLIO ANALYSIS REPORT")
-        print("=" * 80)
-
-        # Portfolio overview
         df = pd.DataFrame(analysis_results)
 
         total_investment = df["investment"].sum()
         total_current_value = df["current_value"].sum()
         total_pnl = df["pnl"].sum()
-        total_pnl_percent = (
-            (total_pnl / total_investment) * 100 if total_investment > 0 else 0
-        )
+        total_pnl_percent = (total_pnl / total_investment * 100) if total_investment > 0 else 0
 
-        print(f"\n💰 PORTFOLIO OVERVIEW:")
-        print(f"   📅 Analysis Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-        print(f"   🌡️  Market Condition: {self.market_condition}")
-        print(f"   💵 Total Investment: ₹{total_investment:,.2f}")
-        print(f"   💎 Current Value: ₹{total_current_value:,.2f}")
-        print(f"   📊 Total P&L: ₹{total_pnl:,.2f} ({total_pnl_percent:+.2f}%)")
-        print(f"   🎯 Portfolio Size: {len(analysis_results)} stocks")
+        print(f"\n📊 PORTFOLIO OVERVIEW:")
+        print(f"   Market: {self.market_condition} | Investment: ₹{total_investment:,.0f} | Value: ₹{total_current_value:,.0f} | P&L: {total_pnl_percent:+.1f}%")
 
-        # Signal distribution
         signal_counts = df["signal"].value_counts()
-        print(f"\n🎯 SIGNAL DISTRIBUTION:")
-        for signal, count in signal_counts.items():
-            emoji = "🟢" if signal == "BUY" else "🔴" if signal == "SELL" else "🟡"
-            print(f"   {emoji} {signal}: {count} stocks")
+        print(f"   Signals: BUY={signal_counts.get('BUY', 0)} | SELL={signal_counts.get('SELL', 0)} | HOLD={signal_counts.get('HOLD', 0)}")
 
-        # High-confidence recommendations
         high_conf_buy = df[(df["signal"] == "BUY") & (df["confidence"] > 70)]
         high_conf_sell = df[(df["signal"] == "SELL") & (df["confidence"] > 70)]
 
-        print(f"\n🚀 HIGH-CONFIDENCE RECOMMENDATIONS:")
-
         if not high_conf_buy.empty:
-            print("   📈 STRONG BUY SIGNALS:")
+            print(f"\n📈 STRONG BUY ({len(high_conf_buy)} stocks):")
             for _, row in high_conf_buy.iterrows():
-                print(f"      🟢 {row['symbol']}: {row['confidence']:.1f}% confidence")
-                print(
-                    f"         💰 Investment: ₹{row['investment']:,.0f} | P&L: {row['pnl_percent']:+.1f}%"
-                )
-                print(
-                    f"         📊 Top reason: {row['reasons'][0] if row['reasons'] else 'N/A'}"
-                )
+                print(f"   {row['symbol']}: {row['confidence']:.0f}% | P&L: {row['pnl_percent']:+.1f}% | Stop: ₹{row.get('stop_loss', 0):,.0f}")
 
         if not high_conf_sell.empty:
-            print("   📉 STRONG SELL SIGNALS:")
+            print(f"\n📉 STRONG SELL ({len(high_conf_sell)} stocks):")
             for _, row in high_conf_sell.iterrows():
-                print(f"      🔴 {row['symbol']}: {row['confidence']:.1f}% confidence")
-                print(
-                    f"         💰 Investment: ₹{row['investment']:,.0f} | P&L: {row['pnl_percent']:+.1f}%"
-                )
-                print(
-                    f"         📊 Top reason: {row['reasons'][0] if row['reasons'] else 'N/A'}"
-                )
+                print(f"   {row['symbol']}: {row['confidence']:.0f}% | P&L: {row['pnl_percent']:+.1f}%")
 
-        # Risk analysis
-        print(f"\n⚠️  RISK ANALYSIS:")
+        high_loss = df[df["pnl_percent"] < -15]
+        if not high_loss.empty:
+            print(f"\n⚠️  HIGH LOSS (>15%): {', '.join(high_loss['symbol'].tolist())}")
 
-        high_loss_positions = df[df["pnl_percent"] < -15]
-        if not high_loss_positions.empty:
-            print("   🚨 HIGH-LOSS POSITIONS (>15% loss):")
-            for _, row in high_loss_positions.iterrows():
-                print(
-                    f"      ❌ {row['symbol']}: {row['pnl_percent']:+.1f}% (₹{row['pnl']:,.0f})"
-                )
+        high_gain = df[df["pnl_percent"] > 25]
+        if not high_gain.empty:
+            print(f"💎 HIGH GAIN (>25%): {', '.join(high_gain['symbol'].tolist())}")
 
-        high_gain_positions = df[df["pnl_percent"] > 25]
-        if not high_gain_positions.empty:
-            print("   💎 HIGH-GAIN POSITIONS (>25% profit):")
-            for _, row in high_gain_positions.iterrows():
-                print(
-                    f"      ✅ {row['symbol']}: {row['pnl_percent']:+.1f}% (₹{row['pnl']:,.0f})"
-                )
-
-        # Sector analysis
         if composition_analysis:
-            print(f"\n🏭 SECTOR ALLOCATION:")
             sector_data = composition_analysis.get("sector_allocation", {})
-            for sector, data in sorted(
-                    sector_data.items(), key=lambda x: x[1]["percentage"], reverse=True
-            ):
-                print(
-                    f"   📊 {sector}: {data['percentage']:.1f}% (₹{data['value']:,.0f})"
-                )
-                print(f"      Stocks: {', '.join(data['stocks'])}")
+            print(f"\n🏭 TOP SECTORS:")
+            for sector, data in sorted(sector_data.items(), key=lambda x: x[1]["percentage"], reverse=True)[:5]:
+                print(f"   {sector}: {data['percentage']:.1f}%")
 
-            risk_data = composition_analysis.get("risk_assessment", {})
-            print(
-                f"   ⚖️  Concentration Risk: {risk_data.get('concentration_risk', 'Unknown')}"
-            )
-            print(
-                f"   🎯 Diversification Score: {risk_data.get('diversification_score', 0)} sectors"
-            )
-
-        # Detailed stock analysis
-        print(f"\n📋 DETAILED STOCK ANALYSIS:")
-        print("-" * 80)
-
+        print(f"\n📋 STOCK DETAILS:")
         for _, row in df.iterrows():
-            symbol = row["symbol"]
-            signal = row["signal"]
-            confidence = row["confidence"]
+            signal_emoji = "🟢" if row["signal"] == "BUY" else "🔴" if row["signal"] == "SELL" else "🟡"
+            tech = row.get("technical_data", {})
+            rsi = tech.get("rsi") if tech.get("rsi") != "N/A" else None
+            
+            print(f"{signal_emoji} {row['symbol']} | {row['signal']} ({row['confidence']:.0f}%) | P&L: {row['pnl_percent']:+.1f}%", end="")
+            if row.get('stop_loss'):
+                print(f" | Stop: ₹{row['stop_loss']:.0f}", end="")
+            if rsi:
+                print(f" | RSI: {rsi:.1f}", end="")
+            print()
 
-            # Signal emoji and color
-            if signal == "BUY":
-                signal_emoji = "🟢"
-            elif signal == "SELL":
-                signal_emoji = "🔴"
-            else:
-                signal_emoji = "🟡"
-
-            print(f"\n{signal_emoji} {symbol} ({row['sector']}):")
-            print(
-                f"   💼 Holdings: {row['quantity']:,} shares @ ₹{row['avg_price']:.2f}"
-            )
-            print(
-                f"   💰 Current: ₹{row['current_price']:.2f} | P&L: {row['pnl_percent']:+.2f}%"
-            )
-            print(f"   🎯 Signal: {signal} (Confidence: {confidence:.1f}%)")
-
-            # Technical indicators
-            tech_data = row.get("technical_data", {})
-            if tech_data.get("rsi") and tech_data.get("rsi") != "N/A":
-                print(f"   📊 RSI: {tech_data['rsi']:.1f}")
-            if tech_data.get("price_vs_sma20") and tech_data.get("price_vs_sma20") != "N/A":
-                print(f"   📈 vs SMA20: {tech_data['price_vs_sma20']}")
-            if tech_data.get("adx") and tech_data.get("adx") != "N/A":
-                print(f"   🎯 ADX: {tech_data['adx']:.1f}")
-
-            # Pattern Analysis (NEW)
-            patterns = row.get("patterns", {})
-            if patterns and patterns.get("patterns_detected", 0) > 0:
-                print(f"   🎨 Patterns: {patterns['patterns_detected']} detected")
-                if patterns.get("top_3_patterns"):
-                    for i, pattern in enumerate(
-                            patterns["top_3_patterns"][:2], 1
-                    ):  # Show top 2
-                        pattern_emoji = (
-                            "📈"
-                            if pattern.get("signal") == "BUY"
-                            else "📉" if pattern.get("signal") == "SELL" else "⚖️"
-                        )
-                        print(
-                            f"      {pattern_emoji} {pattern.get('pattern', 'Unknown')}: {pattern.get('confidence', 0):.0f}% confidence"
-                        )
-
-                if patterns.get("pattern_summary"):
-                    print(f"   📝 Pattern Summary: {patterns['pattern_summary']}")
-            else:
-                print(f"   🎨 Patterns: No significant patterns detected")
-
-            # Top reasons
-            print(f"   📝 Key Reasons:")
-            for i, reason in enumerate(row["reasons"][:3], 1):
-                print(f"      {i}. {reason}")
-
-        # Action items
-        print(f"\n🎬 IMMEDIATE ACTION ITEMS:")
-        print("-" * 50)
-
-        action_items = []
-
-        # Strong buy recommendations
         strong_buys = df[(df["signal"] == "BUY") & (df["confidence"] >= 80)]
-        if not strong_buys.empty:
-            action_items.append("📈 CONSIDER BUYING:")
-            for _, row in strong_buys.iterrows():
-                action_items.append(
-                    f"   • {row['symbol']} (Confidence: {row['confidence']:.1f}%)"
-                )
-
-        # Strong sell recommendations
         strong_sells = df[(df["signal"] == "SELL") & (df["confidence"] >= 80)]
-        if not strong_sells.empty:
-            action_items.append("📉 CONSIDER SELLING:")
-            for _, row in strong_sells.iterrows():
-                action_items.append(
-                    f"   • {row['symbol']} (Confidence: {row['confidence']:.1f}%)"
-                )
-
-        # Stop-loss alerts
         stop_loss_needed = df[df["pnl_percent"] < -20]
-        if not stop_loss_needed.empty:
-            action_items.append("🛑 URGENT - STOP-LOSS REVIEW:")
-            for _, row in stop_loss_needed.iterrows():
-                action_items.append(
-                    f"   • {row['symbol']}: {row['pnl_percent']:+.1f}% loss"
-                )
+        
+        if not strong_buys.empty or not strong_sells.empty or not stop_loss_needed.empty:
+            print(f"\n🎬 ACTION ITEMS:")
+            if not strong_buys.empty:
+                print(f"   BUY: {', '.join(strong_buys['symbol'].tolist())}")
+            if not strong_sells.empty:
+                print(f"   SELL: {', '.join(strong_sells['symbol'].tolist())}")
+            if not stop_loss_needed.empty:
+                print(f"   STOP-LOSS REVIEW: {', '.join(stop_loss_needed['symbol'].tolist())}")
 
-        if action_items:
-            for item in action_items:
-                print(item)
-        else:
-            print("   ✅ No immediate actions required. Continue monitoring.")
-
-        # Save report
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         filename = f"smart_portfolio_analysis_{timestamp}.csv"
         df.to_csv(filename, index=False)
-
-        print(f"\n💾 REPORT SAVED:")
-        print(f"   📄 CSV Report: {filename}")
-        print(f"   🔄 Next Analysis: Recommended in 1-4 hours during market hours")
-
-        print("\n" + "=" * 80)
-        print("⚡ Powered by Smart Portfolio Analyzer")
-        print("🔗 Zerodha MCP + Yahoo Finance + Advanced Technical Analysis")
-        print("=" * 80)
+        print(f"\n💾 Report saved: {filename}")
 
 
 def main():
