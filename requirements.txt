@@ -17,6 +17,7 @@ plotly>=5.15.0
 # Data processing
 requests>=2.31.0
 beautifulsoup4>=4.12.0
+lxml>=4.9.0
 
 # Dashboard (optional)
 streamlit>=1.25.0

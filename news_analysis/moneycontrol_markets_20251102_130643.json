@@ -1,0 +1,3738 @@
+{
+  "scrape_date": "2025-11-02T13:06:43.349746",
+  "scrape_status": "success",
+  "total_articles": 200,
+  "articles_with_tickers": 124,
+  "unique_stocks": 51,
+  "articles": [
+    {
+      "id": "13646676",
+      "url": "https://www.moneycontrol.com/news/business/ipo/fintech-firm-pine-labs-to-launch-ipo-on-november-7-aims-to-raise-rs-2-080-crore-via-fresh-issue-13646676.html",
+      "title": "Fintech firm Pine Labs to launch IPO on November 7; aims to raise Rs 2,080 crore via fresh issue",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "PINE",
+        "PBFINTECH"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13643869",
+      "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-ipo-gmp-live-lenskart-day-1-ipo-subscription-status-price-band-review-gmp-oct-31-liveblog-13643869.html",
+      "title": "Lenskart IPO Day 1 GMP Live: Should you apply or skip? Check GMP, key risks and more",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LENSKART"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13645844",
+      "url": "https://www.moneycontrol.com/news/business/ipo/pharma-company-curis-lifesciences-taps-capital-markets-with-ipo-on-november-7-13645844.html",
+      "title": "Pharma company Curis Lifesciences taps capital markets with IPO on November 7",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "CURIS",
+        "TITAN"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13646371",
+      "url": "https://www.moneycontrol.com/news/business/ipo/promoter-sells-2-75-stake-in-ipo-bound-tenneco-clean-air-india-at-rs-16-023-crore-valuation-13646371.html",
+      "title": "Promoter sells 2.75% stake in IPO-bound Tenneco Clean Air India at Rs 16,023-crore valuation",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "TENNECO",
+        "LICI"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13646258",
+      "url": "https://www.moneycontrol.com/news/business/ipo/safecure-services-ipo-sees-1-77-times-subscription-on-final-day-check-listing-date-13646258.html",
+      "title": "Safecure Services IPO sees 1.77 times subscription on final day; check listing date",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "SAFECURE",
+        "ECLERX"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13646369",
+      "url": "https://www.moneycontrol.com/news/business/ipo/upcoming-ipo-flipkart-tpg-backed-shadowfax-file-updated-drhp-with-sebi-for-rs-2-000-crore-ipo-13646369.html",
+      "title": "Upcoming IPO: Flipkart, TPG-backed Shadowfax files updated DRHP with SEBI for Rs 2,000-crore IPO",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "SHADOWFAX",
+        "SBIN"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13646347",
+      "url": "https://www.moneycontrol.com/news/business/markets/chartist-talks-sudeep-shah-remains-bullish-on-these-3-psus-flags-caution-on-sagility-13646347.html",
+      "title": "Chartist Talks: Sudeep Shah remains bullish on these 3 PSUs, flags caution on Sagility",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "SAGILITY"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13645915",
+      "url": "https://www.moneycontrol.com/news/business/markets/confident-that-we-will-achieve-more-than-the-rs-27-000-crore-order-book-guidance-in-fy26-bel-s-manoj-jain-13645915.html",
+      "title": "'Confident that we will achieve more than the Rs 27,000 crore order book guidance in FY26': BEL's Manoj Jain",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "BEL"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13646356",
+      "url": "https://www.moneycontrol.com/news/business/markets/daily-voice-bachat-utsav-may-fizzle-out-dhananjay-sinha-warns-of-over-optimism-in-market-assumptions-13646356.html",
+      "title": "Daily Voice: ‘Bachat Utsav’ may fizzle out? Dhananjay Sinha warns of over-optimism in market assumptions",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13647010",
+      "url": "https://www.moneycontrol.com/news/business/markets/daily-voice-larger-healthcare-sector-continues-to-provide-exciting-opportunities-for-alpha-generation-says-tcg-amc-chief-13647010.html",
+      "title": "Daily Voice: Larger healthcare sector continues to provide exciting opportunities for alpha generation, says TCG AMC Chief",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LT"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13647243",
+      "url": "https://www.moneycontrol.com/news/business/markets/festive-travel-drives-petrol-sales-to-5-month-high-diesel-demand-stays-flat-in-october-13647243.html",
+      "title": "Festive travel drives petrol sales to 5-month high; diesel demand stays flat in October",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13646082",
+      "url": "https://www.moneycontrol.com/news/business/markets/fiis-net-sell-indian-equities-for-rs-6-769-crore-while-diis-pump-in-rs-7-068-crore-13646082.html",
+      "title": "FIIs net sell Indian equities for Rs 6,769 crore, while DIIs pump in Rs 7,068 crore",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "IOC"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13646553",
+      "url": "https://www.moneycontrol.com/news/business/markets/from-ipo-pricing-to-storytelling-samir-arora-vijay-shekhar-sharma-other-market-veterans-star-ip-feast-4-0-legends-13646553.html",
+      "title": "From IPO pricing to storytelling: Samir Arora, Vijay Shekhar Sharma & other market veterans star at IP Feast 4.0 Legends",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13645726",
+      "url": "https://www.moneycontrol.com/news/business/markets/itc-shares-rise-up-to-1-5-as-q2-results-beat-estimates-on-rising-cigarette-volumes-13645726.html",
+      "title": "ITC shares rise up to 1.5% as Q2 results beat estimates on rising cigarette volumes",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "ITC",
+        "LT"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13646540",
+      "url": "https://www.moneycontrol.com/news/business/markets/madhu-kela-sanjeev-bikhchandani-on-why-india-s-growth-story-is-powered-by-its-entrepreneurs-13646540.html",
+      "title": "Madhu Kela, Sanjeev Bikhchandani on why India's growth story is powered by its entrepreneurs",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LICI"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13647208",
+      "url": "https://www.moneycontrol.com/news/business/markets/mcap-of-four-of-top-10-valued-firms-jumps-by-rs-95-447-cr-reliance-biggest-gainer-13647208.html",
+      "title": "Mcap of four of top 10 valued firms jumps by Rs 95,447 cr; Reliance biggest gainer",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "RELIANCE"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13643771",
+      "url": "https://www.moneycontrol.com/news/business/markets/moneycontrol-pro-weekender-kicking-multiple-cans-down-the-road-13643771.html",
+      "title": "Moneycontrol Pro Weekender | Kicking Multiple Cans Down the Road",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LT"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13646497",
+      "url": "https://www.moneycontrol.com/news/business/markets/more-than-50-smallcaps-rise-up-to-54-as-broader-indices-outperform-13646497.html",
+      "title": "More than 50 smallcaps rise up to 54% as broader indices outperform",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13646095",
+      "url": "https://www.moneycontrol.com/news/business/markets/nova-global-opportunities-fund-picks-additional-3-89-stake-in-aaa-technologies-promoter-sells-1-42-in-affordable-robotic-13646095.html",
+      "title": "Nova Global Opportunities Fund picks additional 3.89% stake in AAA Technologies, promoter sells 1.42% in Affordable Robotic",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "INFY"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13643878",
+      "url": "https://www.moneycontrol.com/news/business/markets/stock-market-live-sensex-nifty-50-share-price-gift-nifty-latest-updates-31-10-2025-liveblog-13643878.html",
+      "title": "Closing Bell: Nifty below 25,750, Sensex slips 466 pts; PSU Banks outperform",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "BEL"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13646534",
+      "url": "https://www.moneycontrol.com/news/business/markets/storytelling-is-the-biggest-bullshit-in-stock-markets-says-sanjoy-bhattacharya-13646534.html",
+      "title": "Storytelling is the biggest bullshit in stock markets, says Sanjoy Bhattacharya",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13644358",
+      "url": "https://www.moneycontrol.com/news/business/markets/swiggy-shares-rise-2-5-as-q2-loss-narrows-sequentially-on-robust-quick-commerce-growth-13644358.html",
+      "title": "Swiggy shares rise 2.5% as Q2 loss narrows sequentially on robust quick commerce growth",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "SWIGGY"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13645621",
+      "url": "https://www.moneycontrol.com/news/business/markets/technical-view-nifty-snaps-4-week-gains-bears-can-challenge-25-500-if-nifty-breaks-25-670-level-bank-nifty-near-key-support-13645621.html",
+      "title": "Technical View: Nifty snaps 4-week gains, bears can challenge 25,500 if Nifty breaks 25,670 level; Bank Nifty near key support",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13638996",
+      "url": "https://www.moneycontrol.com/news/business/markets/textile-shrimp-stocks-rise-up-to-4-after-trump-hints-at-trade-deal-with-india-soon-13638996.html",
+      "title": "Textile, shrimp stocks rise up to 4% after Trump hints at trade deal with India soon",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LICI"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13646463",
+      "url": "https://www.moneycontrol.com/news/business/markets/wall-street-gains-on-amazon-boost-but-rate-caution-tempers-enthusiasm-13646463.html",
+      "title": "Wall Street gains on Amazon boost but rate caution tempers enthusiasm",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13646253",
+      "url": "https://www.moneycontrol.com/news/business/markets/want-to-mimic-what-stocks-the-us-buys-there-may-be-an-etf-soon-13646253.html",
+      "title": "Want to mimic what stocks the US buys? There may be an ETF soon",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13643495",
+      "url": "https://www.moneycontrol.com/news/business/stocks/mtar-technologies-shares-in-focus-on-winning-international-order-13643495.html",
+      "title": "MTAR Technologies shares hit 52-week high on winning international order",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "MTAR",
+        "INFY"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13643891",
+      "url": "https://www.moneycontrol.com/news/business/stocks/rrp-semiconductor-stock-soars-66-500-rajendra-chodankar-now-billionaire-13643891.html",
+      "title": "Rumour-fuelled rally sends RRP Semiconductor up 66,500%; Rajendra Chodankar turns billionaire",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13644991",
+      "url": "https://www.moneycontrol.com/news/business/ipo/groww-ipo-gmp-rises-ahead-of-november-4-launch-here-s-what-you-need-to-know-13644991.html",
+      "title": "Groww IPO GMP rises ahead of November 4 launch; here's what you need to know",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "GROWW"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13644855",
+      "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-s-rs-7-000-crore-ipo-under-the-spotlight-experts-weigh-the-pros-and-cons-13644855.html",
+      "title": "Lenskart’s Rs 7,000 crore IPO under the spotlight: Experts weigh the pros and cons",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LENSKART"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13645095",
+      "url": "https://www.moneycontrol.com/news/business/ipo/ms-dhoni-backed-finbud-ipo-opens-nov-6-price-band-key-dates-and-what-investors-should-know-before-bidding-13645095.html",
+      "title": "MS Dhoni-backed Finbud IPO opens Nov 6: Price band, key dates, and what investors should know before bidding",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "BANDHAN"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13644602",
+      "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-studds-lenskart-ipo-gmps-rise-up-to-18-as-subscriptions-underway-check-key-details-13644602.html",
+      "title": "Orkla India, Studds, Lenskart IPO GMPs rise up to 18% as subscriptions underway; check key details",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LENSKART",
+        "ORKLA",
+        "STUDDS",
+        "LICI"
+      ],
+      "ticker_count": 4,
+      "content": null
+    },
+    {
+      "id": "13644640",
+      "url": "https://www.moneycontrol.com/news/business/markets/commodity-exchange-mcx-says-root-cause-behind-october-28-tech-glitch-identified-13644640.html",
+      "title": "Commodity exchange MCX says root cause behind October 28 tech glitch identified",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "ITC",
+        "TECHM"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13645112",
+      "url": "https://www.moneycontrol.com/news/business/markets/domestic-metal-stocks-may-see-a-strong-run-up-as-commodities-trends-turn-favourable-13645112.html",
+      "title": "Domestic metal stocks may see a strong run-up as commodities trends turn favourable",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13644574",
+      "url": "https://www.moneycontrol.com/news/business/markets/groww-s-user-surge-sets-up-future-growth-arpu-dip-misleading-says-ceo-13644574.html",
+      "title": "Groww’s user surge sets up future growth, ARPU dip misleading, Says CEO",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "GROWW"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13645598",
+      "url": "https://www.moneycontrol.com/news/business/markets/hyundai-motor-india-shares-rise-up-to-2-as-brokerages-remain-bullish-post-q2-results-13645598.html",
+      "title": "Hyundai Motor India shares rise up to 2% as brokerages remain bullish post Q2 results",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LT",
+        "HYUNDAI",
+        "LICI"
+      ],
+      "ticker_count": 3,
+      "content": null
+    },
+    {
+      "id": "13645420",
+      "url": "https://www.moneycontrol.com/news/business/markets/nifty-settles-under-25800-sensex-falls-on-profit-booking-as-bears-lead-charge-13645420.html",
+      "title": "Nifty settles under 25,800, Sensex falls on profit-booking as bears lead charge",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13644613",
+      "url": "https://www.moneycontrol.com/news/business/markets/pl-asset-turns-risk-on-hikes-exposure-to-cyclicals-on-seeing-signs-of-recovery-in-equities-13644613.html",
+      "title": "PL Asset turns risk-on, hikes exposure to cyclicals on signs of recovery in equities",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13645077",
+      "url": "https://www.moneycontrol.com/news/business/markets/q2-results-impact-bandhan-bank-dlf-shares-fall-up-to-8-united-spirits-hits-4-month-high-13645077.html",
+      "title": "Q2 Results impact: Bandhan Bank, DLF shares fall up to 8%, United Spirits hits 4-month high",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LT",
+        "DLF",
+        "BANDHAN"
+      ],
+      "ticker_count": 3,
+      "content": null
+    },
+    {
+      "id": "13644753",
+      "url": "https://www.moneycontrol.com/news/business/markets/sebi-likely-to-penalise-mcx-for-four-hour-trading-halt-report-13644753.html",
+      "title": "SEBI likely to penalise MCX for four-hour trading halt: Report",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LT",
+        "SBIN"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13645480",
+      "url": "https://www.moneycontrol.com/news/business/markets/sebi-s-prospective-mutual-fund-overhaul-may-moderately-dent-amcs-earnings-nomura-13645480.html",
+      "title": "SEBI’s prospective mutual fund overhaul may moderately dent AMCs' earnings: Nomura",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "HDFCAMC",
+        "SBIN"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13644385",
+      "url": "https://www.moneycontrol.com/news/business/markets/sensex-slips-400-pts-from-day-s-high-nifty-below-25-850-fii-selling-among-key-factors-behind-market-decline-13644385.html",
+      "title": "Sensex settles 450 pts lower, Nifty ends below 25,750: FII selling among key factors behind market decline",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "BEL"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13645606",
+      "url": "https://www.moneycontrol.com/news/business/markets/stock-market-holiday-in-november-nse-bse-to-remain-shut-next-week-for-a-day-13645606.html",
+      "title": "Stock Market Holiday in November: NSE, BSE to remain shut next week for a day",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13644584",
+      "url": "https://www.moneycontrol.com/news/business/markets/studds-accessories-ipo-subscribed-3x-on-day-2-so-far-gmp-signals-decent-listing-should-you-apply-13644584.html",
+      "title": "Studds Accessories IPO subscribed 5x on Day 2, GMP signals decent listing: Should you apply?",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "STUDDS"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13645276",
+      "url": "https://www.moneycontrol.com/news/business/markets/taking-stock-sensex-down-466-pts-nifty-below-25-750-media-metals-drag-psu-banks-gain-13645276.html",
+      "title": "Taking Stock: Sensex down 466 pts, Nifty below 25,750; media, metals drag, PSU banks gain",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "BEL"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13644915",
+      "url": "https://www.moneycontrol.com/news/business/markets/union-bank-of-india-other-psu-bank-shares-rise-up-to-6-as-sebi-notifies-new-rules-for-bank-nifty-here-s-why-13644915.html",
+      "title": "Union Bank of India, other PSU bank shares rise up to 6% as SEBI notifies new rules for Bank Nifty: Here's why",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "UNION",
+        "SBIN",
+        "LICI"
+      ],
+      "ticker_count": 3,
+      "content": null
+    },
+    {
+      "id": "13643971",
+      "url": "https://www.moneycontrol.com/news/business/ipo/india-logs-busiest-ipo-month-ever-as-october-fundraising-hits-record-rs-46-000-crore-13643971.html",
+      "title": "India logs busiest IPO month ever as October fundraising hits record Rs 46,000 crore",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LICI"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13644380",
+      "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-ipo-subscribed-4-on-day-1-so-far-gmp-rises-slightly-should-you-apply-13644380.html",
+      "title": "Lenskart's Rs 7,000-crore IPO gets fully subscribed on Day 1; GMP crosses 20%: Should you apply?",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LENSKART"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13642924",
+      "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-ipo-to-open-shortly-should-you-apply-check-gmp-other-key-details-before-subscribing-to-issue-13642924.html",
+      "title": "Lenskart IPO opens for subscription; should you apply? Check GMP, other key details",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LENSKART"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13644471",
+      "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-ipo-subscribed-4x-on-day-3-so-far-gmp-nears-10-here-s-what-analysts-say-13644471.html",
+      "title": "Orkla India IPO closes with 49x subscription, QIB portion booked 118x: Check latest GMP",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "ORKLA",
+        "LICI"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13645417",
+      "url": "https://www.moneycontrol.com/news/business/stocks/lupin-stands-tall-in-digital-therapeutics-as-others-struggle-13645417.html",
+      "title": "Lupin stands tall in digital therapeutics as others struggle",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13644699",
+      "url": "https://www.moneycontrol.com/news/business/stocks/accumulate-cipla-target-of-rs-1675-prabhudas-lilladher-13644699.html",
+      "title": "Accumulate Cipla; target of Rs 1675: Prabhudas Lilladher",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "CIPLA"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13644708",
+      "url": "https://www.moneycontrol.com/news/business/stocks/accumulate-navin-fluorine-international-target-of-rs-5601-prabhudas-lilladher-13644708.html",
+      "title": "Accumulate Navin Fluorine International; target of Rs 5601: Prabhudas Lilladher",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13645107",
+      "url": "https://www.moneycontrol.com/news/business/stocks/accumulate-restaurant-brands-asia-target-of-rs-87-prabhudas-lilladher-2-13645107.html",
+      "title": "Accumulate Restaurant Brands Asia; target of Rs 87: Prabhudas Lilladher",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13644462",
+      "url": "https://www.moneycontrol.com/news/business/stocks/buy-apollo-pipes-target-of-rs-420-choice-equity-broking-13644462.html",
+      "title": "Buy Apollo Pipes; target of Rs 420: Choice Equity Broking",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13644461",
+      "url": "https://www.moneycontrol.com/news/business/stocks/buy-coal-india-target-of-rs-440-anand-rathi-13644461.html",
+      "title": "Buy Coal India; target of Rs 440: Anand Rathi",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "COALINDIA",
+        "LICI"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13644697",
+      "url": "https://www.moneycontrol.com/news/business/stocks/buy-itc-target-of-rs-530-prabhudas-lilladher-2-13644697.html",
+      "title": "Buy ITC; target of Rs 530: Prabhudas Lilladher",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "ITC"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13644460",
+      "url": "https://www.moneycontrol.com/news/business/stocks/buy-jindal-steel-target-of-rs-1230-anand-rathi-13644460.html",
+      "title": "Buy Jindal Steel; target of Rs 1230: Anand Rathi",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "JSWSTEEL"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13644686",
+      "url": "https://www.moneycontrol.com/news/business/stocks/buy-mahanagar-gas-target-of-rs-1531-prabhudas-lilladher-13644686.html",
+      "title": "Buy Mahanagar Gas; target of Rs 1531: Prabhudas Lilladher",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13644459",
+      "url": "https://www.moneycontrol.com/news/business/stocks/buy-rubicon-research-target-of-rs-740-motilal-oswal-13644459.html",
+      "title": "Buy Rubicon Research; target of Rs 740: Motilal Oswal",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "MOTILAL",
+        "OSWAL"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13644700",
+      "url": "https://www.moneycontrol.com/news/business/stocks/buy-union-bank-of-india-target-of-rs-160-prabhudas-lilladher-13644700.html",
+      "title": "Buy Union Bank of India; target of Rs 160: Prabhudas Lilladher",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "UNION",
+        "SBIN",
+        "LICI"
+      ],
+      "ticker_count": 3,
+      "content": null
+    },
+    {
+      "id": "13644709",
+      "url": "https://www.moneycontrol.com/news/business/stocks/hold-apar-industries-target-of-rs-9744-prabhudas-lilladher-13644709.html",
+      "title": "Hold Apar Industries; target of Rs 9744: Prabhudas Lilladher",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "RELIANCE"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13644705",
+      "url": "https://www.moneycontrol.com/news/business/stocks/hold-dabur-india-target-of-rs-490-prabhudas-lilladher-13644705.html",
+      "title": "Hold Dabur India; target of Rs 490: Prabhudas Lilladher",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "DABUR",
+        "LICI"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13644706",
+      "url": "https://www.moneycontrol.com/news/business/stocks/hold-grindwell-norton-target-of-rs-1744-prabhudas-lilladher-13644706.html",
+      "title": "Hold Grindwell Norton; target of Rs 1744: Prabhudas Lilladher",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13644703",
+      "url": "https://www.moneycontrol.com/news/business/stocks/hold-lic-housing-finance-target-of-rs-690-prabhudas-lilladher-13644703.html",
+      "title": "Hold LIC Housing Finance; target of Rs 690: Prabhudas Lilladher",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LICI",
+        "BAJFINANCE"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13644704",
+      "url": "https://www.moneycontrol.com/news/business/stocks/hold-steel-authority-of-india-target-of-rs-143-prabhudas-lilladher-13644704.html",
+      "title": "Hold Steel Authority of India; target of Rs 143: Prabhudas Lilladher",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "JSWSTEEL",
+        "GAIL",
+        "LICI"
+      ],
+      "ticker_count": 3,
+      "content": null
+    },
+    {
+      "id": "13645094",
+      "url": "https://www.moneycontrol.com/news/business/stocks/narayana-health-buys-uk-s-practice-plus-for-rs-1-930-crore-to-expand-global-footprint-13645094.html",
+      "title": "Narayana Health buys UK’s Practice Plus for Rs 1,930 crore to expand global footprint",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LT"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13644463",
+      "url": "https://www.moneycontrol.com/news/business/stocks/reduce-cipla-target-of-rs-1580-choice-equity-broking-13644463.html",
+      "title": "Reduce Cipla; target of Rs 1580: Choice Equity Broking",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "CIPLA"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13644707",
+      "url": "https://www.moneycontrol.com/news/business/stocks/reduce-laxmi-organic-industries-target-of-rs-192-prabhudas-lilladher-13644707.html",
+      "title": "Reduce Laxmi Organic Industries; target of Rs 192: Prabhudas Lilladher",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "RELIANCE"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13639421",
+      "url": "https://www.moneycontrol.com/news/business/markets/first-tick-top-global-cues-to-watch-in-today-s-trade-30-13639421.html",
+      "title": "First Tick: Top global cues to watch in today’s trade",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13643995",
+      "url": "https://www.moneycontrol.com/news/business/markets/october-sees-sharp-dip-in-sme-ipo-activity-rs-219-crore-raised-from-six-issues-13643995.html",
+      "title": "October sees sharp dip in SME IPO activity; Rs 219 crore raised from six issues",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13643630",
+      "url": "https://www.moneycontrol.com/news/business/markets/porinju-veliyath-s-equity-intelligence-india-picks-0-52-stake-in-associated-alcohols-breweries-13643630.html",
+      "title": "Porinju Veliyath's Equity Intelligence India picks 0.52% stake in Associated Alcohols & Breweries",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LICI"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13643179",
+      "url": "https://www.moneycontrol.com/news/business/markets/q2-results-impact-aditya-birla-real-estate-shares-jump-4-on-bullish-analyst-views-despite-loss-ab-capital-shares-surge-6-13643179.html",
+      "title": "Q2 results impact: Aditya Birla Real Estate shares jump 4% on bullish analyst views despite loss, AB Capital shares surge 6%",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LT"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13643840",
+      "url": "https://www.moneycontrol.com/news/business/markets/stocks-to-watch-today-reliance-bel-v2-retail-mtar-associated-alcohols-swiggy-bandhan-bank-manappuram-td-power-united-spirits-welspun-corp-lodha-in-focus-on-31-october-13643840.html",
+      "title": "Stocks to Watch Today: Reliance, BEL, V2 Retail, MTAR, Associated Alcohols, Swiggy, Bandhan Bank, Manappuram, TD Power, United Spirits, Welspun Corp, Lodha in focus on 31 October",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "RELIANCE",
+        "BEL",
+        "MTAR",
+        "BANDHAN",
+        "SWIGGY",
+        "POWERGRID"
+      ],
+      "ticker_count": 6,
+      "content": null
+    },
+    {
+      "id": "13643852",
+      "url": "https://www.moneycontrol.com/news/business/markets/trade-spotlight-how-should-you-trade-bhel-bpcl-nbcc-eclerx-services-polycab-india-brigade-enterprises-and-others-on-october-31-13643852.html",
+      "title": "Trade Spotlight: How should you trade BHEL, BPCL, NBCC, eClerx Services, Polycab India, Brigade Enterprises, and others on October 31?",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "BPCL",
+        "BHEL",
+        "POLYCAB",
+        "ECLERX",
+        "NBCC",
+        "LICI",
+        "ADANI"
+      ],
+      "ticker_count": 7,
+      "content": null
+    },
+    {
+      "id": "13643493",
+      "url": "https://www.moneycontrol.com/news/business/stocks/bharat-electronics-shares-in-focus-on-orders-win-of-rs-732-crore-13643493.html",
+      "title": "Bharat Electronics shares gain on orders win of Rs 732 crore",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "BEL"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13642786",
+      "url": "https://www.moneycontrol.com/news/business/stocks/subscribe-for-lenskart-solutions-ltd-ipo-choice-equity-broking-13642786.html",
+      "title": "Subscribe for Lenskart Solutions Ltd IPO; Choice Equity Broking",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LT",
+        "LENSKART"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13642739",
+      "url": "https://www.moneycontrol.com/news/business/markets/canara-bank-shares-jump-4-to-near-15-year-high-after-lender-s-q2-net-profit-rises-19-asset-quality-improves-13642739.html",
+      "title": "Canara Bank shares jump 4% to near 15-year high after lender’s Q2 net profit rises 19%, asset quality improves",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "CANARA"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13641860",
+      "url": "https://www.moneycontrol.com/news/business/markets/dr-reddy-s-labs-falls-6-after-firm-gets-non-compliance-notice-for-semaglutide-in-canada-13641860.html",
+      "title": "Dr Reddy's Labs falls 6% after firm gets non-compliance notice for semaglutide in Canada",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "DRREDDY"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13642400",
+      "url": "https://www.moneycontrol.com/news/business/markets/itc-shares-down-marginally-ahead-of-q2-results-here-s-what-analysts-expect-13642400.html",
+      "title": "ITC shares down marginally ahead of Q2 results; here's what analysts expect",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "ITC",
+        "LT"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13641538",
+      "url": "https://www.moneycontrol.com/news/business/markets/l-t-shares-jump-2-to-hit-fresh-record-high-after-q2-results-motilal-oswal-raises-target-price-13641538.html",
+      "title": "L&T jumps 2% to hit fresh record high after Q2 results; robust order book gets thumbs up from brokerages",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LT"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13641793",
+      "url": "https://www.moneycontrol.com/news/business/markets/q2-results-impact-bhel-pb-fintech-rise-up-to-3-on-strong-earnings-growth-ixigo-hits-20-lower-circuit-13641793.html",
+      "title": "Q2 results impact: BHEL, PB Fintech rise up to 7% on strong earnings growth, Ixigo hits 20% lower circuit",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LT",
+        "BHEL",
+        "IXIGO",
+        "PBFINTECH",
+        "GROWW"
+      ],
+      "ticker_count": 5,
+      "content": null
+    },
+    {
+      "id": "13642054",
+      "url": "https://www.moneycontrol.com/news/business/markets/swiggy-shares-muted-ahead-of-q2fy26-results-analysts-see-narrower-sequential-net-loss-13642054.html",
+      "title": "Swiggy shares muted ahead of Q2FY26 results, analysts see narrower sequential net loss",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LT",
+        "SWIGGY"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13642174",
+      "url": "https://www.moneycontrol.com/news/business/stocks/accumulate-jindal-steel-target-of-rs-1151-prabhudas-lilladher-13642174.html",
+      "title": "Accumulate Jindal Steel; target of Rs 1151: Prabhudas Lilladher",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "JSWSTEEL"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13642173",
+      "url": "https://www.moneycontrol.com/news/business/stocks/accumulate-mold-tek-packaging-target-of-rs-782-prabhudas-lilladher-13642173.html",
+      "title": "Accumulate Mold-tek Packaging; target of Rs 782: Prabhudas Lilladher",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13642178",
+      "url": "https://www.moneycontrol.com/news/business/stocks/accumulate-nmdc-target-of-rs-86-prabhudas-lilladher-13642178.html",
+      "title": "Accumulate NMDC; target of Rs 86: Prabhudas Lilladher",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13642698",
+      "url": "https://www.moneycontrol.com/news/business/stocks/buy-bhel-target-of-rs-250-prabhudas-lilladher-13642698.html",
+      "title": "Buy BHEL; target of Rs 250: Prabhudas Lilladher",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "BHEL"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13641750",
+      "url": "https://www.moneycontrol.com/news/business/stocks/buy-happiest-minds-target-of-rs-670-choice-equity-broking-13641750.html",
+      "title": "Buy Happiest Minds; target of Rs 670: Choice Equity Broking",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13642177",
+      "url": "https://www.moneycontrol.com/news/business/stocks/buy-larsen-and-toubro-target-of-rs-4766-prabhudas-lilladher-13642177.html",
+      "title": "Buy Larsen and Toubro; target of Rs 4766: Prabhudas Lilladher",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LT"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13642175",
+      "url": "https://www.moneycontrol.com/news/business/stocks/buy-samhi-hotels-target-of-rs-305-prabhudas-lilladher-13642175.html",
+      "title": "Buy Samhi Hotels; target of Rs 305: Prabhudas Lilladher",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13642526",
+      "url": "https://www.moneycontrol.com/news/business/stocks/buy-star-health-target-of-rs-550-nuvama-institutional-equities-13642526.html",
+      "title": "Buy Star Health; target of Rs 550: Nuvama Institutional Equities",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LT",
+        "NUVAMA"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13642507",
+      "url": "https://www.moneycontrol.com/news/business/stocks/buy-sumitomo-chemicals-target-of-rs-630-anand-rathi-2-13642507.html",
+      "title": "Buy Sumitomo Chemicals; target of Rs 630: Anand Rathi",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13642718",
+      "url": "https://www.moneycontrol.com/news/business/stocks/buy-varun-beverages-target-of-rs-576-deven-choksey-13642718.html",
+      "title": "Buy Varun Beverages; target of Rs 576: Deven Choksey",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13641901",
+      "url": "https://www.moneycontrol.com/news/business/stocks/hold-supreme-petrochem-target-of-rs-790-deven-choksey-13641901.html",
+      "title": "Hold Supreme Petrochem; target of Rs 790: Deven Choksey",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13642005",
+      "url": "https://www.moneycontrol.com/news/business/stocks/sell-dr-reddys-laboraories-target-of-rs-1140-deven-choksey-13642005.html",
+      "title": "Sell Dr Reddys Laboraories; target of Rs 1140: Deven Choksey",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "DRREDDY"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13641620",
+      "url": "https://www.moneycontrol.com/news/business/stocks/subscribe-for-studds-accessories-ltd-ipo-anand-rathi-13641620.html",
+      "title": "Subscribe for Studds Accessories Ltd IPO; Anand Rathi",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LT",
+        "STUDDS"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13641662",
+      "url": "https://www.moneycontrol.com/news/business/stocks/subscribe-for-studds-accessories-ltd-ipo-choice-equity-broking-13641662.html",
+      "title": "Subscribe for Studds Accessories Ltd IPO; Choice Equity Broking",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LT",
+        "STUDDS"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13640129",
+      "url": "https://www.moneycontrol.com/news/business/markets/adani-energy-solutions-shares-jump-up-to-7-on-bullish-brokerage-calls-13640129.html",
+      "title": "Adani Energy Solutions shares jump up to 7% on bullish brokerage calls",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "ADANI"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13639686",
+      "url": "https://www.moneycontrol.com/news/business/markets/indian-oil-hpcl-bpcl-rise-up-to-6-as-oil-prices-extend-decline-13639686.html",
+      "title": "Indian Oil, HPCL, BPCL shares rise up to 6% as oil prices extend decline",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "BPCL",
+        "HPCL",
+        "IOC",
+        "HINDPETRO"
+      ],
+      "ticker_count": 4,
+      "content": null
+    },
+    {
+      "id": "13640789",
+      "url": "https://www.moneycontrol.com/news/business/markets/samena-special-situations-mauritius-offloads-0-79-stake-in-dynamatic-technologies-13640789.html",
+      "title": "Samena Special Situations Mauritius offloads 0.79% stake in Dynamatic Technologies",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "INFY"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13643215",
+      "url": "https://www.moneycontrol.com/news/business/ipo/carlyle-group-backed-katsura-investments-transfers-1-21-stake-to-promoter-valuing-ipo-bound-varmora-granito-at-rs-4-500-crore-13643215.html",
+      "title": "Carlyle Group-backed Katsura Investments transfers 1.21% stake to promoter, valuing IPO-bound Varmora Granito at Rs 4,500 crore",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13643440",
+      "url": "https://www.moneycontrol.com/news/business/ipo/game-changers-texfab-ipo-manages-to-sail-through-on-final-day-check-allotment-listing-dates-13643440.html",
+      "title": "Game Changers Texfab IPO manages to sail through on final day; check allotment, listing dates",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13642152",
+      "url": "https://www.moneycontrol.com/news/business/ipo/groww-ipo-could-give-10-listing-gains-as-broking-firm-sets-price-band-ahead-of-next-week-s-issue-launch-13642152.html",
+      "title": "Groww IPO could give 10% listing gains as broking firm sets price band ahead of next week's issue launch",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "GROWW",
+        "BANDHAN"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13642591",
+      "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-ipo-gmp-rises-a-day-ahead-of-issue-launch-check-details-13642591.html",
+      "title": "Lenskart IPO GMP rises a day ahead of issue launch; check details",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LENSKART"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13642729",
+      "url": "https://www.moneycontrol.com/news/business/ipo/physicswallah-said-to-plan-431-million-ipo-in-weeks-13642729.html",
+      "title": "Physicswallah said to plan $431 million IPO in weeks",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13643590",
+      "url": "https://www.moneycontrol.com/news/business/ipo/softbank-group-adia-backed-lenskart-raises-rs-3-268-crore-from-147-anchor-investors-rs-7-278-crore-ipo-to-open-on-october-31-13643590.html",
+      "title": "SoftBank Group, ADIA-backed Lenskart raises Rs 3,268 crore from 147 anchor investors, Rs 7,278-crore IPO to open on October 31",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LENSKART"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13639739",
+      "url": "https://www.moneycontrol.com/news/business/ipo/boat-s-parent-gets-sebi-nod-for-rs-1-500-crore-ipo-13639739.html",
+      "title": "boAt's parent gets SEBI nod for Rs 1,500-crore IPO",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "SBIN"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13640647",
+      "url": "https://www.moneycontrol.com/news/business/ipo/bombay-coated-and-special-steels-raises-rs-7-92-crore-in-pre-ipo-round-cuts-fresh-issue-size-13640647.html",
+      "title": "Bombay Coated and Special Steels raises Rs 7.92 crore in pre-IPO round, cuts fresh issue size",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "COGNIZANT"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13637703",
+      "url": "https://www.moneycontrol.com/news/business/ipo/game-changers-texfab-ipo-sees-muted-response-from-investors-on-day-1-13637703.html",
+      "title": "Game Changers Texfab IPO sees muted response from investors on day 1",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13640999",
+      "url": "https://www.moneycontrol.com/news/business/ipo/groww-parent-billionbrains-garage-ventures-rs-6-632-crore-ipo-to-open-on-november-4-price-band-set-at-rs-95-100-per-share-13640999.html",
+      "title": "Groww-parent Billionbrains Garage Ventures Rs 6,632-crore IPO to open on November 4, price band set at Rs 95-100 per share",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "GROWW",
+        "BANDHAN"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13640976",
+      "url": "https://www.moneycontrol.com/news/business/ipo/groww-s-ipo-likely-priced-at-rs-95-100-apiece-13640976.html",
+      "title": "Groww’s IPO likely priced at Rs 95-100 apiece",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "GROWW"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13640783",
+      "url": "https://www.moneycontrol.com/news/business/ipo/jayesh-logistics-ipo-closes-with-61-26-times-subscription-check-allotment-and-listing-dates-13640783.html",
+      "title": "Jayesh Logistics IPO closes with 61.26 times subscription, check allotment and listing dates",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13640728",
+      "url": "https://www.moneycontrol.com/news/business/ipo/kkr-backed-vertis-hires-three-banks-for-india-ipo-to-seek-approval-by-december-report-13640728.html",
+      "title": "KKR-backed Vertis hires three banks for India IPO, to seek approval by December: Report",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LICI"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13640286",
+      "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-ipo-ceo-peyush-bansal-cfo-abhishek-gupta-react-to-stretched-valuation-concerns-13640286.html",
+      "title": "Lenskart IPO valuation: Is 230 PE ratio justified? Here's what CEO Peyush Bansal says",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LENSKART"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13639433",
+      "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-s-rs-7-000-crore-ipo-gmp-declines-ahead-of-friday-launch-here-s-what-analysts-say-13639433.html",
+      "title": "Lenskart's Rs 7,000-crore IPO GMP declines ahead of Friday launch; here's what analysts say",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LENSKART"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13641085",
+      "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-ipo-day-2-gmp-live-mtrfoods-ipo-subscription-groww-lenskart-gmp-today-oct-30-liveblog-13641085.html",
+      "title": "Orkla India IPO Day 2 GMP Live: Orkla India IPO subscribed 2.12 times on Day 2, BSE data shows - Apply or skip?",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "ORKLA",
+        "LICI"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13641790",
+      "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-ipo-gets-fully-subscribed-on-day-2-despite-declining-gmp-trend-should-you-apply-13641790.html",
+      "title": "Orkla India IPO subscribed nearly 3x on Day 2 despite falling GMP: Should you apply?",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "ORKLA",
+        "LICI"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13638149",
+      "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-ipo-gmp-live-mtrfoods-ipo-subscription-status-price-band-review-gmp-today-oct-29-liveblog-13638149.html",
+      "title": "Orkla India IPO Day 1 GMP Live: MTR Foods IPO hits halfway mark on Day 1, subscribed 57% so far - See latest GMP and more",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "ORKLA",
+        "LICI"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13639140",
+      "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-ipo-subscribed-27-on-day-1-so-far-gmp-declines-should-you-apply-13639140.html",
+      "title": "Orkla India IPO subscribed 78% on Day 1, GMP declines: Should you apply?",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "ORKLA",
+        "LICI"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13636463",
+      "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-ipo-to-open-today-should-you-apply-check-gmp-among-other-key-details-before-subscribing-to-issue-13636463.html",
+      "title": "Orkla India IPO to open today: Should you apply? Check GMP, among other key details before subscribing to issue",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "ORKLA",
+        "LICI"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13637910",
+      "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-raises-rs-500-crore-via-anchor-book-ahead-of-rs-1-668-crore-ipo-13637910.html",
+      "title": "Orkla India raises Rs 500 crore via anchor book ahead of Rs 1,668-crore IPO",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "ORKLA",
+        "LICI"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13639782",
+      "url": "https://www.moneycontrol.com/news/business/ipo/sbi-mutual-fund-invests-rs-100-crore-in-lenskart-in-pre-ipo-round-13639782.html",
+      "title": "SBI Mutual Fund invests Rs 100 crore in Lenskart in pre-IPO round",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LENSKART",
+        "SBIN",
+        "HDFCAMC"
+      ],
+      "ticker_count": 3,
+      "content": null
+    },
+    {
+      "id": "13640234",
+      "url": "https://www.moneycontrol.com/news/business/ipo/studds-accessories-ipo-to-open-for-subscription-shortly-should-you-apply-check-price-band-gmp-other-key-details-13640234.html",
+      "title": "Studds Accessories IPO fully subscribed on Day 1 of bidding; should you apply? Check price band, GMP, other key details",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "STUDDS",
+        "BANDHAN"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13640886",
+      "url": "https://www.moneycontrol.com/news/business/ipo/studds-accessories-raises-rs-136-6-crore-from-9-anchor-investors-ahead-of-rs-455-crore-ipo-13640886.html",
+      "title": "Studds Accessories raises Rs 136.6 crore from 9 anchor investors ahead of Rs 455-crore IPO",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "STUDDS"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13641927",
+      "url": "https://www.moneycontrol.com/news/business/ipo/studds-accessories-sees-robust-subscription-on-day-1-of-ipo-booked-60-so-far-should-you-subscribe-check-gmp-other-key-details-13641927.html",
+      "title": "Studds Accessories IPO subscribed 1.5 times on Day 1; should you apply? Check price band, GMP, other key details",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "STUDDS",
+        "BANDHAN"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13639987",
+      "url": "https://www.moneycontrol.com/news/business/stocks/subscribe-for-orkla-india-ltd-ipo-geojit-financial-services-13639987.html",
+      "title": "Subscribe for Orkla India Ltd IPO; Geojit Financial Services",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LT",
+        "ORKLA",
+        "LICI",
+        "OSWAL",
+        "ECLERX"
+      ],
+      "ticker_count": 5,
+      "content": null
+    },
+    {
+      "id": "13633001",
+      "url": "https://www.moneycontrol.com/news/business/ipo/after-record-selling-in-secondary-market-fiis-turn-choosy-in-ipos-13633001.html",
+      "title": "After record selling in secondary market, FIIs turn choosy in IPOs",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13631931",
+      "url": "https://www.moneycontrol.com/news/business/ipo/curefoods-gets-sebi-nod-for-rs-800-crore-ipo-iron-pillar-accel-among-key-sellers-13631931.html",
+      "title": "Curefoods gets Sebi nod for Rs 800 crore IPO; Iron Pillar, Accel among key sellers",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "SBIN"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13631254",
+      "url": "https://www.moneycontrol.com/news/business/ipo/dmart-s-radhakishan-damani-invests-rs-90-crore-in-lenskart-ahead-of-ipo-13631254.html",
+      "title": "DMart's Radhakishan Damani invests Rs 90 crore in Lenskart ahead of IPO",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LENSKART"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13633045",
+      "url": "https://www.moneycontrol.com/news/business/ipo/founders-global-funds-eye-windfall-from-lenskart-listing-13633045.html",
+      "title": "Lenskart gold rush: Who’s making how much from India’s eyewear unicorn’s mega IPO",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LENSKART",
+        "LICI"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13635108",
+      "url": "https://www.moneycontrol.com/news/business/ipo/fractal-analytics-said-to-plan-555-million-india-ipo-next-month-13635108.html",
+      "title": "Fractal Analytics said to plan $555 million India IPO next month",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LICI"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13632258",
+      "url": "https://www.moneycontrol.com/news/business/ipo/helmet-maker-studds-accessories-files-rhp-to-launch-ipo-on-oct-30-via-pure-ofs-13632258.html",
+      "title": "Helmet maker Studds Accessories files RHP, to launch IPO on Oct 30 via pure OFS",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "STUDDS"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13635024",
+      "url": "https://www.moneycontrol.com/news/business/ipo/homegrown-private-equity-firm-gaja-capital-gets-sebi-nod-for-ipo-13635024.html",
+      "title": "Homegrown private equity firm Gaja Capital gets SEBI nod for IPO",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "SBIN"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13631469",
+      "url": "https://www.moneycontrol.com/news/business/ipo/ipo-action-five-new-public-issues-to-open-for-subscription-this-week-taking-total-fund-raising-to-over-rs-45-000-crore-in-october-13631469.html",
+      "title": "IPO Action: Five new public issues to open for subscription this week, taking total fund raising to over Rs 45,000 crore in October",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13637536",
+      "url": "https://www.moneycontrol.com/news/business/ipo/jayesh-logistics-ipo-continues-to-see-healthy-interest-from-investors-on-day-2-13637536.html",
+      "title": "Jayesh Logistics IPO continues to see healthy interest from investors on day 2",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LT"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13635042",
+      "url": "https://www.moneycontrol.com/news/business/ipo/jayesh-logistics-ipo-subscribed-nearly-4-times-on-day-1-driven-by-strong-investor-interest-13635042.html",
+      "title": "Jayesh Logistics IPO subscribed nearly 4 times on day 1, driven by strong investor interest",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13632510",
+      "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-files-revised-rhp-to-raise-rs-2-150-crore-via-fresh-issue-trims-ofs-to-12-76-cr-shares-13632510.html",
+      "title": "Lenskart files revised RHP to raise Rs 2,150 crore via fresh issue, trims OFS to 12.76 cr shares",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LENSKART"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13637269",
+      "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-ipo-subscription-to-begin-on-oct-31-should-you-apply-check-price-band-gmp-other-key-details-13637269.html",
+      "title": "Lenskart IPO subscription to begin on Oct 31: Should you apply? Check price band, GMP, other key details",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LENSKART",
+        "BANDHAN"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13632256",
+      "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-ipo-to-hit-dalal-street-on-oct-31-total-offer-size-estimated-at-rs-7-278-crore-13632256.html",
+      "title": "Lenskart IPO to hit Dalal Street on Oct 31, total offer size estimated at Rs 7,278 crore",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LENSKART"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13633537",
+      "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-orkla-india-studds-accessories-ipo-gmps-rise-to-19-ahead-of-issue-launches-this-week-check-key-details-13633537.html",
+      "title": "Lenskart, Orkla India, Studds Accessories IPO GMPs rise to 19% ahead of issue launches this week; check key details",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LENSKART",
+        "ORKLA",
+        "STUDDS",
+        "LICI"
+      ],
+      "ticker_count": 4,
+      "content": null
+    },
+    {
+      "id": "13631636",
+      "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-targets-ipo-valuation-of-around-rs-70-000-crore-set-to-launch-issue-between-oct-31-nov-4-13631636.html",
+      "title": "Lenskart targets IPO valuation of around Rs 70,000 crore; set to launch issue between Oct 31-Nov 4",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LENSKART"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13629753",
+      "url": "https://www.moneycontrol.com/news/business/ipo/markets-brace-for-rs-35-000-crore-ipo-wave-till-end-of-november-13629753.html",
+      "title": "Markets brace for Rs 40,000-crore IPO wave till end of November",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13629951",
+      "url": "https://www.moneycontrol.com/news/business/ipo/midwest-share-price-stock-lists-at-9pc-premium-over-ipo-price-on-nse-13629951.html",
+      "title": "Midwest shares make decent stock market debut, settle at 7% premium over IPO price on listing day",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13634911",
+      "url": "https://www.moneycontrol.com/news/business/ipo/milky-mist-curefoods-steamhouse-kanodia-cement-gaja-alternative-get-sebi-nod-for-ipos-sterlite-electric-offer-kept-in-abeyance-13634911.html",
+      "title": "Milky Mist, Curefoods, Steamhouse, Kanodia Cement, Gaja Alternative get SEBI nod for IPOs; Sterlite Electric offer kept in abeyance",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LT",
+        "SBIN"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13632576",
+      "url": "https://www.moneycontrol.com/news/business/ipo/milky-mist-gets-sebi-nod-for-rs-2-000-crore-ipo-to-use-proceeds-for-debt-repayment-expansion-13632576.html",
+      "title": "Milky Mist gets SEBI nod for Rs 2,000-crore IPO; to use proceeds for debt repayment, expansion",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "SBIN"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13629986",
+      "url": "https://www.moneycontrol.com/news/business/ipo/mtr-foods-parent-orkla-india-sets-ipo-price-band-at-rs-695-730-per-share-targets-rs-10-000-crore-valuation-13629986.html",
+      "title": "MTR Foods parent Orkla India sets IPO price band at Rs 695-730 per share, targets Rs 10,000-crore valuation",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "ORKLA",
+        "LICI",
+        "BANDHAN"
+      ],
+      "ticker_count": 3,
+      "content": null
+    },
+    {
+      "id": "13630438",
+      "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-ipo-gmp-rises-as-company-fixes-price-band-ahead-of-issue-launch-next-week-13630438.html",
+      "title": "Orkla India IPO GMP rises as company fixes price band ahead of issue launch next week",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "ORKLA",
+        "LICI",
+        "TITAN",
+        "BANDHAN"
+      ],
+      "ticker_count": 4,
+      "content": null
+    },
+    {
+      "id": "13635077",
+      "url": "https://www.moneycontrol.com/news/business/ipo/sebi-puts-vedanta-group-s-sterlite-electric-public-listing-on-hold-13635077.html",
+      "title": "SEBI puts Vedanta Group's Sterlite Electric public listing on hold",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "VEDL",
+        "SBIN"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13629575",
+      "url": "https://www.moneycontrol.com/news/business/ipo/upcoming-ipo-orkla-india-parent-of-mtr-and-eastern-spices-brand-files-rhp-ipo-to-open-on-october-29-via-pure-ofs-13629575.html",
+      "title": "Upcoming IPO: Orkla India, parent of MTR and Eastern spices brand, files RHP; IPO to open on October 29 via pure OFS",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "ORKLA",
+        "LICI"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13621952",
+      "url": "https://www.moneycontrol.com/news/business/ipo/business-in-the-week-ahead-october-20-24-2025-13621952.html",
+      "title": "Business in the Week Ahead: October 20-24, 2025",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13630874",
+      "url": "https://www.moneycontrol.com/news/business/commodities/copper-pushes-back-toward-11-000-as-test-of-record-high-beckons-13630874.html",
+      "title": "Copper pushes back toward $11,000 as test of record high beckons",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13641515",
+      "url": "https://www.moneycontrol.com/news/business/commodities/copper-slides-from-record-as-traders-eye-trump-xi-trade-talks-13641515.html",
+      "title": "Copper slides from record as traders eye Trump-Xi trade talks",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13642094",
+      "url": "https://www.moneycontrol.com/news/business/commodities/global-gold-demand-climbs-3-to-quarterly-record-as-investment-soars-wgc-says-13642094.html",
+      "title": "Global gold demand climbs 3% to quarterly record as investment soars, WGC says",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13629723",
+      "url": "https://www.moneycontrol.com/news/business/commodities/gold-and-silver-prices-today-october-24-gold-loses-shine-after-diwali-rally-silver-steady-check-prices-in-delhi-mumbai-chennai-and-more-13629723.html",
+      "title": "Gold and silver prices today, October 24: Gold loses shine after Diwali rally, silver steady; check prices in Delhi, Mumbai, Chennai, and more",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13632774",
+      "url": "https://www.moneycontrol.com/news/business/commodities/gold-braces-for-turbulence-ahead-of-central-bank-geopolitical-triggers-analysts-13632774.html",
+      "title": "Gold braces for turbulence ahead of central bank, geopolitical triggers: Analysts",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13631738",
+      "url": "https://www.moneycontrol.com/news/business/commodities/gold-ends-record-breaking-rally-with-first-weekly-loss-in-ten-13631738.html",
+      "title": "Gold ends record-breaking rally with first weekly loss in ten",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13647085",
+      "url": "https://www.moneycontrol.com/news/business/commodities/gold-price-today-november-2-check-24k-22k-18k-rates-in-your-city-delhi-mumbai-chennai-kolkata-bengaluru-and-more-13647085.html",
+      "title": "Gold price today, November 2: Check 24K, 22K, 18K rates in your city - Delhi, Mumbai, Chennai, Kolkata, Bengaluru, and more",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13632446",
+      "url": "https://www.moneycontrol.com/news/business/commodities/gold-rate-on-october-26-check-prices-for-24k-22k-18k-gold-in-your-city-today-13632446.html",
+      "title": "Gold rate on October 26: Check prices for 24K, 22K, 18K gold in your city today",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13632018",
+      "url": "https://www.moneycontrol.com/news/business/commodities/gold-rate-today-on-oct-25-in-india-yellow-metal-breaks-record-rally-in-international-bullion-check-24k-22k-18k-rates-across-major-cities-full-list-13632018.html",
+      "title": "Gold rate today on Oct 25 in India: Yellow metal breaks record rally in international bullion - Check 24K, 22K 18K rates across major cities - Full list",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LICI"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13636973",
+      "url": "https://www.moneycontrol.com/news/business/commodities/gold-silver-futures-drop-3-after-trading-resumes-on-mcx-13636973.html",
+      "title": "Gold, silver futures drop 3% after trading resumes on MCX",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13633320",
+      "url": "https://www.moneycontrol.com/news/business/commodities/gold-silver-rates-today-on-october-27-in-india-gold-posts-first-weekly-drop-as-copper-rallies-check-24k-22k-18k-gold-and-silver-rates-per-kg-city-wise-full-list-13633320.html",
+      "title": "Gold, silver prices today on Oct 27: Gold posts first weekly drop as copper rallies - See 24K, 22K, 18K gold & silver rates per kg – Full List",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13635339",
+      "url": "https://www.moneycontrol.com/news/business/commodities/gold-slips-below-4-000-per-ounce-as-us-china-trade-progress-cools-safe-haven-demand-13635339.html",
+      "title": "Gold slips below $4,000 per ounce as US-China trade progress cools safe-haven demand",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "BEL"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13641073",
+      "url": "https://www.moneycontrol.com/news/business/commodities/gold-slump-holds-as-fed-chair-douses-hopes-for-december-rate-cut-13641073.html",
+      "title": "Gold slump holds as Fed Chair douses hopes for December rate cut",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13630548",
+      "url": "https://www.moneycontrol.com/news/business/commodities/india-demand-cools-after-festive-rush-price-fall-propels-buying-elsewhere-13630548.html",
+      "title": "India's gold demand cools after festive rush; price fall propels buying elsewhere",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LICI"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13630696",
+      "url": "https://www.moneycontrol.com/news/business/commodities/india-demand-cools-after-festive-rush-price-fall-propels-buying-elsewhere-2-13630696.html",
+      "title": "India demand cools after festive rush; price fall propels buying elsewhere",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LICI"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13640732",
+      "url": "https://www.moneycontrol.com/news/business/commodities/india-s-silver-demand-eases-premiums-fall-after-festive-surge-13640732.html",
+      "title": "India's silver demand eases, premiums fall after festive surge",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LICI"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13642056",
+      "url": "https://www.moneycontrol.com/news/business/commodities/indian-oil-seeks-bids-for-24-million-barrels-of-oil-from-americas-for-march-quarter-document-shows-13642056.html",
+      "title": "Indian Oil seeks bids for 24 million barrels of oil from Americas for March quarter, document shows",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "IOC"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13629787",
+      "url": "https://www.moneycontrol.com/news/business/commodities/rbi-banks-on-gold-pares-us-assets-amid-global-uncertainty-report-13629787.html",
+      "title": "RBI banks on gold, pares US assets amid global uncertainty: Report",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13631782",
+      "url": "https://www.moneycontrol.com/news/business/commodities/rising-gold-prices-spark-record-jewellery-exchanges-this-festive-season-report-13631782.html",
+      "title": "Rising gold prices spark record jewellery exchanges this festive season: Report",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13646983",
+      "url": "https://www.moneycontrol.com/news/business/commodities/sbi-joins-india-international-bullion-exchange-as-special-category-client-13646983.html",
+      "title": "SBI joins India International Bullion Exchange as special category client",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "SBIN",
+        "LICI"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13631970",
+      "url": "https://www.moneycontrol.com/news/business/commodities/silver-loses-its-shine-after-dazzling-dhanteras-rally-white-metal-tumbles-18-check-current-rates-and-what-s-next-13631970.html",
+      "title": "Silver loses its shine! After dazzling Dhanteras rally, white metal tumbles 18% - check current rates and what’s next",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13634646",
+      "url": "https://www.moneycontrol.com/news/business/commodities/the-india-web-3-0-summit-2025-shaping-india-s-next-digital-revolution-13634646.html",
+      "title": "The India Web 3.0 Summit 2025: Shaping India’s Next Digital Revolution",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LICI"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13617312",
+      "url": "https://www.moneycontrol.com/news/business/commodities/9k-14k-gold-rate-today-on-october-15-looking-for-budget-jewelry-for-dhanteras-diwali-all-you-need-to-know-13617312.html",
+      "title": "9K, 14K gold rate today on October 15: Looking for budget jewelry for Dhanteras, Diwali? All you need to know",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13623479",
+      "url": "https://www.moneycontrol.com/news/business/commodities/commodities-eye-us-inflation-numbers-chinese-key-data-for-further-direction-13623479.html",
+      "title": "Commodities eye US inflation numbers, Chinese key data for further direction",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13621895",
+      "url": "https://www.moneycontrol.com/news/business/commodities/dhanteras-2024-vs-2025-what-10gm-gold-bought-in-2024-would-cost-today-from-rs-63-tracing-gold-s-6-decade-rally-13621895.html",
+      "title": "Dhanteras 2024 vs 2025: What 10gm gold bought in 2024 would cost today - From Rs 63, tracing gold's 6-decade rally",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13619387",
+      "url": "https://www.moneycontrol.com/news/business/commodities/dhanteras-2025-markets-set-to-glitter-despite-soaring-gold-and-silver-prices-5-things-to-watch-from-muhurat-to-rates-13619387.html",
+      "title": "Dhanteras 2025: Markets set to glitter despite soaring gold and silver prices — 5 things to watch, from muhurat to rates",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13626544",
+      "url": "https://www.moneycontrol.com/news/business/commodities/gold-and-silver-post-steepest-drops-in-years-as-rally-cools-13626544.html",
+      "title": "Gold and silver post steepest drops in years as rally cools",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13627865",
+      "url": "https://www.moneycontrol.com/news/business/commodities/gold-and-silver-prices-today-october-23-24k-gold-at-rs-12-588-silver-at-rs-1-59-lakh-check-rates-in-your-city-13627865.html",
+      "title": "Gold and silver prices today, October 23: 24K gold at Rs 1,25,890, silver at Rs 1.60 lakh; check rates in your city",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13621387",
+      "url": "https://www.moneycontrol.com/news/business/commodities/gold-at-rs-1-35-lakh-and-silver-at-rs-2-3-lakh-motilal-oswal-sees-sparkling-rally-ahead-for-bullion-13621387.html",
+      "title": "Gold at Rs 1.35 lakh and silver at Rs 2.3 lakh: Motilal Oswal sees sparkling rally ahead for bullion",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "MOTILAL",
+        "OSWAL"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13618883",
+      "url": "https://www.moneycontrol.com/news/business/commodities/gold-climbs-to-record-on-us-china-tensions-and-fed-rate-cut-bets-13618883.html",
+      "title": "Gold climbs to record on US-China tensions and Fed rate-cut bets",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13627867",
+      "url": "https://www.moneycontrol.com/news/business/commodities/gold-extends-pullback-from-record-high-for-a-third-day-what-s-behind-the-price-fall-13627867.html",
+      "title": "Gold extends pullback from record high for a third day. What's behind the price fall?",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13627806",
+      "url": "https://www.moneycontrol.com/news/business/commodities/gold-prices-have-tumbled-from-recent-records-what-s-behind-the-losses-13627806.html",
+      "title": "Gold prices have tumbled from recent records. What's behind the losses?",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13627098",
+      "url": "https://www.moneycontrol.com/news/business/commodities/gold-prices-today-october-22-gold-rate-drops-sharply-in-india-after-diwali-check-24k-22k-18k-rates-13627098.html",
+      "title": "Gold Prices Today, October 22: Gold rate drops sharply in India after Diwali; check 24K, 22K, 18K rates",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LICI"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13620824",
+      "url": "https://www.moneycontrol.com/news/business/commodities/gold-prices-today-on-oct-17-in-india-gold-at-all-time-high-in-global-trade-ahead-of-dhanteras-check-24k-22k-18k-gold-rates-across-india-13620824.html",
+      "title": "Gold Prices Today on Oct 17 in India: Gold at all-time high in global trade ahead of Dhanteras - Check 24K, 22K, 18K gold rates across India",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LICI"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13621082",
+      "url": "https://www.moneycontrol.com/news/business/commodities/gold-rallies-beyond-4-300-oz-set-for-best-week-in-five-years-13621082.html",
+      "title": "Gold rallies beyond $4,300/oz, set for best week in five years",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13618822",
+      "url": "https://www.moneycontrol.com/news/business/commodities/gold-rate-today-in-india-on-oct-16-yellow-metal-s-breakneck-rally-continues-likely-to-cross-rs-1-30-000-mark-soon-check-24k-22k-18k-gold-prices-in-mumbai-hyderabad-and-delhi-full-list-13618822.html",
+      "title": "Gold rate today in India on Oct 16: Yellow metal's breakneck rally continues, likely to cross Rs 1.3 lakh/10 gm mark soon - Check 24K, 22K, 18K gold prices in Mumbai, Hyderabad and Delhi - Full list",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LICI"
+      ],
+      "ticker_count": 1,
+      "content": null
+    },
+    {
+      "id": "13619526",
+      "url": "https://www.moneycontrol.com/news/business/commodities/gold-silver-hit-fresh-lifetime-highs-should-you-invest-in-precious-metals-this-dhanteras-13619526.html",
+      "title": "Gold, silver hit fresh lifetime highs: Should you invest in precious metals this Dhanteras?",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13620819",
+      "url": "https://www.moneycontrol.com/news/business/commodities/gold-silver-prcies-today-live-updates-gold-rate-silver-rate-in-india-dhanteras-muurat-ivestment-oct-17-liveblog-13620819.html",
+      "title": "Gold Silver Price October 17: MCX Gold December contract up 1.06%, hits Rs 1.32 lakh intraday high",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13629644",
+      "url": "https://www.moneycontrol.com/news/business/commodities/gold-to-snap-nine-week-winning-streak-as-heat-comes-out-of-rally-13629644.html",
+      "title": "Gold to snap nine-week winning streak as heat comes out of rally",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13627966",
+      "url": "https://www.moneycontrol.com/news/business/commodities/india-plans-first-urea-plant-in-russia-to-secure-fertiliser-supply-details-likely-during-putin-s-december-visit-report-13627966.html",
+      "title": "India plans first urea plant in Russia to secure fertiliser supply; details likely during Putin’s December visit: Report",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [
+        "LICI",
+        "SAFECURE"
+      ],
+      "ticker_count": 2,
+      "content": null
+    },
+    {
+      "id": "13626753",
+      "url": "https://www.moneycontrol.com/news/business/commodities/oil-maintains-gains-on-supply-risks-and-us-plan-to-refill-strategic-reserves-13626753.html",
+      "title": "Oil maintains gains on supply risks and US plan to refill strategic reserves",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13629650",
+      "url": "https://www.moneycontrol.com/news/business/commodities/oil-prices-dip-after-surge-remain-on-track-for-weekly-gain-amid-supply-fears-13629650.html",
+      "title": "Oil prices dip after surge, remain on track for weekly gain amid supply fears",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13627808",
+      "url": "https://www.moneycontrol.com/news/business/commodities/oil-prices-extend-gains-as-us-sanctions-russia-s-rosneft-lukoil-13627808.html",
+      "title": "Oil prices extend gains as US sanctions Russia's Rosneft, Lukoil",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13618842",
+      "url": "https://www.moneycontrol.com/news/business/commodities/silver-rate-today-on-oct-16-silver-prices-breach-rs-1-90-000-kg-mark-as-buying-spree-continues-check-city-wise-silver-rates-full-list-13618842.html",
+      "title": "Silver rate today on Oct 16: Silver breaches Rs 2 lakh/kg mark in Chennai as buying spree continues ahead of Dhanteras, Diwali - See full list of city-wise silver prices",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13620972",
+      "url": "https://www.moneycontrol.com/news/business/commodities/silver-rate-today-on-oct-17-dhanteras-diwali-rush-fuel-glittering-rally-silver-crosses-rs-2-lakh-kg-mark-in-hyderabad-see-silver-prices-city-list-13620972.html",
+      "title": "Silver rate today on Oct 17: Dhanteras, Diwali rush fuel glittering rally, silver crosses Rs 2 lakh/kg mark in Hyderabad - See silver prices city list",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13625344",
+      "url": "https://www.moneycontrol.com/news/business/commodities/tons-of-silver-from-us-china-ease-london-spot-market-squeeze-13625344.html",
+      "title": "Tons of silver from US, China ease London spot market squeeze",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13610829",
+      "url": "https://www.moneycontrol.com/news/business/commodities/commodities-brace-for-volatile-week-as-us-china-trade-tensions-and-extended-shutdown-cloud-outlook-13610829.html",
+      "title": "Commodities brace for volatile week as US-China trade tensions and extended shutdown cloud outlook",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13612038",
+      "url": "https://www.moneycontrol.com/news/business/commodities/expect-10-15-returns-from-gold-not-50-invesco-s-tahir-badshah-says-gold-price-rally-may-be-losing-steam-13612038.html",
+      "title": "‘Expect 10-15% returns from gold, not 50%’: Invesco's Tahir Badshah says gold price rally may be losing steam",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13609570",
+      "url": "https://www.moneycontrol.com/news/business/commodities/explained-why-silver-etfs-are-pricier-than-silver-itself-how-physical-shortage-has-warped-the-market-13609570.html",
+      "title": "Explained: Why silver ETFs are pricier than silver itself, and how a physical shortage has warped the market",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    },
+    {
+      "id": "13612059",
+      "url": "https://www.moneycontrol.com/news/business/commodities/gold-at-new-lifetime-high-silver-futures-rise-up-to-4-ahead-of-dhanteras-13612059.html",
+      "title": "Gold at new lifetime high, silver futures rise up to 4% ahead of Dhanteras",
+      "published_at": null,
+      "section": null,
+      "author": null,
+      "tickers": [],
+      "ticker_count": 0,
+      "content": null
+    }
+  ],
+  "ticker_summary": {
+    "PINE": 1,
+    "PBFINTECH": 2,
+    "LENSKART": 18,
+    "CURIS": 1,
+    "TITAN": 2,
+    "TENNECO": 1,
+    "LICI": 39,
+    "SAFECURE": 2,
+    "ECLERX": 3,
+    "SHADOWFAX": 1,
+    "SBIN": 13,
+    "SAGILITY": 1,
+    "BEL": 7,
+    "LT": 20,
+    "IOC": 3,
+    "ITC": 4,
+    "RELIANCE": 4,
+    "INFY": 3,
+    "SWIGGY": 3,
+    "MTAR": 2,
+    "GROWW": 6,
+    "BANDHAN": 10,
+    "ORKLA": 13,
+    "STUDDS": 9,
+    "TECHM": 1,
+    "HYUNDAI": 1,
+    "DLF": 1,
+    "HDFCAMC": 2,
+    "UNION": 2,
+    "CIPLA": 2,
+    "COALINDIA": 1,
+    "JSWSTEEL": 3,
+    "MOTILAL": 2,
+    "OSWAL": 3,
+    "DABUR": 1,
+    "BAJFINANCE": 1,
+    "GAIL": 1,
+    "POWERGRID": 1,
+    "BPCL": 2,
+    "BHEL": 3,
+    "POLYCAB": 1,
+    "NBCC": 1,
+    "ADANI": 2,
+    "CANARA": 1,
+    "DRREDDY": 2,
+    "IXIGO": 1,
+    "NUVAMA": 1,
+    "HPCL": 1,
+    "HINDPETRO": 1,
+    "COGNIZANT": 1,
+    "VEDL": 1
+  },
+  "ticker_articles": {
+    "PINE": [
+      {
+        "title": "Fintech firm Pine Labs to launch IPO on November 7; aims to raise Rs 2,080 crore via fresh issue",
+        "url": "https://www.moneycontrol.com/news/business/ipo/fintech-firm-pine-labs-to-launch-ipo-on-november-7-aims-to-raise-rs-2-080-crore-via-fresh-issue-13646676.html",
+        "published_at": null
+      }
+    ],
+    "PBFINTECH": [
+      {
+        "title": "Fintech firm Pine Labs to launch IPO on November 7; aims to raise Rs 2,080 crore via fresh issue",
+        "url": "https://www.moneycontrol.com/news/business/ipo/fintech-firm-pine-labs-to-launch-ipo-on-november-7-aims-to-raise-rs-2-080-crore-via-fresh-issue-13646676.html",
+        "published_at": null
+      },
+      {
+        "title": "Q2 results impact: BHEL, PB Fintech rise up to 7% on strong earnings growth, Ixigo hits 20% lower circuit",
+        "url": "https://www.moneycontrol.com/news/business/markets/q2-results-impact-bhel-pb-fintech-rise-up-to-3-on-strong-earnings-growth-ixigo-hits-20-lower-circuit-13641793.html",
+        "published_at": null
+      }
+    ],
+    "LENSKART": [
+      {
+        "title": "Lenskart IPO Day 1 GMP Live: Should you apply or skip? Check GMP, key risks and more",
+        "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-ipo-gmp-live-lenskart-day-1-ipo-subscription-status-price-band-review-gmp-oct-31-liveblog-13643869.html",
+        "published_at": null
+      },
+      {
+        "title": "Lenskart’s Rs 7,000 crore IPO under the spotlight: Experts weigh the pros and cons",
+        "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-s-rs-7-000-crore-ipo-under-the-spotlight-experts-weigh-the-pros-and-cons-13644855.html",
+        "published_at": null
+      },
+      {
+        "title": "Orkla India, Studds, Lenskart IPO GMPs rise up to 18% as subscriptions underway; check key details",
+        "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-studds-lenskart-ipo-gmps-rise-up-to-18-as-subscriptions-underway-check-key-details-13644602.html",
+        "published_at": null
+      },
+      {
+        "title": "Lenskart's Rs 7,000-crore IPO gets fully subscribed on Day 1; GMP crosses 20%: Should you apply?",
+        "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-ipo-subscribed-4-on-day-1-so-far-gmp-rises-slightly-should-you-apply-13644380.html",
+        "published_at": null
+      },
+      {
+        "title": "Lenskart IPO opens for subscription; should you apply? Check GMP, other key details",
+        "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-ipo-to-open-shortly-should-you-apply-check-gmp-other-key-details-before-subscribing-to-issue-13642924.html",
+        "published_at": null
+      },
+      {
+        "title": "Subscribe for Lenskart Solutions Ltd IPO; Choice Equity Broking",
+        "url": "https://www.moneycontrol.com/news/business/stocks/subscribe-for-lenskart-solutions-ltd-ipo-choice-equity-broking-13642786.html",
+        "published_at": null
+      },
+      {
+        "title": "Lenskart IPO GMP rises a day ahead of issue launch; check details",
+        "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-ipo-gmp-rises-a-day-ahead-of-issue-launch-check-details-13642591.html",
+        "published_at": null
+      },
+      {
+        "title": "SoftBank Group, ADIA-backed Lenskart raises Rs 3,268 crore from 147 anchor investors, Rs 7,278-crore IPO to open on October 31",
+        "url": "https://www.moneycontrol.com/news/business/ipo/softbank-group-adia-backed-lenskart-raises-rs-3-268-crore-from-147-anchor-investors-rs-7-278-crore-ipo-to-open-on-october-31-13643590.html",
+        "published_at": null
+      },
+      {
+        "title": "Lenskart IPO valuation: Is 230 PE ratio justified? Here's what CEO Peyush Bansal says",
+        "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-ipo-ceo-peyush-bansal-cfo-abhishek-gupta-react-to-stretched-valuation-concerns-13640286.html",
+        "published_at": null
+      },
+      {
+        "title": "Lenskart's Rs 7,000-crore IPO GMP declines ahead of Friday launch; here's what analysts say",
+        "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-s-rs-7-000-crore-ipo-gmp-declines-ahead-of-friday-launch-here-s-what-analysts-say-13639433.html",
+        "published_at": null
+      },
+      {
+        "title": "SBI Mutual Fund invests Rs 100 crore in Lenskart in pre-IPO round",
+        "url": "https://www.moneycontrol.com/news/business/ipo/sbi-mutual-fund-invests-rs-100-crore-in-lenskart-in-pre-ipo-round-13639782.html",
+        "published_at": null
+      },
+      {
+        "title": "DMart's Radhakishan Damani invests Rs 90 crore in Lenskart ahead of IPO",
+        "url": "https://www.moneycontrol.com/news/business/ipo/dmart-s-radhakishan-damani-invests-rs-90-crore-in-lenskart-ahead-of-ipo-13631254.html",
+        "published_at": null
+      },
+      {
+        "title": "Lenskart gold rush: Who’s making how much from India’s eyewear unicorn’s mega IPO",
+        "url": "https://www.moneycontrol.com/news/business/ipo/founders-global-funds-eye-windfall-from-lenskart-listing-13633045.html",
+        "published_at": null
+      },
+      {
+        "title": "Lenskart files revised RHP to raise Rs 2,150 crore via fresh issue, trims OFS to 12.76 cr shares",
+        "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-files-revised-rhp-to-raise-rs-2-150-crore-via-fresh-issue-trims-ofs-to-12-76-cr-shares-13632510.html",
+        "published_at": null
+      },
+      {
+        "title": "Lenskart IPO subscription to begin on Oct 31: Should you apply? Check price band, GMP, other key details",
+        "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-ipo-subscription-to-begin-on-oct-31-should-you-apply-check-price-band-gmp-other-key-details-13637269.html",
+        "published_at": null
+      },
+      {
+        "title": "Lenskart IPO to hit Dalal Street on Oct 31, total offer size estimated at Rs 7,278 crore",
+        "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-ipo-to-hit-dalal-street-on-oct-31-total-offer-size-estimated-at-rs-7-278-crore-13632256.html",
+        "published_at": null
+      },
+      {
+        "title": "Lenskart, Orkla India, Studds Accessories IPO GMPs rise to 19% ahead of issue launches this week; check key details",
+        "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-orkla-india-studds-accessories-ipo-gmps-rise-to-19-ahead-of-issue-launches-this-week-check-key-details-13633537.html",
+        "published_at": null
+      },
+      {
+        "title": "Lenskart targets IPO valuation of around Rs 70,000 crore; set to launch issue between Oct 31-Nov 4",
+        "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-targets-ipo-valuation-of-around-rs-70-000-crore-set-to-launch-issue-between-oct-31-nov-4-13631636.html",
+        "published_at": null
+      }
+    ],
+    "CURIS": [
+      {
+        "title": "Pharma company Curis Lifesciences taps capital markets with IPO on November 7",
+        "url": "https://www.moneycontrol.com/news/business/ipo/pharma-company-curis-lifesciences-taps-capital-markets-with-ipo-on-november-7-13645844.html",
+        "published_at": null
+      }
+    ],
+    "TITAN": [
+      {
+        "title": "Pharma company Curis Lifesciences taps capital markets with IPO on November 7",
+        "url": "https://www.moneycontrol.com/news/business/ipo/pharma-company-curis-lifesciences-taps-capital-markets-with-ipo-on-november-7-13645844.html",
+        "published_at": null
+      },
+      {
+        "title": "Orkla India IPO GMP rises as company fixes price band ahead of issue launch next week",
+        "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-ipo-gmp-rises-as-company-fixes-price-band-ahead-of-issue-launch-next-week-13630438.html",
+        "published_at": null
+      }
+    ],
+    "TENNECO": [
+      {
+        "title": "Promoter sells 2.75% stake in IPO-bound Tenneco Clean Air India at Rs 16,023-crore valuation",
+        "url": "https://www.moneycontrol.com/news/business/ipo/promoter-sells-2-75-stake-in-ipo-bound-tenneco-clean-air-india-at-rs-16-023-crore-valuation-13646371.html",
+        "published_at": null
+      }
+    ],
+    "LICI": [
+      {
+        "title": "Promoter sells 2.75% stake in IPO-bound Tenneco Clean Air India at Rs 16,023-crore valuation",
+        "url": "https://www.moneycontrol.com/news/business/ipo/promoter-sells-2-75-stake-in-ipo-bound-tenneco-clean-air-india-at-rs-16-023-crore-valuation-13646371.html",
+        "published_at": null
+      },
+      {
+        "title": "Madhu Kela, Sanjeev Bikhchandani on why India's growth story is powered by its entrepreneurs",
+        "url": "https://www.moneycontrol.com/news/business/markets/madhu-kela-sanjeev-bikhchandani-on-why-india-s-growth-story-is-powered-by-its-entrepreneurs-13646540.html",
+        "published_at": null
+      },
+      {
+        "title": "Textile, shrimp stocks rise up to 4% after Trump hints at trade deal with India soon",
+        "url": "https://www.moneycontrol.com/news/business/markets/textile-shrimp-stocks-rise-up-to-4-after-trump-hints-at-trade-deal-with-india-soon-13638996.html",
+        "published_at": null
+      },
+      {
+        "title": "Orkla India, Studds, Lenskart IPO GMPs rise up to 18% as subscriptions underway; check key details",
+        "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-studds-lenskart-ipo-gmps-rise-up-to-18-as-subscriptions-underway-check-key-details-13644602.html",
+        "published_at": null
+      },
+      {
+        "title": "Hyundai Motor India shares rise up to 2% as brokerages remain bullish post Q2 results",
+        "url": "https://www.moneycontrol.com/news/business/markets/hyundai-motor-india-shares-rise-up-to-2-as-brokerages-remain-bullish-post-q2-results-13645598.html",
+        "published_at": null
+      },
+      {
+        "title": "Union Bank of India, other PSU bank shares rise up to 6% as SEBI notifies new rules for Bank Nifty: Here's why",
+        "url": "https://www.moneycontrol.com/news/business/markets/union-bank-of-india-other-psu-bank-shares-rise-up-to-6-as-sebi-notifies-new-rules-for-bank-nifty-here-s-why-13644915.html",
+        "published_at": null
+      },
+      {
+        "title": "India logs busiest IPO month ever as October fundraising hits record Rs 46,000 crore",
+        "url": "https://www.moneycontrol.com/news/business/ipo/india-logs-busiest-ipo-month-ever-as-october-fundraising-hits-record-rs-46-000-crore-13643971.html",
+        "published_at": null
+      },
+      {
+        "title": "Orkla India IPO closes with 49x subscription, QIB portion booked 118x: Check latest GMP",
+        "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-ipo-subscribed-4x-on-day-3-so-far-gmp-nears-10-here-s-what-analysts-say-13644471.html",
+        "published_at": null
+      },
+      {
+        "title": "Buy Coal India; target of Rs 440: Anand Rathi",
+        "url": "https://www.moneycontrol.com/news/business/stocks/buy-coal-india-target-of-rs-440-anand-rathi-13644461.html",
+        "published_at": null
+      },
+      {
+        "title": "Buy Union Bank of India; target of Rs 160: Prabhudas Lilladher",
+        "url": "https://www.moneycontrol.com/news/business/stocks/buy-union-bank-of-india-target-of-rs-160-prabhudas-lilladher-13644700.html",
+        "published_at": null
+      },
+      {
+        "title": "Hold Dabur India; target of Rs 490: Prabhudas Lilladher",
+        "url": "https://www.moneycontrol.com/news/business/stocks/hold-dabur-india-target-of-rs-490-prabhudas-lilladher-13644705.html",
+        "published_at": null
+      },
+      {
+        "title": "Hold LIC Housing Finance; target of Rs 690: Prabhudas Lilladher",
+        "url": "https://www.moneycontrol.com/news/business/stocks/hold-lic-housing-finance-target-of-rs-690-prabhudas-lilladher-13644703.html",
+        "published_at": null
+      },
+      {
+        "title": "Hold Steel Authority of India; target of Rs 143: Prabhudas Lilladher",
+        "url": "https://www.moneycontrol.com/news/business/stocks/hold-steel-authority-of-india-target-of-rs-143-prabhudas-lilladher-13644704.html",
+        "published_at": null
+      },
+      {
+        "title": "Porinju Veliyath's Equity Intelligence India picks 0.52% stake in Associated Alcohols & Breweries",
+        "url": "https://www.moneycontrol.com/news/business/markets/porinju-veliyath-s-equity-intelligence-india-picks-0-52-stake-in-associated-alcohols-breweries-13643630.html",
+        "published_at": null
+      },
+      {
+        "title": "Trade Spotlight: How should you trade BHEL, BPCL, NBCC, eClerx Services, Polycab India, Brigade Enterprises, and others on October 31?",
+        "url": "https://www.moneycontrol.com/news/business/markets/trade-spotlight-how-should-you-trade-bhel-bpcl-nbcc-eclerx-services-polycab-india-brigade-enterprises-and-others-on-october-31-13643852.html",
+        "published_at": null
+      },
+      {
+        "title": "KKR-backed Vertis hires three banks for India IPO, to seek approval by December: Report",
+        "url": "https://www.moneycontrol.com/news/business/ipo/kkr-backed-vertis-hires-three-banks-for-india-ipo-to-seek-approval-by-december-report-13640728.html",
+        "published_at": null
+      },
+      {
+        "title": "Orkla India IPO Day 2 GMP Live: Orkla India IPO subscribed 2.12 times on Day 2, BSE data shows - Apply or skip?",
+        "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-ipo-day-2-gmp-live-mtrfoods-ipo-subscription-groww-lenskart-gmp-today-oct-30-liveblog-13641085.html",
+        "published_at": null
+      },
+      {
+        "title": "Orkla India IPO subscribed nearly 3x on Day 2 despite falling GMP: Should you apply?",
+        "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-ipo-gets-fully-subscribed-on-day-2-despite-declining-gmp-trend-should-you-apply-13641790.html",
+        "published_at": null
+      },
+      {
+        "title": "Orkla India IPO Day 1 GMP Live: MTR Foods IPO hits halfway mark on Day 1, subscribed 57% so far - See latest GMP and more",
+        "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-ipo-gmp-live-mtrfoods-ipo-subscription-status-price-band-review-gmp-today-oct-29-liveblog-13638149.html",
+        "published_at": null
+      },
+      {
+        "title": "Orkla India IPO subscribed 78% on Day 1, GMP declines: Should you apply?",
+        "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-ipo-subscribed-27-on-day-1-so-far-gmp-declines-should-you-apply-13639140.html",
+        "published_at": null
+      },
+      {
+        "title": "Orkla India IPO to open today: Should you apply? Check GMP, among other key details before subscribing to issue",
+        "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-ipo-to-open-today-should-you-apply-check-gmp-among-other-key-details-before-subscribing-to-issue-13636463.html",
+        "published_at": null
+      },
+      {
+        "title": "Orkla India raises Rs 500 crore via anchor book ahead of Rs 1,668-crore IPO",
+        "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-raises-rs-500-crore-via-anchor-book-ahead-of-rs-1-668-crore-ipo-13637910.html",
+        "published_at": null
+      },
+      {
+        "title": "Subscribe for Orkla India Ltd IPO; Geojit Financial Services",
+        "url": "https://www.moneycontrol.com/news/business/stocks/subscribe-for-orkla-india-ltd-ipo-geojit-financial-services-13639987.html",
+        "published_at": null
+      },
+      {
+        "title": "Lenskart gold rush: Who’s making how much from India’s eyewear unicorn’s mega IPO",
+        "url": "https://www.moneycontrol.com/news/business/ipo/founders-global-funds-eye-windfall-from-lenskart-listing-13633045.html",
+        "published_at": null
+      },
+      {
+        "title": "Fractal Analytics said to plan $555 million India IPO next month",
+        "url": "https://www.moneycontrol.com/news/business/ipo/fractal-analytics-said-to-plan-555-million-india-ipo-next-month-13635108.html",
+        "published_at": null
+      },
+      {
+        "title": "Lenskart, Orkla India, Studds Accessories IPO GMPs rise to 19% ahead of issue launches this week; check key details",
+        "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-orkla-india-studds-accessories-ipo-gmps-rise-to-19-ahead-of-issue-launches-this-week-check-key-details-13633537.html",
+        "published_at": null
+      },
+      {
+        "title": "MTR Foods parent Orkla India sets IPO price band at Rs 695-730 per share, targets Rs 10,000-crore valuation",
+        "url": "https://www.moneycontrol.com/news/business/ipo/mtr-foods-parent-orkla-india-sets-ipo-price-band-at-rs-695-730-per-share-targets-rs-10-000-crore-valuation-13629986.html",
+        "published_at": null
+      },
+      {
+        "title": "Orkla India IPO GMP rises as company fixes price band ahead of issue launch next week",
+        "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-ipo-gmp-rises-as-company-fixes-price-band-ahead-of-issue-launch-next-week-13630438.html",
+        "published_at": null
+      },
+      {
+        "title": "Upcoming IPO: Orkla India, parent of MTR and Eastern spices brand, files RHP; IPO to open on October 29 via pure OFS",
+        "url": "https://www.moneycontrol.com/news/business/ipo/upcoming-ipo-orkla-india-parent-of-mtr-and-eastern-spices-brand-files-rhp-ipo-to-open-on-october-29-via-pure-ofs-13629575.html",
+        "published_at": null
+      },
+      {
+        "title": "Gold rate today on Oct 25 in India: Yellow metal breaks record rally in international bullion - Check 24K, 22K 18K rates across major cities - Full list",
+        "url": "https://www.moneycontrol.com/news/business/commodities/gold-rate-today-on-oct-25-in-india-yellow-metal-breaks-record-rally-in-international-bullion-check-24k-22k-18k-rates-across-major-cities-full-list-13632018.html",
+        "published_at": null
+      },
+      {
+        "title": "India's gold demand cools after festive rush; price fall propels buying elsewhere",
+        "url": "https://www.moneycontrol.com/news/business/commodities/india-demand-cools-after-festive-rush-price-fall-propels-buying-elsewhere-13630548.html",
+        "published_at": null
+      },
+      {
+        "title": "India demand cools after festive rush; price fall propels buying elsewhere",
+        "url": "https://www.moneycontrol.com/news/business/commodities/india-demand-cools-after-festive-rush-price-fall-propels-buying-elsewhere-2-13630696.html",
+        "published_at": null
+      },
+      {
+        "title": "India's silver demand eases, premiums fall after festive surge",
+        "url": "https://www.moneycontrol.com/news/business/commodities/india-s-silver-demand-eases-premiums-fall-after-festive-surge-13640732.html",
+        "published_at": null
+      },
+      {
+        "title": "SBI joins India International Bullion Exchange as special category client",
+        "url": "https://www.moneycontrol.com/news/business/commodities/sbi-joins-india-international-bullion-exchange-as-special-category-client-13646983.html",
+        "published_at": null
+      },
+      {
+        "title": "The India Web 3.0 Summit 2025: Shaping India’s Next Digital Revolution",
+        "url": "https://www.moneycontrol.com/news/business/commodities/the-india-web-3-0-summit-2025-shaping-india-s-next-digital-revolution-13634646.html",
+        "published_at": null
+      },
+      {
+        "title": "Gold Prices Today, October 22: Gold rate drops sharply in India after Diwali; check 24K, 22K, 18K rates",
+        "url": "https://www.moneycontrol.com/news/business/commodities/gold-prices-today-october-22-gold-rate-drops-sharply-in-india-after-diwali-check-24k-22k-18k-rates-13627098.html",
+        "published_at": null
+      },
+      {
+        "title": "Gold Prices Today on Oct 17 in India: Gold at all-time high in global trade ahead of Dhanteras - Check 24K, 22K, 18K gold rates across India",
+        "url": "https://www.moneycontrol.com/news/business/commodities/gold-prices-today-on-oct-17-in-india-gold-at-all-time-high-in-global-trade-ahead-of-dhanteras-check-24k-22k-18k-gold-rates-across-india-13620824.html",
+        "published_at": null
+      },
+      {
+        "title": "Gold rate today in India on Oct 16: Yellow metal's breakneck rally continues, likely to cross Rs 1.3 lakh/10 gm mark soon - Check 24K, 22K, 18K gold prices in Mumbai, Hyderabad and Delhi - Full list",
+        "url": "https://www.moneycontrol.com/news/business/commodities/gold-rate-today-in-india-on-oct-16-yellow-metal-s-breakneck-rally-continues-likely-to-cross-rs-1-30-000-mark-soon-check-24k-22k-18k-gold-prices-in-mumbai-hyderabad-and-delhi-full-list-13618822.html",
+        "published_at": null
+      },
+      {
+        "title": "India plans first urea plant in Russia to secure fertiliser supply; details likely during Putin’s December visit: Report",
+        "url": "https://www.moneycontrol.com/news/business/commodities/india-plans-first-urea-plant-in-russia-to-secure-fertiliser-supply-details-likely-during-putin-s-december-visit-report-13627966.html",
+        "published_at": null
+      }
+    ],
+    "SAFECURE": [
+      {
+        "title": "Safecure Services IPO sees 1.77 times subscription on final day; check listing date",
+        "url": "https://www.moneycontrol.com/news/business/ipo/safecure-services-ipo-sees-1-77-times-subscription-on-final-day-check-listing-date-13646258.html",
+        "published_at": null
+      },
+      {
+        "title": "India plans first urea plant in Russia to secure fertiliser supply; details likely during Putin’s December visit: Report",
+        "url": "https://www.moneycontrol.com/news/business/commodities/india-plans-first-urea-plant-in-russia-to-secure-fertiliser-supply-details-likely-during-putin-s-december-visit-report-13627966.html",
+        "published_at": null
+      }
+    ],
+    "ECLERX": [
+      {
+        "title": "Safecure Services IPO sees 1.77 times subscription on final day; check listing date",
+        "url": "https://www.moneycontrol.com/news/business/ipo/safecure-services-ipo-sees-1-77-times-subscription-on-final-day-check-listing-date-13646258.html",
+        "published_at": null
+      },
+      {
+        "title": "Trade Spotlight: How should you trade BHEL, BPCL, NBCC, eClerx Services, Polycab India, Brigade Enterprises, and others on October 31?",
+        "url": "https://www.moneycontrol.com/news/business/markets/trade-spotlight-how-should-you-trade-bhel-bpcl-nbcc-eclerx-services-polycab-india-brigade-enterprises-and-others-on-october-31-13643852.html",
+        "published_at": null
+      },
+      {
+        "title": "Subscribe for Orkla India Ltd IPO; Geojit Financial Services",
+        "url": "https://www.moneycontrol.com/news/business/stocks/subscribe-for-orkla-india-ltd-ipo-geojit-financial-services-13639987.html",
+        "published_at": null
+      }
+    ],
+    "SHADOWFAX": [
+      {
+        "title": "Upcoming IPO: Flipkart, TPG-backed Shadowfax files updated DRHP with SEBI for Rs 2,000-crore IPO",
+        "url": "https://www.moneycontrol.com/news/business/ipo/upcoming-ipo-flipkart-tpg-backed-shadowfax-file-updated-drhp-with-sebi-for-rs-2-000-crore-ipo-13646369.html",
+        "published_at": null
+      }
+    ],
+    "SBIN": [
+      {
+        "title": "Upcoming IPO: Flipkart, TPG-backed Shadowfax files updated DRHP with SEBI for Rs 2,000-crore IPO",
+        "url": "https://www.moneycontrol.com/news/business/ipo/upcoming-ipo-flipkart-tpg-backed-shadowfax-file-updated-drhp-with-sebi-for-rs-2-000-crore-ipo-13646369.html",
+        "published_at": null
+      },
+      {
+        "title": "SEBI likely to penalise MCX for four-hour trading halt: Report",
+        "url": "https://www.moneycontrol.com/news/business/markets/sebi-likely-to-penalise-mcx-for-four-hour-trading-halt-report-13644753.html",
+        "published_at": null
+      },
+      {
+        "title": "SEBI’s prospective mutual fund overhaul may moderately dent AMCs' earnings: Nomura",
+        "url": "https://www.moneycontrol.com/news/business/markets/sebi-s-prospective-mutual-fund-overhaul-may-moderately-dent-amcs-earnings-nomura-13645480.html",
+        "published_at": null
+      },
+      {
+        "title": "Union Bank of India, other PSU bank shares rise up to 6% as SEBI notifies new rules for Bank Nifty: Here's why",
+        "url": "https://www.moneycontrol.com/news/business/markets/union-bank-of-india-other-psu-bank-shares-rise-up-to-6-as-sebi-notifies-new-rules-for-bank-nifty-here-s-why-13644915.html",
+        "published_at": null
+      },
+      {
+        "title": "Buy Union Bank of India; target of Rs 160: Prabhudas Lilladher",
+        "url": "https://www.moneycontrol.com/news/business/stocks/buy-union-bank-of-india-target-of-rs-160-prabhudas-lilladher-13644700.html",
+        "published_at": null
+      },
+      {
+        "title": "boAt's parent gets SEBI nod for Rs 1,500-crore IPO",
+        "url": "https://www.moneycontrol.com/news/business/ipo/boat-s-parent-gets-sebi-nod-for-rs-1-500-crore-ipo-13639739.html",
+        "published_at": null
+      },
+      {
+        "title": "SBI Mutual Fund invests Rs 100 crore in Lenskart in pre-IPO round",
+        "url": "https://www.moneycontrol.com/news/business/ipo/sbi-mutual-fund-invests-rs-100-crore-in-lenskart-in-pre-ipo-round-13639782.html",
+        "published_at": null
+      },
+      {
+        "title": "Curefoods gets Sebi nod for Rs 800 crore IPO; Iron Pillar, Accel among key sellers",
+        "url": "https://www.moneycontrol.com/news/business/ipo/curefoods-gets-sebi-nod-for-rs-800-crore-ipo-iron-pillar-accel-among-key-sellers-13631931.html",
+        "published_at": null
+      },
+      {
+        "title": "Homegrown private equity firm Gaja Capital gets SEBI nod for IPO",
+        "url": "https://www.moneycontrol.com/news/business/ipo/homegrown-private-equity-firm-gaja-capital-gets-sebi-nod-for-ipo-13635024.html",
+        "published_at": null
+      },
+      {
+        "title": "Milky Mist, Curefoods, Steamhouse, Kanodia Cement, Gaja Alternative get SEBI nod for IPOs; Sterlite Electric offer kept in abeyance",
+        "url": "https://www.moneycontrol.com/news/business/ipo/milky-mist-curefoods-steamhouse-kanodia-cement-gaja-alternative-get-sebi-nod-for-ipos-sterlite-electric-offer-kept-in-abeyance-13634911.html",
+        "published_at": null
+      },
+      {
+        "title": "Milky Mist gets SEBI nod for Rs 2,000-crore IPO; to use proceeds for debt repayment, expansion",
+        "url": "https://www.moneycontrol.com/news/business/ipo/milky-mist-gets-sebi-nod-for-rs-2-000-crore-ipo-to-use-proceeds-for-debt-repayment-expansion-13632576.html",
+        "published_at": null
+      },
+      {
+        "title": "SEBI puts Vedanta Group's Sterlite Electric public listing on hold",
+        "url": "https://www.moneycontrol.com/news/business/ipo/sebi-puts-vedanta-group-s-sterlite-electric-public-listing-on-hold-13635077.html",
+        "published_at": null
+      },
+      {
+        "title": "SBI joins India International Bullion Exchange as special category client",
+        "url": "https://www.moneycontrol.com/news/business/commodities/sbi-joins-india-international-bullion-exchange-as-special-category-client-13646983.html",
+        "published_at": null
+      }
+    ],
+    "SAGILITY": [
+      {
+        "title": "Chartist Talks: Sudeep Shah remains bullish on these 3 PSUs, flags caution on Sagility",
+        "url": "https://www.moneycontrol.com/news/business/markets/chartist-talks-sudeep-shah-remains-bullish-on-these-3-psus-flags-caution-on-sagility-13646347.html",
+        "published_at": null
+      }
+    ],
+    "BEL": [
+      {
+        "title": "'Confident that we will achieve more than the Rs 27,000 crore order book guidance in FY26': BEL's Manoj Jain",
+        "url": "https://www.moneycontrol.com/news/business/markets/confident-that-we-will-achieve-more-than-the-rs-27-000-crore-order-book-guidance-in-fy26-bel-s-manoj-jain-13645915.html",
+        "published_at": null
+      },
+      {
+        "title": "Closing Bell: Nifty below 25,750, Sensex slips 466 pts; PSU Banks outperform",
+        "url": "https://www.moneycontrol.com/news/business/markets/stock-market-live-sensex-nifty-50-share-price-gift-nifty-latest-updates-31-10-2025-liveblog-13643878.html",
+        "published_at": null
+      },
+      {
+        "title": "Sensex settles 450 pts lower, Nifty ends below 25,750: FII selling among key factors behind market decline",
+        "url": "https://www.moneycontrol.com/news/business/markets/sensex-slips-400-pts-from-day-s-high-nifty-below-25-850-fii-selling-among-key-factors-behind-market-decline-13644385.html",
+        "published_at": null
+      },
+      {
+        "title": "Taking Stock: Sensex down 466 pts, Nifty below 25,750; media, metals drag, PSU banks gain",
+        "url": "https://www.moneycontrol.com/news/business/markets/taking-stock-sensex-down-466-pts-nifty-below-25-750-media-metals-drag-psu-banks-gain-13645276.html",
+        "published_at": null
+      },
+      {
+        "title": "Stocks to Watch Today: Reliance, BEL, V2 Retail, MTAR, Associated Alcohols, Swiggy, Bandhan Bank, Manappuram, TD Power, United Spirits, Welspun Corp, Lodha in focus on 31 October",
+        "url": "https://www.moneycontrol.com/news/business/markets/stocks-to-watch-today-reliance-bel-v2-retail-mtar-associated-alcohols-swiggy-bandhan-bank-manappuram-td-power-united-spirits-welspun-corp-lodha-in-focus-on-31-october-13643840.html",
+        "published_at": null
+      },
+      {
+        "title": "Bharat Electronics shares gain on orders win of Rs 732 crore",
+        "url": "https://www.moneycontrol.com/news/business/stocks/bharat-electronics-shares-in-focus-on-orders-win-of-rs-732-crore-13643493.html",
+        "published_at": null
+      },
+      {
+        "title": "Gold slips below $4,000 per ounce as US-China trade progress cools safe-haven demand",
+        "url": "https://www.moneycontrol.com/news/business/commodities/gold-slips-below-4-000-per-ounce-as-us-china-trade-progress-cools-safe-haven-demand-13635339.html",
+        "published_at": null
+      }
+    ],
+    "LT": [
+      {
+        "title": "Daily Voice: Larger healthcare sector continues to provide exciting opportunities for alpha generation, says TCG AMC Chief",
+        "url": "https://www.moneycontrol.com/news/business/markets/daily-voice-larger-healthcare-sector-continues-to-provide-exciting-opportunities-for-alpha-generation-says-tcg-amc-chief-13647010.html",
+        "published_at": null
+      },
+      {
+        "title": "ITC shares rise up to 1.5% as Q2 results beat estimates on rising cigarette volumes",
+        "url": "https://www.moneycontrol.com/news/business/markets/itc-shares-rise-up-to-1-5-as-q2-results-beat-estimates-on-rising-cigarette-volumes-13645726.html",
+        "published_at": null
+      },
+      {
+        "title": "Moneycontrol Pro Weekender | Kicking Multiple Cans Down the Road",
+        "url": "https://www.moneycontrol.com/news/business/markets/moneycontrol-pro-weekender-kicking-multiple-cans-down-the-road-13643771.html",
+        "published_at": null
+      },
+      {
+        "title": "Hyundai Motor India shares rise up to 2% as brokerages remain bullish post Q2 results",
+        "url": "https://www.moneycontrol.com/news/business/markets/hyundai-motor-india-shares-rise-up-to-2-as-brokerages-remain-bullish-post-q2-results-13645598.html",
+        "published_at": null
+      },
+      {
+        "title": "Q2 Results impact: Bandhan Bank, DLF shares fall up to 8%, United Spirits hits 4-month high",
+        "url": "https://www.moneycontrol.com/news/business/markets/q2-results-impact-bandhan-bank-dlf-shares-fall-up-to-8-united-spirits-hits-4-month-high-13645077.html",
+        "published_at": null
+      },
+      {
+        "title": "SEBI likely to penalise MCX for four-hour trading halt: Report",
+        "url": "https://www.moneycontrol.com/news/business/markets/sebi-likely-to-penalise-mcx-for-four-hour-trading-halt-report-13644753.html",
+        "published_at": null
+      },
+      {
+        "title": "Narayana Health buys UK’s Practice Plus for Rs 1,930 crore to expand global footprint",
+        "url": "https://www.moneycontrol.com/news/business/stocks/narayana-health-buys-uk-s-practice-plus-for-rs-1-930-crore-to-expand-global-footprint-13645094.html",
+        "published_at": null
+      },
+      {
+        "title": "Q2 results impact: Aditya Birla Real Estate shares jump 4% on bullish analyst views despite loss, AB Capital shares surge 6%",
+        "url": "https://www.moneycontrol.com/news/business/markets/q2-results-impact-aditya-birla-real-estate-shares-jump-4-on-bullish-analyst-views-despite-loss-ab-capital-shares-surge-6-13643179.html",
+        "published_at": null
+      },
+      {
+        "title": "Subscribe for Lenskart Solutions Ltd IPO; Choice Equity Broking",
+        "url": "https://www.moneycontrol.com/news/business/stocks/subscribe-for-lenskart-solutions-ltd-ipo-choice-equity-broking-13642786.html",
+        "published_at": null
+      },
+      {
+        "title": "ITC shares down marginally ahead of Q2 results; here's what analysts expect",
+        "url": "https://www.moneycontrol.com/news/business/markets/itc-shares-down-marginally-ahead-of-q2-results-here-s-what-analysts-expect-13642400.html",
+        "published_at": null
+      },
+      {
+        "title": "L&T jumps 2% to hit fresh record high after Q2 results; robust order book gets thumbs up from brokerages",
+        "url": "https://www.moneycontrol.com/news/business/markets/l-t-shares-jump-2-to-hit-fresh-record-high-after-q2-results-motilal-oswal-raises-target-price-13641538.html",
+        "published_at": null
+      },
+      {
+        "title": "Q2 results impact: BHEL, PB Fintech rise up to 7% on strong earnings growth, Ixigo hits 20% lower circuit",
+        "url": "https://www.moneycontrol.com/news/business/markets/q2-results-impact-bhel-pb-fintech-rise-up-to-3-on-strong-earnings-growth-ixigo-hits-20-lower-circuit-13641793.html",
+        "published_at": null
+      },
+      {
+        "title": "Swiggy shares muted ahead of Q2FY26 results, analysts see narrower sequential net loss",
+        "url": "https://www.moneycontrol.com/news/business/markets/swiggy-shares-muted-ahead-of-q2fy26-results-analysts-see-narrower-sequential-net-loss-13642054.html",
+        "published_at": null
+      },
+      {
+        "title": "Buy Larsen and Toubro; target of Rs 4766: Prabhudas Lilladher",
+        "url": "https://www.moneycontrol.com/news/business/stocks/buy-larsen-and-toubro-target-of-rs-4766-prabhudas-lilladher-13642177.html",
+        "published_at": null
+      },
+      {
+        "title": "Buy Star Health; target of Rs 550: Nuvama Institutional Equities",
+        "url": "https://www.moneycontrol.com/news/business/stocks/buy-star-health-target-of-rs-550-nuvama-institutional-equities-13642526.html",
+        "published_at": null
+      },
+      {
+        "title": "Subscribe for Studds Accessories Ltd IPO; Anand Rathi",
+        "url": "https://www.moneycontrol.com/news/business/stocks/subscribe-for-studds-accessories-ltd-ipo-anand-rathi-13641620.html",
+        "published_at": null
+      },
+      {
+        "title": "Subscribe for Studds Accessories Ltd IPO; Choice Equity Broking",
+        "url": "https://www.moneycontrol.com/news/business/stocks/subscribe-for-studds-accessories-ltd-ipo-choice-equity-broking-13641662.html",
+        "published_at": null
+      },
+      {
+        "title": "Subscribe for Orkla India Ltd IPO; Geojit Financial Services",
+        "url": "https://www.moneycontrol.com/news/business/stocks/subscribe-for-orkla-india-ltd-ipo-geojit-financial-services-13639987.html",
+        "published_at": null
+      },
+      {
+        "title": "Jayesh Logistics IPO continues to see healthy interest from investors on day 2",
+        "url": "https://www.moneycontrol.com/news/business/ipo/jayesh-logistics-ipo-continues-to-see-healthy-interest-from-investors-on-day-2-13637536.html",
+        "published_at": null
+      },
+      {
+        "title": "Milky Mist, Curefoods, Steamhouse, Kanodia Cement, Gaja Alternative get SEBI nod for IPOs; Sterlite Electric offer kept in abeyance",
+        "url": "https://www.moneycontrol.com/news/business/ipo/milky-mist-curefoods-steamhouse-kanodia-cement-gaja-alternative-get-sebi-nod-for-ipos-sterlite-electric-offer-kept-in-abeyance-13634911.html",
+        "published_at": null
+      }
+    ],
+    "IOC": [
+      {
+        "title": "FIIs net sell Indian equities for Rs 6,769 crore, while DIIs pump in Rs 7,068 crore",
+        "url": "https://www.moneycontrol.com/news/business/markets/fiis-net-sell-indian-equities-for-rs-6-769-crore-while-diis-pump-in-rs-7-068-crore-13646082.html",
+        "published_at": null
+      },
+      {
+        "title": "Indian Oil, HPCL, BPCL shares rise up to 6% as oil prices extend decline",
+        "url": "https://www.moneycontrol.com/news/business/markets/indian-oil-hpcl-bpcl-rise-up-to-6-as-oil-prices-extend-decline-13639686.html",
+        "published_at": null
+      },
+      {
+        "title": "Indian Oil seeks bids for 24 million barrels of oil from Americas for March quarter, document shows",
+        "url": "https://www.moneycontrol.com/news/business/commodities/indian-oil-seeks-bids-for-24-million-barrels-of-oil-from-americas-for-march-quarter-document-shows-13642056.html",
+        "published_at": null
+      }
+    ],
+    "ITC": [
+      {
+        "title": "ITC shares rise up to 1.5% as Q2 results beat estimates on rising cigarette volumes",
+        "url": "https://www.moneycontrol.com/news/business/markets/itc-shares-rise-up-to-1-5-as-q2-results-beat-estimates-on-rising-cigarette-volumes-13645726.html",
+        "published_at": null
+      },
+      {
+        "title": "Commodity exchange MCX says root cause behind October 28 tech glitch identified",
+        "url": "https://www.moneycontrol.com/news/business/markets/commodity-exchange-mcx-says-root-cause-behind-october-28-tech-glitch-identified-13644640.html",
+        "published_at": null
+      },
+      {
+        "title": "Buy ITC; target of Rs 530: Prabhudas Lilladher",
+        "url": "https://www.moneycontrol.com/news/business/stocks/buy-itc-target-of-rs-530-prabhudas-lilladher-2-13644697.html",
+        "published_at": null
+      },
+      {
+        "title": "ITC shares down marginally ahead of Q2 results; here's what analysts expect",
+        "url": "https://www.moneycontrol.com/news/business/markets/itc-shares-down-marginally-ahead-of-q2-results-here-s-what-analysts-expect-13642400.html",
+        "published_at": null
+      }
+    ],
+    "RELIANCE": [
+      {
+        "title": "Mcap of four of top 10 valued firms jumps by Rs 95,447 cr; Reliance biggest gainer",
+        "url": "https://www.moneycontrol.com/news/business/markets/mcap-of-four-of-top-10-valued-firms-jumps-by-rs-95-447-cr-reliance-biggest-gainer-13647208.html",
+        "published_at": null
+      },
+      {
+        "title": "Hold Apar Industries; target of Rs 9744: Prabhudas Lilladher",
+        "url": "https://www.moneycontrol.com/news/business/stocks/hold-apar-industries-target-of-rs-9744-prabhudas-lilladher-13644709.html",
+        "published_at": null
+      },
+      {
+        "title": "Reduce Laxmi Organic Industries; target of Rs 192: Prabhudas Lilladher",
+        "url": "https://www.moneycontrol.com/news/business/stocks/reduce-laxmi-organic-industries-target-of-rs-192-prabhudas-lilladher-13644707.html",
+        "published_at": null
+      },
+      {
+        "title": "Stocks to Watch Today: Reliance, BEL, V2 Retail, MTAR, Associated Alcohols, Swiggy, Bandhan Bank, Manappuram, TD Power, United Spirits, Welspun Corp, Lodha in focus on 31 October",
+        "url": "https://www.moneycontrol.com/news/business/markets/stocks-to-watch-today-reliance-bel-v2-retail-mtar-associated-alcohols-swiggy-bandhan-bank-manappuram-td-power-united-spirits-welspun-corp-lodha-in-focus-on-31-october-13643840.html",
+        "published_at": null
+      }
+    ],
+    "INFY": [
+      {
+        "title": "Nova Global Opportunities Fund picks additional 3.89% stake in AAA Technologies, promoter sells 1.42% in Affordable Robotic",
+        "url": "https://www.moneycontrol.com/news/business/markets/nova-global-opportunities-fund-picks-additional-3-89-stake-in-aaa-technologies-promoter-sells-1-42-in-affordable-robotic-13646095.html",
+        "published_at": null
+      },
+      {
+        "title": "MTAR Technologies shares hit 52-week high on winning international order",
+        "url": "https://www.moneycontrol.com/news/business/stocks/mtar-technologies-shares-in-focus-on-winning-international-order-13643495.html",
+        "published_at": null
+      },
+      {
+        "title": "Samena Special Situations Mauritius offloads 0.79% stake in Dynamatic Technologies",
+        "url": "https://www.moneycontrol.com/news/business/markets/samena-special-situations-mauritius-offloads-0-79-stake-in-dynamatic-technologies-13640789.html",
+        "published_at": null
+      }
+    ],
+    "SWIGGY": [
+      {
+        "title": "Swiggy shares rise 2.5% as Q2 loss narrows sequentially on robust quick commerce growth",
+        "url": "https://www.moneycontrol.com/news/business/markets/swiggy-shares-rise-2-5-as-q2-loss-narrows-sequentially-on-robust-quick-commerce-growth-13644358.html",
+        "published_at": null
+      },
+      {
+        "title": "Stocks to Watch Today: Reliance, BEL, V2 Retail, MTAR, Associated Alcohols, Swiggy, Bandhan Bank, Manappuram, TD Power, United Spirits, Welspun Corp, Lodha in focus on 31 October",
+        "url": "https://www.moneycontrol.com/news/business/markets/stocks-to-watch-today-reliance-bel-v2-retail-mtar-associated-alcohols-swiggy-bandhan-bank-manappuram-td-power-united-spirits-welspun-corp-lodha-in-focus-on-31-october-13643840.html",
+        "published_at": null
+      },
+      {
+        "title": "Swiggy shares muted ahead of Q2FY26 results, analysts see narrower sequential net loss",
+        "url": "https://www.moneycontrol.com/news/business/markets/swiggy-shares-muted-ahead-of-q2fy26-results-analysts-see-narrower-sequential-net-loss-13642054.html",
+        "published_at": null
+      }
+    ],
+    "MTAR": [
+      {
+        "title": "MTAR Technologies shares hit 52-week high on winning international order",
+        "url": "https://www.moneycontrol.com/news/business/stocks/mtar-technologies-shares-in-focus-on-winning-international-order-13643495.html",
+        "published_at": null
+      },
+      {
+        "title": "Stocks to Watch Today: Reliance, BEL, V2 Retail, MTAR, Associated Alcohols, Swiggy, Bandhan Bank, Manappuram, TD Power, United Spirits, Welspun Corp, Lodha in focus on 31 October",
+        "url": "https://www.moneycontrol.com/news/business/markets/stocks-to-watch-today-reliance-bel-v2-retail-mtar-associated-alcohols-swiggy-bandhan-bank-manappuram-td-power-united-spirits-welspun-corp-lodha-in-focus-on-31-october-13643840.html",
+        "published_at": null
+      }
+    ],
+    "GROWW": [
+      {
+        "title": "Groww IPO GMP rises ahead of November 4 launch; here's what you need to know",
+        "url": "https://www.moneycontrol.com/news/business/ipo/groww-ipo-gmp-rises-ahead-of-november-4-launch-here-s-what-you-need-to-know-13644991.html",
+        "published_at": null
+      },
+      {
+        "title": "Groww’s user surge sets up future growth, ARPU dip misleading, Says CEO",
+        "url": "https://www.moneycontrol.com/news/business/markets/groww-s-user-surge-sets-up-future-growth-arpu-dip-misleading-says-ceo-13644574.html",
+        "published_at": null
+      },
+      {
+        "title": "Q2 results impact: BHEL, PB Fintech rise up to 7% on strong earnings growth, Ixigo hits 20% lower circuit",
+        "url": "https://www.moneycontrol.com/news/business/markets/q2-results-impact-bhel-pb-fintech-rise-up-to-3-on-strong-earnings-growth-ixigo-hits-20-lower-circuit-13641793.html",
+        "published_at": null
+      },
+      {
+        "title": "Groww IPO could give 10% listing gains as broking firm sets price band ahead of next week's issue launch",
+        "url": "https://www.moneycontrol.com/news/business/ipo/groww-ipo-could-give-10-listing-gains-as-broking-firm-sets-price-band-ahead-of-next-week-s-issue-launch-13642152.html",
+        "published_at": null
+      },
+      {
+        "title": "Groww-parent Billionbrains Garage Ventures Rs 6,632-crore IPO to open on November 4, price band set at Rs 95-100 per share",
+        "url": "https://www.moneycontrol.com/news/business/ipo/groww-parent-billionbrains-garage-ventures-rs-6-632-crore-ipo-to-open-on-november-4-price-band-set-at-rs-95-100-per-share-13640999.html",
+        "published_at": null
+      },
+      {
+        "title": "Groww’s IPO likely priced at Rs 95-100 apiece",
+        "url": "https://www.moneycontrol.com/news/business/ipo/groww-s-ipo-likely-priced-at-rs-95-100-apiece-13640976.html",
+        "published_at": null
+      }
+    ],
+    "BANDHAN": [
+      {
+        "title": "MS Dhoni-backed Finbud IPO opens Nov 6: Price band, key dates, and what investors should know before bidding",
+        "url": "https://www.moneycontrol.com/news/business/ipo/ms-dhoni-backed-finbud-ipo-opens-nov-6-price-band-key-dates-and-what-investors-should-know-before-bidding-13645095.html",
+        "published_at": null
+      },
+      {
+        "title": "Q2 Results impact: Bandhan Bank, DLF shares fall up to 8%, United Spirits hits 4-month high",
+        "url": "https://www.moneycontrol.com/news/business/markets/q2-results-impact-bandhan-bank-dlf-shares-fall-up-to-8-united-spirits-hits-4-month-high-13645077.html",
+        "published_at": null
+      },
+      {
+        "title": "Stocks to Watch Today: Reliance, BEL, V2 Retail, MTAR, Associated Alcohols, Swiggy, Bandhan Bank, Manappuram, TD Power, United Spirits, Welspun Corp, Lodha in focus on 31 October",
+        "url": "https://www.moneycontrol.com/news/business/markets/stocks-to-watch-today-reliance-bel-v2-retail-mtar-associated-alcohols-swiggy-bandhan-bank-manappuram-td-power-united-spirits-welspun-corp-lodha-in-focus-on-31-october-13643840.html",
+        "published_at": null
+      },
+      {
+        "title": "Groww IPO could give 10% listing gains as broking firm sets price band ahead of next week's issue launch",
+        "url": "https://www.moneycontrol.com/news/business/ipo/groww-ipo-could-give-10-listing-gains-as-broking-firm-sets-price-band-ahead-of-next-week-s-issue-launch-13642152.html",
+        "published_at": null
+      },
+      {
+        "title": "Groww-parent Billionbrains Garage Ventures Rs 6,632-crore IPO to open on November 4, price band set at Rs 95-100 per share",
+        "url": "https://www.moneycontrol.com/news/business/ipo/groww-parent-billionbrains-garage-ventures-rs-6-632-crore-ipo-to-open-on-november-4-price-band-set-at-rs-95-100-per-share-13640999.html",
+        "published_at": null
+      },
+      {
+        "title": "Studds Accessories IPO fully subscribed on Day 1 of bidding; should you apply? Check price band, GMP, other key details",
+        "url": "https://www.moneycontrol.com/news/business/ipo/studds-accessories-ipo-to-open-for-subscription-shortly-should-you-apply-check-price-band-gmp-other-key-details-13640234.html",
+        "published_at": null
+      },
+      {
+        "title": "Studds Accessories IPO subscribed 1.5 times on Day 1; should you apply? Check price band, GMP, other key details",
+        "url": "https://www.moneycontrol.com/news/business/ipo/studds-accessories-sees-robust-subscription-on-day-1-of-ipo-booked-60-so-far-should-you-subscribe-check-gmp-other-key-details-13641927.html",
+        "published_at": null
+      },
+      {
+        "title": "Lenskart IPO subscription to begin on Oct 31: Should you apply? Check price band, GMP, other key details",
+        "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-ipo-subscription-to-begin-on-oct-31-should-you-apply-check-price-band-gmp-other-key-details-13637269.html",
+        "published_at": null
+      },
+      {
+        "title": "MTR Foods parent Orkla India sets IPO price band at Rs 695-730 per share, targets Rs 10,000-crore valuation",
+        "url": "https://www.moneycontrol.com/news/business/ipo/mtr-foods-parent-orkla-india-sets-ipo-price-band-at-rs-695-730-per-share-targets-rs-10-000-crore-valuation-13629986.html",
+        "published_at": null
+      },
+      {
+        "title": "Orkla India IPO GMP rises as company fixes price band ahead of issue launch next week",
+        "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-ipo-gmp-rises-as-company-fixes-price-band-ahead-of-issue-launch-next-week-13630438.html",
+        "published_at": null
+      }
+    ],
+    "ORKLA": [
+      {
+        "title": "Orkla India, Studds, Lenskart IPO GMPs rise up to 18% as subscriptions underway; check key details",
+        "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-studds-lenskart-ipo-gmps-rise-up-to-18-as-subscriptions-underway-check-key-details-13644602.html",
+        "published_at": null
+      },
+      {
+        "title": "Orkla India IPO closes with 49x subscription, QIB portion booked 118x: Check latest GMP",
+        "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-ipo-subscribed-4x-on-day-3-so-far-gmp-nears-10-here-s-what-analysts-say-13644471.html",
+        "published_at": null
+      },
+      {
+        "title": "Orkla India IPO Day 2 GMP Live: Orkla India IPO subscribed 2.12 times on Day 2, BSE data shows - Apply or skip?",
+        "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-ipo-day-2-gmp-live-mtrfoods-ipo-subscription-groww-lenskart-gmp-today-oct-30-liveblog-13641085.html",
+        "published_at": null
+      },
+      {
+        "title": "Orkla India IPO subscribed nearly 3x on Day 2 despite falling GMP: Should you apply?",
+        "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-ipo-gets-fully-subscribed-on-day-2-despite-declining-gmp-trend-should-you-apply-13641790.html",
+        "published_at": null
+      },
+      {
+        "title": "Orkla India IPO Day 1 GMP Live: MTR Foods IPO hits halfway mark on Day 1, subscribed 57% so far - See latest GMP and more",
+        "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-ipo-gmp-live-mtrfoods-ipo-subscription-status-price-band-review-gmp-today-oct-29-liveblog-13638149.html",
+        "published_at": null
+      },
+      {
+        "title": "Orkla India IPO subscribed 78% on Day 1, GMP declines: Should you apply?",
+        "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-ipo-subscribed-27-on-day-1-so-far-gmp-declines-should-you-apply-13639140.html",
+        "published_at": null
+      },
+      {
+        "title": "Orkla India IPO to open today: Should you apply? Check GMP, among other key details before subscribing to issue",
+        "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-ipo-to-open-today-should-you-apply-check-gmp-among-other-key-details-before-subscribing-to-issue-13636463.html",
+        "published_at": null
+      },
+      {
+        "title": "Orkla India raises Rs 500 crore via anchor book ahead of Rs 1,668-crore IPO",
+        "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-raises-rs-500-crore-via-anchor-book-ahead-of-rs-1-668-crore-ipo-13637910.html",
+        "published_at": null
+      },
+      {
+        "title": "Subscribe for Orkla India Ltd IPO; Geojit Financial Services",
+        "url": "https://www.moneycontrol.com/news/business/stocks/subscribe-for-orkla-india-ltd-ipo-geojit-financial-services-13639987.html",
+        "published_at": null
+      },
+      {
+        "title": "Lenskart, Orkla India, Studds Accessories IPO GMPs rise to 19% ahead of issue launches this week; check key details",
+        "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-orkla-india-studds-accessories-ipo-gmps-rise-to-19-ahead-of-issue-launches-this-week-check-key-details-13633537.html",
+        "published_at": null
+      },
+      {
+        "title": "MTR Foods parent Orkla India sets IPO price band at Rs 695-730 per share, targets Rs 10,000-crore valuation",
+        "url": "https://www.moneycontrol.com/news/business/ipo/mtr-foods-parent-orkla-india-sets-ipo-price-band-at-rs-695-730-per-share-targets-rs-10-000-crore-valuation-13629986.html",
+        "published_at": null
+      },
+      {
+        "title": "Orkla India IPO GMP rises as company fixes price band ahead of issue launch next week",
+        "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-ipo-gmp-rises-as-company-fixes-price-band-ahead-of-issue-launch-next-week-13630438.html",
+        "published_at": null
+      },
+      {
+        "title": "Upcoming IPO: Orkla India, parent of MTR and Eastern spices brand, files RHP; IPO to open on October 29 via pure OFS",
+        "url": "https://www.moneycontrol.com/news/business/ipo/upcoming-ipo-orkla-india-parent-of-mtr-and-eastern-spices-brand-files-rhp-ipo-to-open-on-october-29-via-pure-ofs-13629575.html",
+        "published_at": null
+      }
+    ],
+    "STUDDS": [
+      {
+        "title": "Orkla India, Studds, Lenskart IPO GMPs rise up to 18% as subscriptions underway; check key details",
+        "url": "https://www.moneycontrol.com/news/business/ipo/orkla-india-studds-lenskart-ipo-gmps-rise-up-to-18-as-subscriptions-underway-check-key-details-13644602.html",
+        "published_at": null
+      },
+      {
+        "title": "Studds Accessories IPO subscribed 5x on Day 2, GMP signals decent listing: Should you apply?",
+        "url": "https://www.moneycontrol.com/news/business/markets/studds-accessories-ipo-subscribed-3x-on-day-2-so-far-gmp-signals-decent-listing-should-you-apply-13644584.html",
+        "published_at": null
+      },
+      {
+        "title": "Subscribe for Studds Accessories Ltd IPO; Anand Rathi",
+        "url": "https://www.moneycontrol.com/news/business/stocks/subscribe-for-studds-accessories-ltd-ipo-anand-rathi-13641620.html",
+        "published_at": null
+      },
+      {
+        "title": "Subscribe for Studds Accessories Ltd IPO; Choice Equity Broking",
+        "url": "https://www.moneycontrol.com/news/business/stocks/subscribe-for-studds-accessories-ltd-ipo-choice-equity-broking-13641662.html",
+        "published_at": null
+      },
+      {
+        "title": "Studds Accessories IPO fully subscribed on Day 1 of bidding; should you apply? Check price band, GMP, other key details",
+        "url": "https://www.moneycontrol.com/news/business/ipo/studds-accessories-ipo-to-open-for-subscription-shortly-should-you-apply-check-price-band-gmp-other-key-details-13640234.html",
+        "published_at": null
+      },
+      {
+        "title": "Studds Accessories raises Rs 136.6 crore from 9 anchor investors ahead of Rs 455-crore IPO",
+        "url": "https://www.moneycontrol.com/news/business/ipo/studds-accessories-raises-rs-136-6-crore-from-9-anchor-investors-ahead-of-rs-455-crore-ipo-13640886.html",
+        "published_at": null
+      },
+      {
+        "title": "Studds Accessories IPO subscribed 1.5 times on Day 1; should you apply? Check price band, GMP, other key details",
+        "url": "https://www.moneycontrol.com/news/business/ipo/studds-accessories-sees-robust-subscription-on-day-1-of-ipo-booked-60-so-far-should-you-subscribe-check-gmp-other-key-details-13641927.html",
+        "published_at": null
+      },
+      {
+        "title": "Helmet maker Studds Accessories files RHP, to launch IPO on Oct 30 via pure OFS",
+        "url": "https://www.moneycontrol.com/news/business/ipo/helmet-maker-studds-accessories-files-rhp-to-launch-ipo-on-oct-30-via-pure-ofs-13632258.html",
+        "published_at": null
+      },
+      {
+        "title": "Lenskart, Orkla India, Studds Accessories IPO GMPs rise to 19% ahead of issue launches this week; check key details",
+        "url": "https://www.moneycontrol.com/news/business/ipo/lenskart-orkla-india-studds-accessories-ipo-gmps-rise-to-19-ahead-of-issue-launches-this-week-check-key-details-13633537.html",
+        "published_at": null
+      }
+    ],
+    "TECHM": [
+      {
+        "title": "Commodity exchange MCX says root cause behind October 28 tech glitch identified",
+        "url": "https://www.moneycontrol.com/news/business/markets/commodity-exchange-mcx-says-root-cause-behind-october-28-tech-glitch-identified-13644640.html",
+        "published_at": null
+      }
+    ],
+    "HYUNDAI": [
+      {
+        "title": "Hyundai Motor India shares rise up to 2% as brokerages remain bullish post Q2 results",
+        "url": "https://www.moneycontrol.com/news/business/markets/hyundai-motor-india-shares-rise-up-to-2-as-brokerages-remain-bullish-post-q2-results-13645598.html",
+        "published_at": null
+      }
+    ],
+    "DLF": [
+      {
+        "title": "Q2 Results impact: Bandhan Bank, DLF shares fall up to 8%, United Spirits hits 4-month high",
+        "url": "https://www.moneycontrol.com/news/business/markets/q2-results-impact-bandhan-bank-dlf-shares-fall-up-to-8-united-spirits-hits-4-month-high-13645077.html",
+        "published_at": null
+      }
+    ],
+    "HDFCAMC": [
+      {
+        "title": "SEBI’s prospective mutual fund overhaul may moderately dent AMCs' earnings: Nomura",
+        "url": "https://www.moneycontrol.com/news/business/markets/sebi-s-prospective-mutual-fund-overhaul-may-moderately-dent-amcs-earnings-nomura-13645480.html",
+        "published_at": null
+      },
+      {
+        "title": "SBI Mutual Fund invests Rs 100 crore in Lenskart in pre-IPO round",
+        "url": "https://www.moneycontrol.com/news/business/ipo/sbi-mutual-fund-invests-rs-100-crore-in-lenskart-in-pre-ipo-round-13639782.html",
+        "published_at": null
+      }
+    ],
+    "UNION": [
+      {
+        "title": "Union Bank of India, other PSU bank shares rise up to 6% as SEBI notifies new rules for Bank Nifty: Here's why",
+        "url": "https://www.moneycontrol.com/news/business/markets/union-bank-of-india-other-psu-bank-shares-rise-up-to-6-as-sebi-notifies-new-rules-for-bank-nifty-here-s-why-13644915.html",
+        "published_at": null
+      },
+      {
+        "title": "Buy Union Bank of India; target of Rs 160: Prabhudas Lilladher",
+        "url": "https://www.moneycontrol.com/news/business/stocks/buy-union-bank-of-india-target-of-rs-160-prabhudas-lilladher-13644700.html",
+        "published_at": null
+      }
+    ],
+    "CIPLA": [
+      {
+        "title": "Accumulate Cipla; target of Rs 1675: Prabhudas Lilladher",
+        "url": "https://www.moneycontrol.com/news/business/stocks/accumulate-cipla-target-of-rs-1675-prabhudas-lilladher-13644699.html",
+        "published_at": null
+      },
+      {
+        "title": "Reduce Cipla; target of Rs 1580: Choice Equity Broking",
+        "url": "https://www.moneycontrol.com/news/business/stocks/reduce-cipla-target-of-rs-1580-choice-equity-broking-13644463.html",
+        "published_at": null
+      }
+    ],
+    "COALINDIA": [
+      {
+        "title": "Buy Coal India; target of Rs 440: Anand Rathi",
+        "url": "https://www.moneycontrol.com/news/business/stocks/buy-coal-india-target-of-rs-440-anand-rathi-13644461.html",
+        "published_at": null
+      }
+    ],
+    "JSWSTEEL": [
+      {
+        "title": "Buy Jindal Steel; target of Rs 1230: Anand Rathi",
+        "url": "https://www.moneycontrol.com/news/business/stocks/buy-jindal-steel-target-of-rs-1230-anand-rathi-13644460.html",
+        "published_at": null
+      },
+      {
+        "title": "Hold Steel Authority of India; target of Rs 143: Prabhudas Lilladher",
+        "url": "https://www.moneycontrol.com/news/business/stocks/hold-steel-authority-of-india-target-of-rs-143-prabhudas-lilladher-13644704.html",
+        "published_at": null
+      },
+      {
+        "title": "Accumulate Jindal Steel; target of Rs 1151: Prabhudas Lilladher",
+        "url": "https://www.moneycontrol.com/news/business/stocks/accumulate-jindal-steel-target-of-rs-1151-prabhudas-lilladher-13642174.html",
+        "published_at": null
+      }
+    ],
+    "MOTILAL": [
+      {
+        "title": "Buy Rubicon Research; target of Rs 740: Motilal Oswal",
+        "url": "https://www.moneycontrol.com/news/business/stocks/buy-rubicon-research-target-of-rs-740-motilal-oswal-13644459.html",
+        "published_at": null
+      },
+      {
+        "title": "Gold at Rs 1.35 lakh and silver at Rs 2.3 lakh: Motilal Oswal sees sparkling rally ahead for bullion",
+        "url": "https://www.moneycontrol.com/news/business/commodities/gold-at-rs-1-35-lakh-and-silver-at-rs-2-3-lakh-motilal-oswal-sees-sparkling-rally-ahead-for-bullion-13621387.html",
+        "published_at": null
+      }
+    ],
+    "OSWAL": [
+      {
+        "title": "Buy Rubicon Research; target of Rs 740: Motilal Oswal",
+        "url": "https://www.moneycontrol.com/news/business/stocks/buy-rubicon-research-target-of-rs-740-motilal-oswal-13644459.html",
+        "published_at": null
+      },
+      {
+        "title": "Subscribe for Orkla India Ltd IPO; Geojit Financial Services",
+        "url": "https://www.moneycontrol.com/news/business/stocks/subscribe-for-orkla-india-ltd-ipo-geojit-financial-services-13639987.html",
+        "published_at": null
+      },
+      {
+        "title": "Gold at Rs 1.35 lakh and silver at Rs 2.3 lakh: Motilal Oswal sees sparkling rally ahead for bullion",
+        "url": "https://www.moneycontrol.com/news/business/commodities/gold-at-rs-1-35-lakh-and-silver-at-rs-2-3-lakh-motilal-oswal-sees-sparkling-rally-ahead-for-bullion-13621387.html",
+        "published_at": null
+      }
+    ],
+    "DABUR": [
+      {
+        "title": "Hold Dabur India; target of Rs 490: Prabhudas Lilladher",
+        "url": "https://www.moneycontrol.com/news/business/stocks/hold-dabur-india-target-of-rs-490-prabhudas-lilladher-13644705.html",
+        "published_at": null
+      }
+    ],
+    "BAJFINANCE": [
+      {
+        "title": "Hold LIC Housing Finance; target of Rs 690: Prabhudas Lilladher",
+        "url": "https://www.moneycontrol.com/news/business/stocks/hold-lic-housing-finance-target-of-rs-690-prabhudas-lilladher-13644703.html",
+        "published_at": null
+      }
+    ],
+    "GAIL": [
+      {
+        "title": "Hold Steel Authority of India; target of Rs 143: Prabhudas Lilladher",
+        "url": "https://www.moneycontrol.com/news/business/stocks/hold-steel-authority-of-india-target-of-rs-143-prabhudas-lilladher-13644704.html",
+        "published_at": null
+      }
+    ],
+    "POWERGRID": [
+      {
+        "title": "Stocks to Watch Today: Reliance, BEL, V2 Retail, MTAR, Associated Alcohols, Swiggy, Bandhan Bank, Manappuram, TD Power, United Spirits, Welspun Corp, Lodha in focus on 31 October",
+        "url": "https://www.moneycontrol.com/news/business/markets/stocks-to-watch-today-reliance-bel-v2-retail-mtar-associated-alcohols-swiggy-bandhan-bank-manappuram-td-power-united-spirits-welspun-corp-lodha-in-focus-on-31-october-13643840.html",
+        "published_at": null
+      }
+    ],
+    "BPCL": [
+      {
+        "title": "Trade Spotlight: How should you trade BHEL, BPCL, NBCC, eClerx Services, Polycab India, Brigade Enterprises, and others on October 31?",
+        "url": "https://www.moneycontrol.com/news/business/markets/trade-spotlight-how-should-you-trade-bhel-bpcl-nbcc-eclerx-services-polycab-india-brigade-enterprises-and-others-on-october-31-13643852.html",
+        "published_at": null
+      },
+      {
+        "title": "Indian Oil, HPCL, BPCL shares rise up to 6% as oil prices extend decline",
+        "url": "https://www.moneycontrol.com/news/business/markets/indian-oil-hpcl-bpcl-rise-up-to-6-as-oil-prices-extend-decline-13639686.html",
+        "published_at": null
+      }
+    ],
+    "BHEL": [
+      {
+        "title": "Trade Spotlight: How should you trade BHEL, BPCL, NBCC, eClerx Services, Polycab India, Brigade Enterprises, and others on October 31?",
+        "url": "https://www.moneycontrol.com/news/business/markets/trade-spotlight-how-should-you-trade-bhel-bpcl-nbcc-eclerx-services-polycab-india-brigade-enterprises-and-others-on-october-31-13643852.html",
+        "published_at": null
+      },
+      {
+        "title": "Q2 results impact: BHEL, PB Fintech rise up to 7% on strong earnings growth, Ixigo hits 20% lower circuit",
+        "url": "https://www.moneycontrol.com/news/business/markets/q2-results-impact-bhel-pb-fintech-rise-up-to-3-on-strong-earnings-growth-ixigo-hits-20-lower-circuit-13641793.html",
+        "published_at": null
+      },
+      {
+        "title": "Buy BHEL; target of Rs 250: Prabhudas Lilladher",
+        "url": "https://www.moneycontrol.com/news/business/stocks/buy-bhel-target-of-rs-250-prabhudas-lilladher-13642698.html",
+        "published_at": null
+      }
+    ],
+    "POLYCAB": [
+      {
+        "title": "Trade Spotlight: How should you trade BHEL, BPCL, NBCC, eClerx Services, Polycab India, Brigade Enterprises, and others on October 31?",
+        "url": "https://www.moneycontrol.com/news/business/markets/trade-spotlight-how-should-you-trade-bhel-bpcl-nbcc-eclerx-services-polycab-india-brigade-enterprises-and-others-on-october-31-13643852.html",
+        "published_at": null
+      }
+    ],
+    "NBCC": [
+      {
+        "title": "Trade Spotlight: How should you trade BHEL, BPCL, NBCC, eClerx Services, Polycab India, Brigade Enterprises, and others on October 31?",
+        "url": "https://www.moneycontrol.com/news/business/markets/trade-spotlight-how-should-you-trade-bhel-bpcl-nbcc-eclerx-services-polycab-india-brigade-enterprises-and-others-on-october-31-13643852.html",
+        "published_at": null
+      }
+    ],
+    "ADANI": [
+      {
+        "title": "Trade Spotlight: How should you trade BHEL, BPCL, NBCC, eClerx Services, Polycab India, Brigade Enterprises, and others on October 31?",
+        "url": "https://www.moneycontrol.com/news/business/markets/trade-spotlight-how-should-you-trade-bhel-bpcl-nbcc-eclerx-services-polycab-india-brigade-enterprises-and-others-on-october-31-13643852.html",
+        "published_at": null
+      },
+      {
+        "title": "Adani Energy Solutions shares jump up to 7% on bullish brokerage calls",
+        "url": "https://www.moneycontrol.com/news/business/markets/adani-energy-solutions-shares-jump-up-to-7-on-bullish-brokerage-calls-13640129.html",
+        "published_at": null
+      }
+    ],
+    "CANARA": [
+      {
+        "title": "Canara Bank shares jump 4% to near 15-year high after lender’s Q2 net profit rises 19%, asset quality improves",
+        "url": "https://www.moneycontrol.com/news/business/markets/canara-bank-shares-jump-4-to-near-15-year-high-after-lender-s-q2-net-profit-rises-19-asset-quality-improves-13642739.html",
+        "published_at": null
+      }
+    ],
+    "DRREDDY": [
+      {
+        "title": "Dr Reddy's Labs falls 6% after firm gets non-compliance notice for semaglutide in Canada",
+        "url": "https://www.moneycontrol.com/news/business/markets/dr-reddy-s-labs-falls-6-after-firm-gets-non-compliance-notice-for-semaglutide-in-canada-13641860.html",
+        "published_at": null
+      },
+      {
+        "title": "Sell Dr Reddys Laboraories; target of Rs 1140: Deven Choksey",
+        "url": "https://www.moneycontrol.com/news/business/stocks/sell-dr-reddys-laboraories-target-of-rs-1140-deven-choksey-13642005.html",
+        "published_at": null
+      }
+    ],
+    "IXIGO": [
+      {
+        "title": "Q2 results impact: BHEL, PB Fintech rise up to 7% on strong earnings growth, Ixigo hits 20% lower circuit",
+        "url": "https://www.moneycontrol.com/news/business/markets/q2-results-impact-bhel-pb-fintech-rise-up-to-3-on-strong-earnings-growth-ixigo-hits-20-lower-circuit-13641793.html",
+        "published_at": null
+      }
+    ],
+    "NUVAMA": [
+      {
+        "title": "Buy Star Health; target of Rs 550: Nuvama Institutional Equities",
+        "url": "https://www.moneycontrol.com/news/business/stocks/buy-star-health-target-of-rs-550-nuvama-institutional-equities-13642526.html",
+        "published_at": null
+      }
+    ],
+    "HPCL": [
+      {
+        "title": "Indian Oil, HPCL, BPCL shares rise up to 6% as oil prices extend decline",
+        "url": "https://www.moneycontrol.com/news/business/markets/indian-oil-hpcl-bpcl-rise-up-to-6-as-oil-prices-extend-decline-13639686.html",
+        "published_at": null
+      }
+    ],
+    "HINDPETRO": [
+      {
+        "title": "Indian Oil, HPCL, BPCL shares rise up to 6% as oil prices extend decline",
+        "url": "https://www.moneycontrol.com/news/business/markets/indian-oil-hpcl-bpcl-rise-up-to-6-as-oil-prices-extend-decline-13639686.html",
+        "published_at": null
+      }
+    ],
+    "COGNIZANT": [
+      {
+        "title": "Bombay Coated and Special Steels raises Rs 7.92 crore in pre-IPO round, cuts fresh issue size",
+        "url": "https://www.moneycontrol.com/news/business/ipo/bombay-coated-and-special-steels-raises-rs-7-92-crore-in-pre-ipo-round-cuts-fresh-issue-size-13640647.html",
+        "published_at": null
+      }
+    ],
+    "VEDL": [
+      {
+        "title": "SEBI puts Vedanta Group's Sterlite Electric public listing on hold",
+        "url": "https://www.moneycontrol.com/news/business/ipo/sebi-puts-vedanta-group-s-sterlite-electric-public-listing-on-hold-13635077.html",
+        "published_at": null
+      }
+    ]
+  }
+}
