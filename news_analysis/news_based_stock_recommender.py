@@ -335,7 +335,7 @@ class NewsBasedStockRecommender:
 def main():
     """Main entry point."""
     recommender = NewsBasedStockRecommender()
-    result = recommender.recommend_stocks(max_stocks=20, top_recommendations=3)
+    result = recommender.recommend_stocks(max_stocks=200, top_recommendations=3)
     return result
 
 

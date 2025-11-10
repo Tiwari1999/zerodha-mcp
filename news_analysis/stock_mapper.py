@@ -14,6 +14,7 @@ from collections import defaultdict
 
 try:
     import requests
+
     REQUESTS_AVAILABLE = True
 except ImportError:
     REQUESTS_AVAILABLE = False
@@ -21,7 +22,7 @@ except ImportError:
 
 class StockMapper:
     """Maps company names to stock ticker symbols for Indian markets."""
-    
+
     def __init__(self, mapping_file: Optional[str] = None):
         """
         Initialize stock mapper.
@@ -32,23 +33,37 @@ class StockMapper:
         self.company_to_ticker: Dict[str, str] = {}
         self.ticker_to_companies: Dict[str, Set[str]] = defaultdict(set)
         self.ticker_aliases: Dict[str, str] = {}
-        
+
         # Load mappings
         if mapping_file and Path(mapping_file).exists():
             self.load_from_file(mapping_file)
         else:
             self.load_default_mappings()
-    
+
     def load_default_mappings(self):
-        """Load comprehensive default mappings for Indian stocks."""
-        # Comprehensive NSE/BSE stock mappings
-        # Format: {ticker: [company_name_variations]}
+        """Load mappings. Prefer NSE EQUITY_L.csv if available, else use minimal seed map."""
+        # Try loading NSE list from EQUITY_L.csv at repo root
+        repo_root = Path(__file__).resolve().parents[1]
+        csv_path_candidates = [
+            repo_root / "EQUITY_L.csv",
+            Path.cwd() / "EQUITY_L.csv",
+        ]
+
+        for csv_path in csv_path_candidates:
+            if csv_path.exists():
+                try:
+                    self._load_from_equity_csv(csv_path)
+                    return
+                except Exception:
+                    # Fallback to seed map below
+                    break
+
+        # Seed mappings (fallback if CSV not found)
         stock_mappings = {
             # Large Cap Stocks
             'RELIANCE': ['Reliance Industries', 'Reliance', 'RIL', 'Reliance Industries Limited'],
             'TCS': ['Tata Consultancy Services', 'TCS', 'Tata CS'],
             'HDFCBANK': ['HDFC Bank', 'HDFC Bank Limited', 'HDFC'],
-            'INFY': ['Infosys', 'Infosys Limited', 'Infosys Technologies'],
             'ICICIBANK': ['ICICI Bank', 'ICICI Bank Limited', 'ICICI'],
             'HDFC': ['Housing Development Finance Corporation', 'HDFC Ltd'],
             'BHARTIARTL': ['Bharti Airtel', 'Airtel', 'Bharti', 'Airtel Limited'],
@@ -57,7 +72,8 @@ class StockMapper:
             'ITC': ['ITC Limited', 'ITC', 'ITC Ltd'],
             'LICI': ['LIC', 'Life Insurance Corporation', 'LIC India', 'LIC of India'],
             'KOTAKBANK': ['Kotak Mahindra Bank', 'Kotak Bank', 'Kotak', 'Kotak Mahindra'],
-            'LT': ['Larsen & Toubro', 'L&T', 'L and T', 'Larsen Toubro', 'Larsen and Toubro', 'L&T Limited', 'Larsen & Toubro Limited'],
+            'LT': ['Larsen & Toubro', 'L&T', 'L and T', 'Larsen Toubro', 'Larsen and Toubro', 'L&T Limited',
+                   'Larsen & Toubro Limited'],
             'INFY': ['Infosys', 'Infosys Limited', 'Infosys Technologies', 'Infosys Ltd'],
             'HCLTECH': ['HCL Technologies', 'HCL', 'HCL Tech', 'HCL Technologies Limited'],
             'AXISBANK': ['Axis Bank', 'Axis Bank Limited'],
@@ -132,17 +148,52 @@ class StockMapper:
             'STUDDS': ['Studds Accessories', 'Studds', 'Studds Accessories Limited'],
             'PINE': ['Pine Labs', 'Pine Labs Private', 'Pine Labs Limited'],
         }
-        
-        # Build mappings
+
+        # Build mappings from seed
         for ticker, names in stock_mappings.items():
-            self.ticker_to_companies[ticker].add(ticker)
-            for name in names:
-                # Normalize company name
-                normalized = self._normalize_company_name(name)
-                self.company_to_ticker[normalized] = ticker
-                self.ticker_to_companies[ticker].add(name)
-                self.ticker_to_companies[ticker].add(normalized)
-    
+            self._add_mapping_entries(ticker, names)
+
+    def _add_mapping_entries(self, ticker: str, names: List[str]):
+        """Add a ticker and its company name variations into internal maps."""
+        self.ticker_to_companies[ticker].add(ticker)
+        self.company_to_ticker[ticker] = ticker
+        for name in names:
+            normalized = self._normalize_company_name(name)
+            self.company_to_ticker[normalized] = ticker
+            self.ticker_to_companies[ticker].add(name)
+            self.ticker_to_companies[ticker].add(normalized)
+
+    def _load_from_equity_csv(self, csv_path: Path):
+        """Load tickers and names from NSE EQUITY_L.csv (SYMBOL, NAME OF COMPANY, SERIES).
+
+        Only include series EQ (main trading) to avoid special series noise.
+        """
+        with open(csv_path, newline="", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                symbol = (row.get("SYMBOL") or "").strip().upper()
+                name = (row.get("NAME OF COMPANY") or "").strip()
+                series = (row.get(" SERIES") or row.get("SERIES") or "").strip().upper()
+                if not symbol or not name:
+                    continue
+                # Prefer EQ series; if SERIES column absent or empty, still include
+                if series and series not in {"EQ", "BE", "BZ"}:
+                    # Keep common series too (BE/BZ often appear in news); skip others
+                    continue
+
+                # Build variations
+                variations = [name, re.sub(r"\b(LIMITED|LTD\.?|PVT\.?|PRIVATE|COMPANY|CO\.?|INDIA)\b", "", name,
+                                           flags=re.I).strip(), symbol]
+                # Keep ticker itself as a mention
+
+                # Special case: replace & with AND and vice-versa
+                if "&" in name or " AND " in name.upper():
+                    variations.append(name.replace("&", "AND"))
+                    variations.append(name.replace("AND", "&"))
+
+                # Add entries
+                self._add_mapping_entries(symbol, [v for v in variations if v])
+
     def _normalize_company_name(self, name: str) -> str:
         """Normalize company name for matching."""
         name = name.upper().strip()
@@ -155,7 +206,7 @@ class StockMapper:
         # Remove extra spaces
         name = re.sub(r'\s+', ' ', name)
         return name.strip()
-    
+
     def find_ticker(self, text: str, threshold: float = 0.7) -> List[Tuple[str, str, float]]:
         """
         Find stock tickers mentioned in text using fuzzy matching.
@@ -170,14 +221,14 @@ class StockMapper:
         text_upper = text.upper()
         found_tickers = []
         seen_tickers = set()
-        
+
         # Method 1: Direct ticker match
         for ticker in self.ticker_to_companies.keys():
             if ticker in text_upper:
                 if ticker not in seen_tickers:
                     found_tickers.append((ticker, ticker, 1.0))
                     seen_tickers.add(ticker)
-        
+
         # Method 2: Company name fuzzy matching (improved)
         # Extract words and phrases more carefully
         text_words = re.findall(r'\b[A-Z][A-Za-z0-9]{1,20}\b', text_upper)
@@ -188,13 +239,13 @@ class StockMapper:
                 text_phrases.append(text_words[i])
             # Two-word phrases
             if i < len(text_words) - 1:
-                phrase = f"{text_words[i]} {text_words[i+1]}"
+                phrase = f"{text_words[i]} {text_words[i + 1]}"
                 text_phrases.append(phrase)
             # Three-word phrases
             if i < len(text_words) - 2:
-                phrase = f"{text_words[i]} {text_words[i+1]} {text_words[i+2]}"
+                phrase = f"{text_words[i]} {text_words[i + 1]} {text_words[i + 2]}"
                 text_phrases.append(phrase)
-        
+
         # First pass: Direct matches (high confidence)
         for phrase in text_phrases:
             normalized = self._normalize_company_name(phrase)
@@ -205,7 +256,7 @@ class StockMapper:
                     if len(phrase) >= 3 and phrase in text_upper:
                         found_tickers.append((ticker, phrase, 1.0))
                         seen_tickers.add(ticker)
-        
+
         # Second pass: Fuzzy matches (only if no direct match found)
         for phrase in text_phrases:
             if len(phrase) < 4:  # Skip very short phrases
@@ -214,7 +265,7 @@ class StockMapper:
             # Skip if already matched directly
             if normalized in self.company_to_ticker:
                 continue
-            
+
             # Fuzzy match with stricter requirements
             best_match = None
             best_score = 0.0
@@ -222,24 +273,24 @@ class StockMapper:
                 # Skip if ticker already found
                 if ticker in seen_tickers:
                     continue
-                
+
                 # Use better similarity metric (require word boundary match for better accuracy)
                 if phrase in company_name or company_name in phrase:
                     score = 0.95  # High score for substring match
                 else:
                     score = SequenceMatcher(None, normalized, company_name).ratio()
-                
+
                 # Require higher threshold and better match quality
                 if score > best_score and score >= max(threshold, 0.85):
                     # Additional check: ensure phrase length similarity
                     if abs(len(phrase) - len(company_name)) / max(len(phrase), len(company_name)) < 0.5:
                         best_score = score
                         best_match = (ticker, phrase, score)
-            
+
             if best_match and best_match[0] not in seen_tickers:
                 found_tickers.append(best_match)
                 seen_tickers.add(best_match[0])
-        
+
         # Method 3: Look for "X shares", "X stock", "X IPO" patterns
         patterns = [
             r'\b([A-Z][A-Z0-9]{2,15})\s+(?:SHARES?|STOCK|STOCKS|IPO|LIMITED|LTD)\b',
@@ -254,11 +305,11 @@ class StockMapper:
                     if actual_ticker not in seen_tickers:
                         found_tickers.append((actual_ticker, match, 0.9))
                         seen_tickers.add(actual_ticker)
-        
+
         # Sort by confidence (descending)
         found_tickers.sort(key=lambda x: x[2], reverse=True)
         return found_tickers
-    
+
     def extract_tickers_from_text(self, text: str, title: str = "") -> List[str]:
         """
         Extract stock tickers from text (simple interface).
@@ -272,7 +323,7 @@ class StockMapper:
         """
         full_text = f"{title} {text}"
         matches = self.find_ticker(full_text, threshold=0.75)  # Higher threshold to reduce false positives
-        
+
         # Prioritize high-confidence matches and exact matches
         ticker_scores = {}
         for ticker, matched_text, score in matches:
@@ -285,10 +336,10 @@ class StockMapper:
             # Lower confidence matches only if not already found with higher confidence
             elif score >= 0.75 and ticker not in ticker_scores:
                 ticker_scores[ticker] = score
-        
+
         # Return tickers sorted by confidence
         return [ticker for ticker, _ in sorted(ticker_scores.items(), key=lambda x: x[1], reverse=True)]
-    
+
     def save_to_file(self, filepath: str):
         """Save mappings to JSON file."""
         data = {
@@ -297,7 +348,7 @@ class StockMapper:
         }
         with open(filepath, 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
-    
+
     def load_from_file(self, filepath: str):
         """Load mappings from JSON file."""
         with open(filepath, 'r', encoding='utf-8') as f:
@@ -305,7 +356,7 @@ class StockMapper:
             self.company_to_ticker = data.get('company_to_ticker', {})
             ticker_to_companies = data.get('ticker_to_companies', {})
             self.ticker_to_companies = {k: set(v) for k, v in ticker_to_companies.items()}
-    
+
     def get_company_name(self, ticker: str) -> Optional[str]:
         """Get primary company name for a ticker."""
         companies = self.ticker_to_companies.get(ticker)
@@ -313,7 +364,7 @@ class StockMapper:
             # Return the longest name (usually the full name)
             return max(companies, key=len)
         return None
-    
+
     def get_all_tickers(self) -> Set[str]:
         """Get all known ticker symbols."""
         return set(self.ticker_to_companies.keys())
@@ -322,6 +373,7 @@ class StockMapper:
 # Global instance for easy access
 _stock_mapper = None
 
+
 def get_stock_mapper() -> StockMapper:
     """Get global stock mapper instance."""
     global _stock_mapper
@@ -329,10 +381,11 @@ def get_stock_mapper() -> StockMapper:
         _stock_mapper = StockMapper()
     return _stock_mapper
 
+
 if __name__ == "__main__":
     # Test the mapper
     mapper = StockMapper()
-    
+
     test_texts = [
         "Reliance Industries shares rise 5%",
         "TCS announces new project",
@@ -340,14 +393,13 @@ if __name__ == "__main__":
         "Infosys reported strong Q2 results",
         "HDFC Bank announces dividend",
     ]
-    
+
     print("Testing Stock Mapper:")
     print("=" * 80)
     for text in test_texts:
         tickers = mapper.extract_tickers_from_text(text)
         print(f"\nText: {text}")
         print(f"Found tickers: {tickers}")
-    
+
     print(f"\n\nTotal tickers loaded: {len(mapper.get_all_tickers())}")
     print(f"Total company name mappings: {len(mapper.company_to_ticker)}")
-

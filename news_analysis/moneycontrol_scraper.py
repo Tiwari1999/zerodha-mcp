@@ -9,20 +9,22 @@ Scrape Moneycontrol 'Markets' sections:
 
 from __future__ import annotations
 
+import json
 import re
 import time
-import json
 from datetime import datetime, timedelta, timezone
+from pathlib import Path
 from urllib.parse import urljoin
 
+import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 from dateutil import parser as date_parser
-import pandas as pd
 
 # Import stock mapper for comprehensive ticker extraction
 try:
-    from .stock_mapper import get_stock_mapper
+    from news_analysis import get_stock_mapper
+
     STOCK_MAPPER_AVAILABLE = True
 except ImportError:
     STOCK_MAPPER_AVAILABLE = False
@@ -38,7 +40,7 @@ SECTIONS = [
 ]
 
 # Scrape window / limits
-HOURS_BACK = 24
+HOURS_BACK = 48
 MAX_PAGES_PER_SECTION = 5  # Reduced for faster scraping
 SLEEP_LISTING_SEC = 0.5  # Reduced delay
 SLEEP_ARTICLE_SEC = 0.3  # Reduced delay
@@ -78,13 +80,29 @@ COOKIES = {
 # URL pattern for articles: /news/...-123456.html
 ARTICLE_RE = re.compile(r"^https?://www\.moneycontrol\.com/news/.+-(\d+)\.html(?:\?.*)?$")
 
-# Initialize stock mapper for comprehensive ticker extraction
-if STOCK_MAPPER_AVAILABLE:
-    _stock_mapper = get_stock_mapper()
-    KNOWN_STOCKS = _stock_mapper.get_all_tickers()
-else:
-    # Fallback: Limited stock list if mapper not available
-    KNOWN_STOCKS = {
+# Lazy initialization of stock mapper (avoid circular import and module-level init delays)
+_stock_mapper = None
+KNOWN_STOCKS = None
+
+def _get_stock_mapper():
+    """Lazy initialization of stock mapper."""
+    global _stock_mapper, KNOWN_STOCKS
+    if _stock_mapper is None:
+        if STOCK_MAPPER_AVAILABLE:
+            try:
+                _stock_mapper = get_stock_mapper()
+                KNOWN_STOCKS = _stock_mapper.get_all_tickers()
+            except Exception as e:
+                print(f"[WARN] Failed to load stock mapper: {e}, using limited stock list")
+                _stock_mapper = None
+                KNOWN_STOCKS = _get_fallback_stocks()
+        else:
+            KNOWN_STOCKS = _get_fallback_stocks()
+    return _stock_mapper
+
+def _get_fallback_stocks():
+    """Fallback: Limited stock list if mapper not available."""
+    return {
         'TCS', 'INFY', 'RELIANCE', 'HDFCBANK', 'HDFC', 'ICICIBANK', 'BHARTIARTL',
         'SBIN', 'BAJFINANCE', 'ITC', 'LICI', 'KOTAKBANK', 'LT', 'HCLTECH',
         'AXISBANK', 'ASIANPAINT', 'MARUTI', 'TITAN', 'TATAMOTORS', 'NTPC',
@@ -101,8 +119,10 @@ else:
         'ADITYA', 'BIRLA', 'BHEL', 'AMS', 'ADANI', 'BANDHAN', 'VODAFONE'
     }
 
+
 def now_utc() -> datetime:
     return datetime.now(timezone.utc)
+
 
 def get_soup(session: requests.Session, url: str) -> BeautifulSoup | None:
     """Get HTML content with appropriate headers."""
@@ -110,98 +130,111 @@ def get_soup(session: requests.Session, url: str) -> BeautifulSoup | None:
         # Remove Accept-Encoding to avoid compression issues
         html_headers = HEADERS.copy()
         html_headers.pop("Accept-Encoding", None)
-        
-        r = session.get(url, headers=html_headers, cookies=COOKIES, timeout=20, allow_redirects=True)
+
+        # Use shorter timeout to avoid hanging
+        r = session.get(url, headers=html_headers, cookies=COOKIES, timeout=15, allow_redirects=True)
         r.raise_for_status()
-        
+
         # Ensure proper encoding
         if r.encoding is None or r.encoding == 'ISO-8859-1':
             r.encoding = 'utf-8'
-        
+
         if not r.text or len(r.text) < 100:
-            print(f"[WARN] Response too short for {url}")
             return None
-        
+
         # Check if we got HTML
         if "<html" not in r.text.lower() and "<body" not in r.text.lower():
-            print(f"[WARN] Response doesn't appear to be HTML for {url}")
             return None
-            
+
         return BeautifulSoup(r.text, "html.parser")
+    except requests.exceptions.Timeout:
+        print(f"  ⏱️  Timeout fetching {url}")
+        return None
     except requests.exceptions.HTTPError as e:
-        print(f"[WARN] HTTP Error {e.response.status_code} for {url}")
+        print(f"  ⚠️  HTTP {e.response.status_code} for {url}")
+        return None
+    except requests.exceptions.RequestException as e:
+        print(f"  ⚠️  Request failed for {url}: {type(e).__name__}")
         return None
     except Exception as e:
-        print(f"[WARN] GET failed {url}: {e}")
+        print(f"  ⚠️  Error parsing {url}: {type(e).__name__}")
         return None
+
 
 def parse_listing_links(soup: BeautifulSoup) -> list[str]:
     """Extract article links from Moneycontrol listing page."""
     links = set()
-    
+
     # Find all anchor tags
     for a in soup.find_all("a", href=True):
         href = a.get("href", "").strip()
         if not href:
             continue
-        
+
         # Make absolute URL
         if not href.startswith("http"):
             href = urljoin(BASE, href)
-        
+
         # Must be a Moneycontrol news article URL
         if not href.startswith("https://www.moneycontrol.com/news/"):
             continue
-        
+
         # Skip navigation/category links (don't have .html or article IDs)
         if href.endswith("/") or "/news/" in href and href.count("/") <= 4:
             continue
-        
+
         # Must match article pattern (ends with number.html)
         if ARTICLE_RE.match(href):
             # Check if it's from markets/stocks/ipo/commodities sections
             if any(seg in href for seg in (
-                "/news/business/markets/",
-                "/news/business/stocks/",
-                "/news/business/ipo/",
-                "/news/business/commodities/",
+                    "/news/business/markets/",
+                    "/news/business/stocks/",
+                    "/news/business/ipo/",
+                    "/news/business/commodities/",
             )):
                 links.add(href)
         # Also check for .html links with numbers (article IDs)
         elif ".html" in href and any(char.isdigit() for char in href):
             # Check if it's from our target sections
             if any(seg in href for seg in (
-                "/news/business/markets/",
-                "/news/business/stocks/",
-                "/news/business/ipo/",
-                "/news/business/commodities/",
+                    "/news/business/markets/",
+                    "/news/business/stocks/",
+                    "/news/business/ipo/",
+                    "/news/business/commodities/",
             )):
                 links.add(href)
-    
+
     return list(links)
+
 
 def extract_stock_tickers(content: str, title: str = "") -> list[str]:
     """Extract stock tickers from content using comprehensive stock mapper."""
-    if STOCK_MAPPER_AVAILABLE:
+    mapper = _get_stock_mapper()
+    if mapper:
         # Use comprehensive stock mapper with fuzzy matching
-        return _stock_mapper.extract_tickers_from_text(content, title)
+        return mapper.extract_tickers_from_text(content, title)
     else:
         # Fallback to simple pattern matching
+        if KNOWN_STOCKS is None:
+            _get_stock_mapper()  # Initialize if not done yet
+        
         tickers = set()
         full_text = f"{title} {content}".upper()
-        
+
         # Pattern 1: Known stocks only (most reliable)
-        for stock in KNOWN_STOCKS:
+        for stock in KNOWN_STOCKS or set():
             if stock in full_text:
                 tickers.add(stock)
-        
+
         # Pattern 2: Stock mentions with context (e.g., "TCS shares", "Reliance IPO")
-        stock_context = re.findall(r'\b([A-Z]{3,10})\s+(?:shares|share|stock|stocks|IPO|Ltd|Limited|Corp|Corporation)\b', full_text)
+        stock_context = re.findall(
+            r'\b([A-Z]{3,10})\s+(?:shares|share|stock|stocks|IPO|Ltd|Limited|Corp|Corporation)\b', full_text)
         for stock in stock_context:
-            if stock in KNOWN_STOCKS or (len(stock) >= 3 and stock.isalpha()):
+            if stock in (KNOWN_STOCKS or set()) or (len(stock) >= 3 and stock.isalpha()):
                 tickers.add(stock)
-        
+
         return sorted(list(tickers))
+
 
 def parse_article(session: requests.Session, url: str) -> dict:
     """Parse individual article page."""
@@ -220,9 +253,9 @@ def parse_article(session: requests.Session, url: str) -> dict:
     # Published time
     published_dt = None
     cand = (
-        soup.find("meta", {"property": "article:published_time"})
-        or soup.find("meta", {"name": "pubdate"})
-        or soup.find("meta", {"name": "publish-date"})
+            soup.find("meta", {"property": "article:published_time"})
+            or soup.find("meta", {"name": "pubdate"})
+            or soup.find("meta", {"name": "publish-date"})
     )
     if cand and cand.get("content"):
         try:
@@ -264,11 +297,11 @@ def parse_article(session: requests.Session, url: str) -> dict:
 
     # Extract tickers
     tickers = extract_stock_tickers(content or "", title or "")
-    
+
     # Article ID
     m = ARTICLE_RE.match(url)
     article_id = m.group(1) if m else None
-    
+
     return {
         "id": article_id,
         "url": url,
@@ -281,6 +314,7 @@ def parse_article(session: requests.Session, url: str) -> dict:
         "content": (content[:20000] if content else None),
     }
 
+
 def page_url(section_url: str, page: int) -> str:
     """Get paginated URL."""
     if page <= 1:
@@ -290,8 +324,11 @@ def page_url(section_url: str, page: int) -> str:
         join += "/"
     return f"{join}?page={page}"
 
+
 def scrape_markets_news():
     """Scrape Moneycontrol markets news and extract stock tickers."""
+    print(f"🚀 Starting scraper... (max {MAX_PAGES_PER_SECTION} pages/section, {MAX_ARTICLES_PER_SECTION} articles/section)")
+    
     session = requests.Session()
     session.cookies.update(COOKIES)
 
@@ -300,34 +337,40 @@ def scrape_markets_news():
     cutoff = now_utc() - timedelta(hours=HOURS_BACK)
     total_articles_scraped = 0
 
-    for section in SECTIONS:
+    for section_idx, section in enumerate(SECTIONS, 1):
+        print(f"\n📰 Section {section_idx}/{len(SECTIONS)}: {section}")
         section_articles = 0
-        
+
         for p in range(1, MAX_PAGES_PER_SECTION + 1):
             url = page_url(section, p)
+            print(f"  📄 Page {p}: {url}")
             soup = get_soup(session, url)
             if not soup:
+                print(f"  ⚠️  Failed to fetch page {p}, stopping section")
                 break
 
             links = parse_listing_links(soup)
+            print(f"  ✅ Found {len(links)} article links")
             if not links:
+                print(f"  ⚠️  No links found on page {p}, stopping section")
                 break
 
             stop_due_to_time = False
-            for link in sorted(set(links)):
+            for link_idx, link in enumerate(sorted(set(links)), 1):
                 # Limit articles per section
                 if section_articles >= MAX_ARTICLES_PER_SECTION:
-                    print(f"    Reached max articles ({MAX_ARTICLES_PER_SECTION}) for this section")
+                    print(f"  ⏹️  Reached max articles ({MAX_ARTICLES_PER_SECTION}) for this section")
                     break
-                    
+
                 key = link.split("/")[-1].replace(".html", "") if ".html" in link else link
                 if key in seen_ids:
                     continue
                 seen_ids.add(key)
-                
+
+                print(f"    [{link_idx}/{len(links)}] Scraping: {link[:80]}...")
                 time.sleep(SLEEP_ARTICLE_SEC)
                 art = parse_article(session, link)
-                
+
                 # Only add if article was successfully parsed
                 if art and not art.get("error"):
                     # Time filter
@@ -339,22 +382,32 @@ def scrape_markets_news():
                                 dt = dt.replace(tzinfo=timezone.utc)
                             if dt < cutoff:
                                 stop_due_to_time = True
+                                print(f"    ⏰ Article too old, stopping time-based scraping")
                         except Exception:
                             pass
 
                     all_items.append(art)
                     section_articles += 1
                     total_articles_scraped += 1
+                    tickers = art.get("tickers", [])
+                    if tickers:
+                        print(f"      ✅ Found {len(tickers)} tickers: {', '.join(tickers[:5])}")
+                else:
+                    print(f"      ⚠️  Failed to parse article")
 
             time.sleep(SLEEP_LISTING_SEC)
 
             if stop_due_to_time or section_articles >= MAX_ARTICLES_PER_SECTION:
                 break
+        
+        print(f"  ✅ Section complete: {section_articles} articles scraped")
 
+    print(f"\n✅ Scraping complete! Total articles: {total_articles_scraped}")
+    
     # Aggregate tickers
     ticker_count = {}
     ticker_articles = {}
-    
+
     for item in all_items:
         for ticker in item.get("tickers", []):
             ticker_count[ticker] = ticker_count.get(ticker, 0) + 1
@@ -367,7 +420,7 @@ def scrape_markets_news():
             })
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    json_file = f"moneycontrol_markets_{timestamp}.json"
+    json_file = f"news_analysis/moneycontrol_markets_{timestamp}.json"
     json_data = {
         "scrape_date": datetime.now().isoformat(),
         "scrape_status": "success" if all_items else "no_articles_found",
@@ -378,19 +431,31 @@ def scrape_markets_news():
         "ticker_summary": ticker_count,
         "ticker_articles": ticker_articles
     }
+
+    # Ensure directory exists
+    Path(json_file).parent.mkdir(parents=True, exist_ok=True)
     
     with open(json_file, "w", encoding="utf-8") as f:
         json.dump(json_data, f, ensure_ascii=False, indent=2)
-    
+    print(f"💾 Saved JSON: {json_file}")
+
     csv_file = None
     if all_items:
         df = pd.DataFrame(all_items)
-        csv_file = f"moneycontrol_markets_{timestamp}.csv"
+        csv_file = f"news_analysis/moneycontrol_markets_{timestamp}.csv"
         df.to_csv(csv_file, index=False)
-    
+        print(f"💾 Saved CSV: {csv_file}")
+
     # Return tickers sorted by mention count
     sorted_tickers = sorted(ticker_count.items(), key=lambda x: x[1], reverse=True)
     
+    print(f"\n📊 Summary:")
+    print(f"   - Total articles: {len(all_items)}")
+    print(f"   - Articles with tickers: {sum(1 for item in all_items if item.get('tickers'))}")
+    print(f"   - Unique stocks found: {len(ticker_count)}")
+    if sorted_tickers:
+        print(f"   - Top 5 stocks: {', '.join([f'{t[0]}({t[1]})' for t in sorted_tickers[:5]])}")
+
     return {
         "articles": all_items,
         "tickers": [t[0] for t in sorted_tickers],
@@ -398,6 +463,7 @@ def scrape_markets_news():
         "ticker_articles": ticker_articles,
         "files": {"json": json_file, "csv": csv_file}
     }
+
 
 if __name__ == "__main__":
     scrape_markets_news()
