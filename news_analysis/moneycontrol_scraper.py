@@ -80,44 +80,18 @@ COOKIES = {
 # URL pattern for articles: /news/...-123456.html
 ARTICLE_RE = re.compile(r"^https?://www\.moneycontrol\.com/news/.+-(\d+)\.html(?:\?.*)?$")
 
-# Lazy initialization of stock mapper (avoid circular import and module-level init delays)
+# Lazy initialization of stock mapper
 _stock_mapper = None
-KNOWN_STOCKS = None
 
 def _get_stock_mapper():
     """Lazy initialization of stock mapper."""
-    global _stock_mapper, KNOWN_STOCKS
-    if _stock_mapper is None:
-        if STOCK_MAPPER_AVAILABLE:
-            try:
-                _stock_mapper = get_stock_mapper()
-                KNOWN_STOCKS = _stock_mapper.get_all_tickers()
-            except Exception as e:
-                print(f"[WARN] Failed to load stock mapper: {e}, using limited stock list")
-                _stock_mapper = None
-                KNOWN_STOCKS = _get_fallback_stocks()
-        else:
-            KNOWN_STOCKS = _get_fallback_stocks()
+    global _stock_mapper
+    if _stock_mapper is None and STOCK_MAPPER_AVAILABLE:
+        try:
+            _stock_mapper = get_stock_mapper()
+        except Exception:
+            pass
     return _stock_mapper
-
-def _get_fallback_stocks():
-    """Fallback: Limited stock list if mapper not available."""
-    return {
-        'TCS', 'INFY', 'RELIANCE', 'HDFCBANK', 'HDFC', 'ICICIBANK', 'BHARTIARTL',
-        'SBIN', 'BAJFINANCE', 'ITC', 'LICI', 'KOTAKBANK', 'LT', 'HCLTECH',
-        'AXISBANK', 'ASIANPAINT', 'MARUTI', 'TITAN', 'TATAMOTORS', 'NTPC',
-        'INDUSINDBK', 'POWERGRID', 'ULTRACEMCO', 'TATACONSUM', 'WIPRO', 'TECHM',
-        'NESTLEIND', 'ADANIENT', 'TATAPOWER', 'COALINDIA', 'BPCL', 'ONGC',
-        'HINDALCO', 'VEDL', 'JSWSTEEL', 'TATASTEEL', 'HINDUNILVR', 'DABUR',
-        'BRITANNIA', 'GODREJCP', 'MARICO', 'GAIL', 'IOC', 'IRCTC', 'IDEA',
-        'SUZLON', 'BEL', 'HYUNDAI', 'BHEL', 'HPCL', 'MTAR', 'LENSKART',
-        'SHADOWFAX', 'SWIGGY', 'GROWW', 'ORKLA', 'STUDDS', 'PINE', 'TENNECO',
-        'SAFECURE', 'CURIS', 'PICCADIL', 'DLF', 'BANDHAN', 'UNION', 'POLYCAB',
-        'ECLERX', 'NBCC', 'HUDCO', 'HINDPETRO', 'CANARA', 'BOSCH', 'CIPLA',
-        'COGNIZANT', 'DRREDDY', 'CONCOR', 'SAGILITY', 'IXIGO', 'PBFINTECH',
-        'NUVAMA', 'MOTILAL', 'OSWAL', 'HDFCAMC', 'DYNAMATIC', 'PORINJU',
-        'ADITYA', 'BIRLA', 'BHEL', 'AMS', 'ADANI', 'BANDHAN', 'VODAFONE'
-    }
 
 
 def now_utc() -> datetime:
@@ -127,83 +101,43 @@ def now_utc() -> datetime:
 def get_soup(session: requests.Session, url: str) -> BeautifulSoup | None:
     """Get HTML content with appropriate headers."""
     try:
-        # Remove Accept-Encoding to avoid compression issues
-        html_headers = HEADERS.copy()
-        html_headers.pop("Accept-Encoding", None)
-
-        # Use shorter timeout to avoid hanging
+        html_headers = {k: v for k, v in HEADERS.items() if k != "Accept-Encoding"}
         r = session.get(url, headers=html_headers, cookies=COOKIES, timeout=15, allow_redirects=True)
         r.raise_for_status()
-
-        # Ensure proper encoding
-        if r.encoding is None or r.encoding == 'ISO-8859-1':
+        
+        if r.encoding in (None, 'ISO-8859-1'):
             r.encoding = 'utf-8'
-
-        if not r.text or len(r.text) < 100:
+        
+        if not r.text or len(r.text) < 100 or "<html" not in r.text.lower() and "<body" not in r.text.lower():
             return None
-
-        # Check if we got HTML
-        if "<html" not in r.text.lower() and "<body" not in r.text.lower():
-            return None
-
+        
         return BeautifulSoup(r.text, "html.parser")
-    except requests.exceptions.Timeout:
-        print(f"  ⏱️  Timeout fetching {url}")
-        return None
-    except requests.exceptions.HTTPError as e:
-        print(f"  ⚠️  HTTP {e.response.status_code} for {url}")
-        return None
-    except requests.exceptions.RequestException as e:
-        print(f"  ⚠️  Request failed for {url}: {type(e).__name__}")
-        return None
-    except Exception as e:
-        print(f"  ⚠️  Error parsing {url}: {type(e).__name__}")
+    except Exception:
         return None
 
 
 def parse_listing_links(soup: BeautifulSoup) -> list[str]:
     """Extract article links from Moneycontrol listing page."""
+    target_sections = ("/news/business/markets/", "/news/business/stocks/", 
+                      "/news/business/ipo/", "/news/business/commodities/")
     links = set()
-
-    # Find all anchor tags
+    
     for a in soup.find_all("a", href=True):
         href = a.get("href", "").strip()
         if not href:
             continue
-
-        # Make absolute URL
+        
         if not href.startswith("http"):
             href = urljoin(BASE, href)
-
-        # Must be a Moneycontrol news article URL
-        if not href.startswith("https://www.moneycontrol.com/news/"):
+        
+        if (not href.startswith("https://www.moneycontrol.com/news/") or
+            href.endswith("/") or (href.count("/") <= 4) or
+            not any(seg in href for seg in target_sections) or
+            not (ARTICLE_RE.match(href) or (".html" in href and any(c.isdigit() for c in href)))):
             continue
-
-        # Skip navigation/category links (don't have .html or article IDs)
-        if href.endswith("/") or "/news/" in href and href.count("/") <= 4:
-            continue
-
-        # Must match article pattern (ends with number.html)
-        if ARTICLE_RE.match(href):
-            # Check if it's from markets/stocks/ipo/commodities sections
-            if any(seg in href for seg in (
-                    "/news/business/markets/",
-                    "/news/business/stocks/",
-                    "/news/business/ipo/",
-                    "/news/business/commodities/",
-            )):
-                links.add(href)
-        # Also check for .html links with numbers (article IDs)
-        elif ".html" in href and any(char.isdigit() for char in href):
-            # Check if it's from our target sections
-            if any(seg in href for seg in (
-                    "/news/business/markets/",
-                    "/news/business/stocks/",
-                    "/news/business/ipo/",
-                    "/news/business/commodities/",
-            )):
-                links.add(href)
-
+        
+        links.add(href)
+    
     return list(links)
 
 
@@ -211,29 +145,8 @@ def extract_stock_tickers(content: str, title: str = "") -> list[str]:
     """Extract stock tickers from content using comprehensive stock mapper."""
     mapper = _get_stock_mapper()
     if mapper:
-        # Use comprehensive stock mapper with fuzzy matching
-        return mapper.extract_tickers_from_text(content, title)
-    else:
-        # Fallback to simple pattern matching
-        if KNOWN_STOCKS is None:
-            _get_stock_mapper()  # Initialize if not done yet
-        
-        tickers = set()
-        full_text = f"{title} {content}".upper()
-
-        # Pattern 1: Known stocks only (most reliable)
-        for stock in KNOWN_STOCKS or set():
-            if stock in full_text:
-                tickers.add(stock)
-
-        # Pattern 2: Stock mentions with context (e.g., "TCS shares", "Reliance IPO")
-        stock_context = re.findall(
-            r'\b([A-Z]{3,10})\s+(?:shares|share|stock|stocks|IPO|Ltd|Limited|Corp|Corporation)\b', full_text)
-        for stock in stock_context:
-            if stock in (KNOWN_STOCKS or set()) or (len(stock) >= 3 and stock.isalpha()):
-                tickers.add(stock)
-
-        return sorted(list(tickers))
+        return mapper.extract_tickers_from_text(content, title, max_tickers=5)
+    return []
 
 
 def parse_article(session: requests.Session, url: str) -> dict:
@@ -246,54 +159,72 @@ def parse_article(session: requests.Session, url: str) -> dict:
     title = None
     if soup.title:
         title = soup.title.get_text(strip=True)
-    mt = soup.find("meta", property="og:title") or soup.find("meta", attrs={"name": "title"})
-    if mt and mt.get("content"):
-        title = mt["content"].strip()
+    if not title:
+        meta = soup.find("meta", property="og:title") or soup.find("meta", attrs={"name": "title"})
+        title = meta.get("content", "").strip() if meta else None
 
     # Published time
-    published_dt = None
-    cand = (
-            soup.find("meta", {"property": "article:published_time"})
-            or soup.find("meta", {"name": "pubdate"})
-            or soup.find("meta", {"name": "publish-date"})
-    )
-    if cand and cand.get("content"):
+    published_iso = None
+    pub_meta = (soup.find("meta", {"property": "article:published_time"}) or
+                soup.find("meta", {"name": "pubdate"}) or
+                soup.find("meta", {"name": "publish-date"}))
+    if pub_meta and pub_meta.get("content"):
         try:
-            published_dt = date_parser.parse(cand["content"])
-            if not published_dt.tzinfo:
-                published_dt = published_dt.replace(tzinfo=timezone.utc)
+            dt = date_parser.parse(pub_meta["content"])
+            if not dt.tzinfo:
+                dt = dt.replace(tzinfo=timezone.utc)
+            published_iso = dt.astimezone(timezone.utc).isoformat()
         except Exception:
-            published_dt = None
-
-    published_iso = published_dt.astimezone(timezone.utc).isoformat() if published_dt else None
+            pass
 
     # Section
-    section = None
     sec_meta = soup.find("meta", {"property": "article:section"})
-    if sec_meta and sec_meta.get("content"):
-        section = sec_meta["content"].strip()
+    section = str(sec_meta.get("content", "")).strip() if sec_meta and sec_meta.get("content") else None
 
     # Author
-    author = None
-    ma = soup.find("meta", {"name": "author"}) or soup.find("meta", {"property": "article:author"})
-    if ma and ma.get("content"):
-        author = ma["content"].strip()
+    author_meta = soup.find("meta", {"name": "author"}) or soup.find("meta", {"property": "article:author"})
+    author = str(author_meta.get("content", "")).strip() if author_meta and author_meta.get("content") else None
 
-    # Content
+    # Content extraction - try multiple methods
+    skip_words = ['cookie', 'privacy', 'follow us', 'trending', 'powered by', 
+                  'see the top', 'invest now', 'my account', 'search quotes', 'mutual fund']
+    
+    def extract_paragraphs(container):
+        """Extract valid paragraphs from container."""
+        paras = container.find_all('p') if hasattr(container, 'find_all') else []
+        valid = [str(p.get_text(strip=True)) for p in paras 
+                if len(str(p.get_text(strip=True))) > 50 and
+                not any(skip in str(p.get_text(strip=True)).lower() for skip in skip_words)]
+        return '\n\n'.join(valid) if valid else None
+    
     content = None
-    selectors = [
-        "div[itemprop=articleBody]",
-        "div.article-content",
-        "div.articleDetail",
-        "div#content-body",
-        "article",
-        "main",
-    ]
-    for sel in selectors:
-        node = soup.select_one(sel)
-        if node and node.get_text(strip=True):
-            content = node.get_text("\n", strip=True)
-            break
+    # Method 1: disBdy div
+    content_div = soup.find('div', class_=lambda x: x and 'disBdy' in ' '.join(x) if x else False)
+    if content_div:
+        content = str(content_div.get_text("\n", strip=True))
+        if len(content) < 200:
+            content = None
+    
+    # Method 2: section tag
+    if not content or len(content) < 200:
+        section_tag = soup.find('section')
+        if section_tag:
+            content = extract_paragraphs(section_tag)
+    
+    # Method 3: all paragraphs
+    if not content or len(content) < 200:
+        content = extract_paragraphs(soup)
+    
+    # Method 4: other selectors
+    if not content or len(content) < 200:
+        for sel in ["div[itemprop=articleBody]", "div.article-content", 
+                   "div.articleDetail", "div#content-body", "article"]:
+            node = soup.select_one(sel)
+            if node:
+                text = str(node.get_text("\n", strip=True))
+                if len(text) > 200:
+                    content = text
+                    break
 
     # Extract tickers
     tickers = extract_stock_tickers(content or "", title or "")
@@ -311,18 +242,14 @@ def parse_article(session: requests.Session, url: str) -> dict:
         "author": author,
         "tickers": tickers,
         "ticker_count": len(tickers),
-        "content": (content[:20000] if content else None),
+        "content": (content[:2000] if content else None),
     }
 
 
 def page_url(section_url: str, page: int) -> str:
     """Get paginated URL."""
-    if page <= 1:
-        return urljoin(BASE, section_url)
-    join = urljoin(BASE, section_url)
-    if not join.endswith("/"):
-        join += "/"
-    return f"{join}?page={page}"
+    url = urljoin(BASE, section_url)
+    return url if page <= 1 else f"{url.rstrip('/')}/?page={page}"
 
 
 def scrape_markets_news():
@@ -371,29 +298,26 @@ def scrape_markets_news():
                 time.sleep(SLEEP_ARTICLE_SEC)
                 art = parse_article(session, link)
 
-                # Only add if article was successfully parsed
-                if art and not art.get("error"):
-                    # Time filter
-                    published_iso = art.get("published_at")
-                    if published_iso:
-                        try:
-                            dt = date_parser.parse(published_iso)
-                            if dt.tzinfo is None:
-                                dt = dt.replace(tzinfo=timezone.utc)
-                            if dt < cutoff:
-                                stop_due_to_time = True
-                                print(f"    ⏰ Article too old, stopping time-based scraping")
-                        except Exception:
-                            pass
-
-                    all_items.append(art)
-                    section_articles += 1
-                    total_articles_scraped += 1
-                    tickers = art.get("tickers", [])
-                    if tickers:
-                        print(f"      ✅ Found {len(tickers)} tickers: {', '.join(tickers[:5])}")
-                else:
-                    print(f"      ⚠️  Failed to parse article")
+                if not art or art.get("error"):
+                    continue
+                
+                # Time filter
+                if art.get("published_at"):
+                    try:
+                        dt = date_parser.parse(art["published_at"])
+                        if dt.tzinfo is None:
+                            dt = dt.replace(tzinfo=timezone.utc)
+                        if dt < cutoff:
+                            stop_due_to_time = True
+                            break
+                    except Exception:
+                        pass
+                
+                all_items.append(art)
+                section_articles += 1
+                total_articles_scraped += 1
+                if art.get("tickers"):
+                    print(f"      ✅ Found {len(art['tickers'])} tickers: {', '.join(art['tickers'][:5])}")
 
             time.sleep(SLEEP_LISTING_SEC)
 
@@ -441,9 +365,8 @@ def scrape_markets_news():
 
     csv_file = None
     if all_items:
-        df = pd.DataFrame(all_items)
         csv_file = f"news_analysis/moneycontrol_markets_{timestamp}.csv"
-        df.to_csv(csv_file, index=False)
+        pd.DataFrame(all_items).to_csv(csv_file, index=False)
         print(f"💾 Saved CSV: {csv_file}")
 
     # Return tickers sorted by mention count

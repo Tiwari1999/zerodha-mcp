@@ -20,21 +20,33 @@ except ImportError:
     REQUESTS_AVAILABLE = False
 
 
+# Blacklist of common words that should never be matched as tickers
+BLACKLIST = {
+    'THE', 'AND', 'FOR', 'ARE', 'BUT', 'NOT', 'YOU', 'ALL', 'CAN', 'HER', 'WAS', 'ONE', 'OUR', 'OUT',
+    'DAY', 'GET', 'HAS', 'HIM', 'HIS', 'HOW', 'ITS', 'MAY', 'NEW', 'NOW', 'OLD', 'SEE', 'TWO', 'WHO',
+    'WAY', 'USE', 'MAN', 'MEN', 'HAD', 'THEY', 'THEM', 'THIS', 'THAT', 'THESE', 'THOSE', 'WAS', 'WERE',
+    'WHAT', 'WHEN', 'WHERE', 'WHICH', 'WHILE', 'WITH', 'WITHIN', 'WITHOUT', 'WOULD', 'YOUR', 'YOURS',
+    'CRORE', 'LAKH', 'LAKHS', 'CRORES', 'RUPEES', 'RS', 'INR', 'USD', 'EURO', 'EUROS',
+    'SME', 'QIB', 'NII', 'IPO', 'NSE', 'BSE', 'SEBI', 'RBI', 'GST', 'PAN', 'AADHAAR',
+    'IST', 'GMT', 'UTC', 'AM', 'PM', 'HR', 'HRS', 'MIN', 'MINS', 'SEC', 'SECS',
+    'NOV', 'DEC', 'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT',
+    'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN',
+    'LTD', 'LIMITED', 'CORP', 'CORPORATION', 'INC', 'INCORPORATED',
+    'SHARES', 'SHARE', 'STOCK', 'STOCKS', 'EQUITY', 'EQUITIES',
+    'INVESTOR', 'INVESTORS', 'INVESTMENT', 'INVESTMENTS',
+    'ACCOUNT', 'ACCOUNTS', 'DEMAT', 'BANK', 'BANKS',
+    'THEIR', 'THERE', 'THEN', 'THAN',
+}
+
+
 class StockMapper:
     """Maps company names to stock ticker symbols for Indian markets."""
 
     def __init__(self, mapping_file: Optional[str] = None):
-        """
-        Initialize stock mapper.
-        
-        Args:
-            mapping_file: Path to JSON file with stock mappings (optional)
-        """
+        """Initialize stock mapper."""
         self.company_to_ticker: Dict[str, str] = {}
         self.ticker_to_companies: Dict[str, Set[str]] = defaultdict(set)
-        self.ticker_aliases: Dict[str, str] = {}
 
-        # Load mappings
         if mapping_file and Path(mapping_file).exists():
             self.load_from_file(mapping_file)
         else:
@@ -42,21 +54,16 @@ class StockMapper:
 
     def load_default_mappings(self):
         """Load mappings. Prefer NSE EQUITY_L.csv if available, else use minimal seed map."""
-        # Try loading NSE list from EQUITY_L.csv at repo root
         repo_root = Path(__file__).resolve().parents[1]
-        csv_path_candidates = [
-            repo_root / "EQUITY_L.csv",
-            Path.cwd() / "EQUITY_L.csv",
-        ]
-
-        for csv_path in csv_path_candidates:
-            if csv_path.exists():
-                try:
-                    self._load_from_equity_csv(csv_path)
-                    return
-                except Exception:
-                    # Fallback to seed map below
-                    break
+        csv_path = next((p for p in [repo_root / "EQUITY_L.csv", Path.cwd() / "EQUITY_L.csv"] 
+                        if p.exists()), None)
+        
+        if csv_path:
+            try:
+                self._load_from_equity_csv(csv_path)
+                return
+            except Exception:
+                pass
 
         # Seed mappings (fallback if CSV not found)
         stock_mappings = {
@@ -208,137 +215,78 @@ class StockMapper:
         return name.strip()
 
     def find_ticker(self, text: str, threshold: float = 0.7) -> List[Tuple[str, str, float]]:
-        """
-        Find stock tickers mentioned in text using fuzzy matching.
-        
-        Args:
-            text: Text to search for stock mentions
-            threshold: Minimum similarity score (0-1)
-        
-        Returns:
-            List of (ticker, matched_company_name, confidence_score) tuples
-        """
+        """Find stock tickers mentioned in text using strict matching with context."""
         text_upper = text.upper()
         found_tickers = []
         seen_tickers = set()
 
-        # Method 1: Direct ticker match
+        # Method 1: Direct ticker match with context
         for ticker in self.ticker_to_companies.keys():
-            if ticker in text_upper:
+            if ticker in BLACKLIST or len(ticker) <= 2:
+                continue
+            
+            # Pattern 1: Ticker with financial context (highest priority)
+            if re.search(r'\b' + re.escape(ticker) + r'\s+(?:SHARES?|STOCK|STOCKS|IPO|LIMITED|LTD|CORP|CORPORATION)\b', text_upper):
                 if ticker not in seen_tickers:
                     found_tickers.append((ticker, ticker, 1.0))
                     seen_tickers.add(ticker)
-
-        # Method 2: Company name fuzzy matching (improved)
-        # Extract words and phrases more carefully
-        text_words = re.findall(r'\b[A-Z][A-Za-z0-9]{1,20}\b', text_upper)
-        text_phrases = []
-        for i in range(len(text_words)):
-            # Single word (only if it's substantial)
-            if len(text_words[i]) >= 3:
-                text_phrases.append(text_words[i])
-            # Two-word phrases
-            if i < len(text_words) - 1:
-                phrase = f"{text_words[i]} {text_words[i + 1]}"
-                text_phrases.append(phrase)
-            # Three-word phrases
-            if i < len(text_words) - 2:
-                phrase = f"{text_words[i]} {text_words[i + 1]} {text_words[i + 2]}"
-                text_phrases.append(phrase)
-
-        # First pass: Direct matches (high confidence)
-        for phrase in text_phrases:
-            normalized = self._normalize_company_name(phrase)
-            if normalized in self.company_to_ticker:
-                ticker = self.company_to_ticker[normalized]
+                    continue
+            
+            # Pattern 2: Ticker as standalone word
+            if len(ticker) >= 3 and re.search(r'(?:^|[^A-Z0-9])' + re.escape(ticker) + r'(?:[^A-Z0-9]|$)', text_upper):
                 if ticker not in seen_tickers:
-                    # Check if it's a meaningful match (not just a substring)
-                    if len(phrase) >= 3 and phrase in text_upper:
-                        found_tickers.append((ticker, phrase, 1.0))
+                    found_tickers.append((ticker, ticker, 0.9))
+                    seen_tickers.add(ticker)
+
+        # Method 2: Company name matching with context
+        patterns = [
+            r'\b([A-Z][A-Za-z0-9\s&]{4,40}?)\s+(?:SHARES?|STOCK|STOCKS|IPO|LIMITED|LTD|CORP|CORPORATION|ANNOUNCES?|REPORTS?|RISES?|FALLS?|GAINS?|DROPS?)\b',
+            r'\b(?:SHARES?|STOCK|STOCKS)\s+OF\s+([A-Z][A-Za-z0-9\s&]{4,40}?)\b',
+        ]
+        
+        for pattern in patterns:
+            for match in re.findall(pattern, text_upper):
+                match = match.strip()
+                if len(match) < 4 or any(w in BLACKLIST for w in match.split()):
+                    continue
+                normalized = self._normalize_company_name(match)
+                if normalized in self.company_to_ticker:
+                    ticker = self.company_to_ticker[normalized]
+                    if ticker not in BLACKLIST and ticker not in seen_tickers:
+                        found_tickers.append((ticker, match, 0.9))
                         seen_tickers.add(ticker)
 
-        # Second pass: Fuzzy matches (only if no direct match found)
-        for phrase in text_phrases:
-            if len(phrase) < 4:  # Skip very short phrases
-                continue
-            normalized = self._normalize_company_name(phrase)
-            # Skip if already matched directly
-            if normalized in self.company_to_ticker:
-                continue
-
-            # Fuzzy match with stricter requirements
-            best_match = None
-            best_score = 0.0
-            for company_name, ticker in self.company_to_ticker.items():
-                # Skip if ticker already found
-                if ticker in seen_tickers:
+        # Method 3: 2-3 word phrases
+        text_words = re.findall(r'\b[A-Z][A-Za-z0-9]{2,15}\b', text_upper)
+        for i in range(len(text_words) - 1):
+            for word_count in [2, 3]:
+                if i + word_count > len(text_words):
                     continue
+                phrase = ' '.join(text_words[i:i+word_count])
+                if any(w in BLACKLIST for w in text_words[i:i+word_count]) or len(phrase) < 5:
+                    continue
+                normalized = self._normalize_company_name(phrase)
+                if normalized in self.company_to_ticker:
+                    ticker = self.company_to_ticker[normalized]
+                    if ticker not in BLACKLIST and ticker not in seen_tickers:
+                        found_tickers.append((ticker, phrase, 0.85))
+                        seen_tickers.add(ticker)
 
-                # Use better similarity metric (require word boundary match for better accuracy)
-                if phrase in company_name or company_name in phrase:
-                    score = 0.95  # High score for substring match
-                else:
-                    score = SequenceMatcher(None, normalized, company_name).ratio()
+        # Filter and sort
+        filtered = [(t, m, s) for t, m, s in found_tickers if t not in BLACKLIST]
+        filtered.sort(key=lambda x: x[2], reverse=True)
+        return filtered
 
-                # Require higher threshold and better match quality
-                if score > best_score and score >= max(threshold, 0.85):
-                    # Additional check: ensure phrase length similarity
-                    if abs(len(phrase) - len(company_name)) / max(len(phrase), len(company_name)) < 0.5:
-                        best_score = score
-                        best_match = (ticker, phrase, score)
-
-            if best_match and best_match[0] not in seen_tickers:
-                found_tickers.append(best_match)
-                seen_tickers.add(best_match[0])
-
-        # Method 3: Look for "X shares", "X stock", "X IPO" patterns
-        patterns = [
-            r'\b([A-Z][A-Z0-9]{2,15})\s+(?:SHARES?|STOCK|STOCKS|IPO|LIMITED|LTD)\b',
-            r'\b([A-Z][A-Z0-9]{2,15})\s+(?:SHARES?|STOCK|STOCKS|IPO)\s+(?:OF|TO)\b',
-        ]
-        for pattern in patterns:
-            matches = re.findall(pattern, text_upper)
-            for match in matches:
-                ticker = self._normalize_company_name(match)
-                if ticker in self.company_to_ticker:
-                    actual_ticker = self.company_to_ticker[ticker]
-                    if actual_ticker not in seen_tickers:
-                        found_tickers.append((actual_ticker, match, 0.9))
-                        seen_tickers.add(actual_ticker)
-
-        # Sort by confidence (descending)
-        found_tickers.sort(key=lambda x: x[2], reverse=True)
-        return found_tickers
-
-    def extract_tickers_from_text(self, text: str, title: str = "") -> List[str]:
-        """
-        Extract stock tickers from text (simple interface).
+    def extract_tickers_from_text(self, text: str, title: str = "", max_tickers: int = 5) -> List[str]:
+        """Extract stock tickers from text (simple interface)."""
+        matches = self.find_ticker(f"{title} {text}", threshold=0.85)
         
-        Args:
-            text: Article content
-            title: Article title (optional)
-        
-        Returns:
-            List of unique ticker symbols found
-        """
-        full_text = f"{title} {text}"
-        matches = self.find_ticker(full_text, threshold=0.75)  # Higher threshold to reduce false positives
-
-        # Prioritize high-confidence matches and exact matches
         ticker_scores = {}
         for ticker, matched_text, score in matches:
-            # Exact ticker match gets highest priority
-            if matched_text.upper() == ticker:
-                ticker_scores[ticker] = max(ticker_scores.get(ticker, 0), 1.0)
-            # High confidence matches
-            elif score >= 0.85:
-                ticker_scores[ticker] = max(ticker_scores.get(ticker, 0), score)
-            # Lower confidence matches only if not already found with higher confidence
-            elif score >= 0.75 and ticker not in ticker_scores:
-                ticker_scores[ticker] = score
-
-        # Return tickers sorted by confidence
-        return [ticker for ticker, _ in sorted(ticker_scores.items(), key=lambda x: x[1], reverse=True)]
+            priority = 1.0 if matched_text.upper() == ticker else score
+            ticker_scores[ticker] = max(ticker_scores.get(ticker, 0), priority)
+        
+        return [t for t, _ in sorted(ticker_scores.items(), key=lambda x: x[1], reverse=True)][:max_tickers]
 
     def save_to_file(self, filepath: str):
         """Save mappings to JSON file."""
@@ -360,10 +308,7 @@ class StockMapper:
     def get_company_name(self, ticker: str) -> Optional[str]:
         """Get primary company name for a ticker."""
         companies = self.ticker_to_companies.get(ticker)
-        if companies:
-            # Return the longest name (usually the full name)
-            return max(companies, key=len)
-        return None
+        return max(companies, key=len) if companies else None
 
     def get_all_tickers(self) -> Set[str]:
         """Get all known ticker symbols."""
